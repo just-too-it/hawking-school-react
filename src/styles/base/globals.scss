@@ -1,110 +1,110 @@
-/* html,
+html,
 body {
   padding: 0;
   margin: 0;
   color: $color-black;
-  background-color: $color-white;
-  font-family: Montserrat, sans-serif;
+  background-color: $color-background;
+  font-family: Inter, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 30px;
+  line-height: 24px;
 }
 
-h1 {
-  padding: 0;
-  margin: 0;
-  font-weight: 700;
-  font-size: 60px;
-  line-height: 73px;
+// h1 {
+//   padding: 0;
+//   margin: 0;
+//   font-weight: 700;
+//   font-size: 60px;
+//   line-height: 73px;
 
-  @media (max-width: $max-tablet-width) {
-    font-size: 45px;
-    line-height: 55px;
-  }
+//   @media (max-width: $max-tablet-width) {
+//     font-size: 45px;
+//     line-height: 55px;
+//   }
 
-  @media (max-width: $max-mobile-width) {
-    font-size: 30px;
-    line-height: 37px;
-  }
-}
+//   @media (max-width: $max-mobile-width) {
+//     font-size: 30px;
+//     line-height: 37px;
+//   }
+// }
 
-h2 {
-  padding: 0;
-  margin: 0;
-  font-weight: 600;
-  font-size: 40px;
-  line-height: 49px;
-  position: relative;
+// h2 {
+//   padding: 0;
+//   margin: 0;
+//   font-weight: 600;
+//   font-size: 40px;
+//   line-height: 49px;
+//   position: relative;
 
-  @media (max-width: $max-tablet-width) {
-    font-size: 30px;
-    line-height: 37px;
-  }
+//   @media (max-width: $max-tablet-width) {
+//     font-size: 30px;
+//     line-height: 37px;
+//   }
 
-  @media (max-width: $max-mobile-width) {
-    font-size: 20px;
-    line-height: 30px;
-  }
+//   @media (max-width: $max-mobile-width) {
+//     font-size: 20px;
+//     line-height: 30px;
+//   }
 
-  &::before {
-    position: absolute;
-    content: '';
-    top: -17px;
-    left: 1px;
-    width: 74px;
-    height: 5px;
-    background-color: $color-red-light;
-  }
-}
+//   &::before {
+//     position: absolute;
+//     content: '';
+//     top: -17px;
+//     left: 1px;
+//     width: 74px;
+//     height: 5px;
+//     background-color: $color-red-light;
+//   }
+// }
 
-h3 {
-  padding: 0;
-  margin: 0;
-  font-weight: 700;
-  font-size: 20px;
+// h3 {
+//   padding: 0;
+//   margin: 0;
+//   font-weight: 700;
+//   font-size: 20px;
 
-  @media (max-width: $max-tablet-width) {
-    font-size: 18px;
-    line-height: 30px;
-  }
-}
+//   @media (max-width: $max-tablet-width) {
+//     font-size: 18px;
+//     line-height: 30px;
+//   }
+// }
 
-h4 {
-  padding: 0;
-  margin: 0;
-  font-weight: 700;
-  font-size: 22px;
-  line-height: 27px;
-  text-transform: uppercase;
-}
+// h4 {
+//   padding: 0;
+//   margin: 0;
+//   font-weight: 700;
+//   font-size: 22px;
+//   line-height: 27px;
+//   text-transform: uppercase;
+// }
 
-.container {
-  max-width: 1248px;
-  width: 100%;
-  margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
+// .container {
+//   max-width: 1248px;
+//   width: 100%;
+//   margin: 0 auto;
+//   padding-left: 15px;
+//   padding-right: 15px;
 
-  @media (max-width: $max-tablet-width) {
-    max-width: $tablet-width;
-    padding-left: 16px;
-  }
+//   @media (max-width: $max-tablet-width) {
+//     max-width: $tablet-width;
+//     padding-left: 16px;
+//   }
 
-  @media (max-width: $max-mobile-width) {
-    max-width: $mobile-width;
-  }
-}
+//   @media (max-width: $max-mobile-width) {
+//     max-width: $mobile-width;
+//   }
+// }
 
-a {
-  font-weight: 600;
-  color: $color-red-light;
-  text-decoration: none;
-}
+// a {
+//   font-weight: 600;
+//   color: $color-red-light;
+//   text-decoration: none;
+// }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
- */
+
