@@ -5,5 +5,7 @@
  */
 export const PagesLinks = {
   MAIN_PAGE: '/',
-  NEWS_PAGE: '/news'
+  NEWS_PAGE: 'news',
+  BOOKMARKS_PAGE: 'bookmarks',
+  LOGIN_PAGE: 'login'
 }
