@@ -1,6 +1,6 @@
 export interface IItemNav {
     title: string;
-    link: string;
+    link?: string;
 }
 
 export interface INav {

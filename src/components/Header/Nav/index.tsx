@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
 import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
 import { INav } from './Nav.types';
 
@@ -7,21 +8,24 @@ export const Nav: FC<{ menu: INav }> = (props) => {
 
   return (
     <nav className="nav">
+      <div className='container'>
       <ul className="nav__main">
         {nav.map((item) => (
           <li key={item.title} className="nav__item">
-              <a href={item.link} title={item.title} className={item.title == 'Объявления на карте'? 'nav__link nav__link_map' : 'nav__link'}>{item.title}</a>
+            <Link to={item.link} title={item.title} className={item.title == 'Объявления на карте'? 'nav__link nav__link_icon' : 'nav__link'}>{item.title}</Link>
           </li>
         ))}
       </ul>
       <ul className='nav__sub'>
       <li className="nav__bookmarks">
-              <a href={PagesLinks.BOOKMARKS_PAGE} title='Закладки' className="nav__link">Закладки</a>
+              <Link to={PagesLinks.BOOKMARKS_PAGE} title='Закладки' className="nav__link">Закладки</Link>
         </li>
         <li className="nav__login">
-              <a href={PagesLinks.LOGIN_PAGE} title='Вход и регистрация' className="nav__link">Вход и регистрация</a>
+              <Link to={PagesLinks.LOGIN_PAGE} title='Вход и регистрация' className="nav__link">Вход и регистрация</Link>
         </li>
       </ul>
+      </div>
+      
 
       
     </nav>

@@ -1,12 +1,15 @@
 .nav {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    line-height: 17px;
-    padding-top: 11px;
-    padding-bottom: 12px;
+    background-color: $color-background-grey;
 
-
+    & .container {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        line-height: 17px;
+        padding-top: 11px;
+        padding-bottom: 12px;
+    }
+    
     &__main, &__sub {
         display: flex;
     }
@@ -21,7 +24,7 @@
 
 
     &__item {
-        margin-right: 44px;
+        margin-right: 57px;
 
         &:last-child {
             margin-right: 0px;
@@ -36,7 +39,7 @@
         margin-bottom: -12px;
         
         
-        &_map {
+        &_icon {
             padding-left: 13px;
             position: relative;
 

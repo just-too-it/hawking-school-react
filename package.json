@@ -23,8 +23,8 @@
     "stylelint:fix": "stylelint src/**/*{.css,.scss} --fix",
     "prettier": "prettier --check src/**/*{.css,.scss}",
     "prettier:fix": "prettier --write src/**/*{.css,.scss}",
-    "eslint": "eslint src/**/*.js",
-    "eslint:fix": "eslint src/**/*.js --fix"
+    "eslint": "eslint src/**/*.ts",
+    "eslint:fix": "eslint src/**/*.ts --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +48,9 @@
     "@types/node": "^17.0.39",
     "@types/react": "^18.0.10",
     "@types/react-dom": "^18.0.5",
+    "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
@@ -60,6 +63,7 @@
     "stylelint": "^14.8.5",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^25.0.0",
-    "stylelint-config-standard-scss": "^4.0.0"
+    "stylelint-config-standard-scss": "^4.0.0",
+    "ts-loader": "^9.3.0"
   }
 }

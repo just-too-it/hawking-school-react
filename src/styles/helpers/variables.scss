@@ -1,7 +1,8 @@
 
 // Colors
 $color-white: #fff;
-$color-background: #E5E5E5;
+$color-background-white: #fff;
+$color-background-grey: #F8F8F8;
 $color-black: #1E2123;
 $color-yellow: #FFD54F;
 $color-grey-dark: #686868;
@@ -12,6 +13,8 @@ $color-cobalt: #664EF9;
 
 
 $color-yellow-linear: linear-gradient(106.06deg, #FFD54F 1.12%, #FEC100 97.96%);
+$color-violet-linear: linear-gradient(90deg, #9D94FF 0%, #6B50E9 94.5%);
+$color-violet-linear-hover:linear-gradient(90deg, #867CFC 0%, #6929F3 94.5%);
 
 // Device
 $desktop-width: 1440px;
