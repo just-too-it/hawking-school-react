@@ -1,4 +1,6 @@
+import { IBreadcrumbs } from "../../components/Breadcrumbs/Breadcrumbs.types";
 import { ISelector } from "../../components/UI/SSelect/SSelector.types";
+import { PagesLinks } from "../constants/pagesLinks.constant";
 
 export const chooseCity: ISelector = {
     title: 'Выбор города',
@@ -10,3 +12,10 @@ export const chooseCity: ISelector = {
         {id: 5, value: 'Город 5'}
     ]
 }
+
+export const breadcrumbsForNews: IBreadcrumbs[] = [
+    {
+        title: 'Новости',
+        link: PagesLinks.NEWS_PAGE
+    },
+    ]

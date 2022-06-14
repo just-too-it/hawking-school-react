@@ -16,10 +16,11 @@
     "noEmit": true,
     "noImplicitAny": false,
     "noFallthroughCasesInSwitch": true,
-    "strictNullChecks": false,
+    "strictNullChecks": false
   },
-  "include": ["src","**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "build/**/*"]
+  "include": ["src", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "build/**/*"],
+  "files": ["index.d.ts"]
 }
 
 /* {
