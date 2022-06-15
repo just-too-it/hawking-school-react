@@ -1,6 +1,5 @@
 import React, { FC, useState } from 'react';
 import { Logo } from '../../Logo';
-import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
 import { Link } from 'react-router-dom';
 import { SButton } from '../../UI/SButton';
 import { IButton } from '../../UI/SButton/SButton.type';
@@ -12,7 +11,9 @@ export const SubNav: FC<{ menu: IItemSubNav[] }> = (props) => {
   const btnPlaceAd: IButton = {
     type: 'button',
     label: '+ Разместить объявление',
-    btnOnClick: () => {},
+    btnOnClick: () => {
+      console.log('');
+    },
   };
 
   return (
@@ -46,7 +47,13 @@ export const SubNav: FC<{ menu: IItemSubNav[] }> = (props) => {
           ))}
         </ul>
         <div className="subnav__button">
-          <SButton btn={btnPlaceAd} />
+          <SButton
+            type={'button'}
+            label={'+ Разместить объявление'}
+            btnOnClick={() => {
+              console.log('');
+            }}
+          />
         </div>
       </div>
     </div>

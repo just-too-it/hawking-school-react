@@ -1,6 +1,6 @@
 import { IPayment } from "../../components/Payment/Payment.type"
 
-export const payments: IPayment[] = [
+export const PAYMENTS: IPayment[] = [
         {name: 'visa', link:'/mock-link'},
         {name: 'webpay', link:'/mock-link'},
         {name: 'visa2', link:'/mock-link'},

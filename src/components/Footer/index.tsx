@@ -7,7 +7,7 @@ import { Info } from './Info';
 import { FooterSubNav } from './FooterSubNav';
 import { FooterNav } from './FooterNav';
 import { Payment } from '../Payment';
-import { payments } from '../../core/constants/payments.constant';
+import { PAYMENTS } from '../../core/constants/payments.constant';
 
 export const Footer = () => {
 
@@ -28,7 +28,7 @@ export const Footer = () => {
             <Social socialBlock={socialGroups} />
           </div>
           <div className="footer__payment">
-            <Payment payments={payments}/>
+            <Payment payments={PAYMENTS}/>
           </div>
         </div>
       </div>
