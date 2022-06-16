@@ -3,6 +3,8 @@
   height: 500px;
   box-shadow: (0 20px 40px rgb(135 124 202 / 15%));
   padding-bottom: 23.54px;
+  background: $color-white;
+  position: relative;
 
   &__img {
     margin-bottom: 30px;
