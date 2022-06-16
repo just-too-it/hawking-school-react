@@ -4,6 +4,7 @@ import { NewsPreview } from '../../../components/NewsPreview';
 import { breadcrumbsForNews, news } from '../../../core/mockData/mockData';
 import { Search } from '../../../components/Search';
 import styles from './News.module.scss';
+import { Pagination } from '../../../components/Pagination';
 
 export const News = () => {
   return (
@@ -20,6 +21,7 @@ export const News = () => {
           </li>
         ))}
       </ul>
+      <Pagination currentPage={1} totalPage={10}/>
     </section>
   );
 };
