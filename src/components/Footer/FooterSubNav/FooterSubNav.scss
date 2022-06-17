@@ -16,7 +16,7 @@
     color: $color-black;
 
     &_last {
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
   }
 
@@ -29,5 +29,9 @@
     font-size: 14px;
     line-height: 17px;
     color: $color-grey-font;
+  }
+
+  &__sub-item {
+    margin-bottom: 8px;
   }
 }

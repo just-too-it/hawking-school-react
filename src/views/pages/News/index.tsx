@@ -16,7 +16,7 @@ export const News = () => {
   }
 
   useMemo(()=>{
-    setNewsList(fileredList(news, '8'))
+    setNewsList(fileredList(news, 'Линия'))
   },[])
 
   return (
