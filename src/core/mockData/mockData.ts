@@ -3,6 +3,7 @@ import { INewsPreview } from "../../components/NewsPreview/NewsPreview.types";
 import { ISelector } from "../../components/UI/SSelect/SSelector.types";
 import { PagesLinks } from "../constants/pagesLinks.constant";
 import room from '../../assets/images/room.jpg'
+import { INewsList } from "../../components/NewsList/NewsList.types";
 
 export const chooseCity: ISelector = {
     title: 'Выбор города',
@@ -28,8 +29,13 @@ for (let index = 0; index < 20; index++) {
     news.push({
         id: index+1,
         img: room,
-        title: 'Линия Сталина: суровый отдых в усадьбах на сутки',
+        title: `Линия${index+1} Сталина: суровый отдых в усадьбах на сутки`,
         description: 'Чем заняться в выходные? Когда нет безотлагательных домашних дел, а на улице хорошая погода, хочется уехать из города, чтобы сменить обстановку. Например, снять коттедж на сутки для семьи или большой компании друзей. А бла-бла-бла',
         date: new Date(2008, 0, 14)
     })
+}
+
+export const newsList: INewsList = {
+    newsPreviews: news,
+    newsPerPage: 9
 }

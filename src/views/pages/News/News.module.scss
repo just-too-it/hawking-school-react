@@ -2,13 +2,7 @@
   position: relative;
   padding-top: 42px;
   padding-bottom: 100px;
-}
-
-.list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-bottom: 80px;
+  min-height: 1100px;
 }
 
 .title {
