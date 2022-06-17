@@ -8,12 +8,21 @@
     "plugin:react/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier"
   ],
   "ignorePatterns": [".eslintrc.json", "tsconfig.json"],
-  "plugins": ["prettier"],
+  "plugins": ["react", "react-hooks", "import", "@typescript-eslint", "prettier"],
   "parserOptions": {
+    "project": "./tsconfig.json",
     "ecmaVersion": 12,
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true,
+      "experimentalObjectRestSpread": true
+    },
     "sourceType": "module"
   },
   "settings": {
@@ -21,10 +30,15 @@
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
+    },
+    "react": {
+      "version": "detect"
     }
   },
   "rules": {
     "react/prop-types": "off",
-    "no-unused-vars": "off"
+    "no-unused-vars": "off",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
   }
 }

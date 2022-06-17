@@ -1,0 +1,16 @@
+.button {
+  border: none;
+  background: $color-violet-linear;
+  border-radius: 19px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: $color-white;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+  padding: 10px 18px;
+
+  &:hover {
+    background: $color-violet-linear-hover;
+  }
+}
