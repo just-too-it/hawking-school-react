@@ -17,7 +17,7 @@ export const FullNews = () => {
 
   useEffect(() => {
     setNews(getItemFromNews(Number(idNews.id), newsItems));
-  }, []);
+  }, [idNews]);
 
   return (
     <>

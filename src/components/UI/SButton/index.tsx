@@ -2,7 +2,7 @@ import React, { FC, useState, useEffect } from 'react';
 import { IButton } from './SButton.type';
 import { ReactComponent as HomeIcon } from '../../../assets/images/icons/home.svg';
 
-export const SButton: FC<IButton> = ({ label, type, btnOnClick, color, icon, ...rest }) => {
+export const SButton: FC<IButton> = ({ label, type, btnOnClick, color, ...rest }) => {
   const [buttonClassName, setButtonClassName] = useState('button');
   const [iconBefore, setIconBefore] = useState(null as React.ReactElement);
 

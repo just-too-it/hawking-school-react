@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import styles from './NewsItem.module.scss';
 import { FullNews } from '../../../components/FullNews';
 import { breadcrumbsForNewsItem, news } from '../../../core/mockData/mockData';

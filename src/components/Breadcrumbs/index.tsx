@@ -21,7 +21,7 @@ export const Breadcrumbs: FC<{ breadcrumbs: IBreadcrumbs[] }> = (props) => {
                 <span className="breadcrumbs__link breadcrumbs__link_last">{crumb.title}</span>
               ) : (
                 <Link
-                  to={crumb.link}
+                  to={`/${crumb.link}`}
                   className={'breadcrumbs__link'}
                 >
                   {crumb.title}
