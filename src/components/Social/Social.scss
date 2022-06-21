@@ -4,6 +4,10 @@
   align-items: center;
   justify-content: space-between;
 
+  &__title {
+    font-weight: 500;
+  }
+
   &__list {
     display: flex;
     justify-content: space-between;
@@ -44,4 +48,71 @@
       background-size: 20px 20px;
     }
   }
+
+
+  &_share {
+    width: 360px;
+
+    & .social__title {
+      font-weight: 400;
+      margin-right: 15px;
+    }
+
+    & .social__item {
+      width: 34.15px;
+      height: 35px;
+      margin-right: 19.82px;
+  
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    & .social__link {
+      background: rgba(102, 78, 249, 0.1);
+      border-radius: 19px;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      &_vk {
+        background-image: url('../../assets/images/icons/vk-share.svg');
+        background-size: 17.07px 9.96px;
+      }
+
+      &_facebook {
+        background-image: url('../../assets/images/icons/fb-share.svg');
+        background-size: 8.54px 17.07px;
+      }
+
+      
+      &_viber {
+        background-image: url('../../assets/images/icons/viber-share.svg');
+        background-size: 16.53px 17.42px;
+      }
+
+      &_telegram {
+        background-image: url('../../assets/images/icons/telegram-share.svg');
+        background-size: 16.53px 13.86px;
+      }
+
+      &_whatsapp {
+        background-image: url('../../assets/images/icons/whatsapp-share.svg');
+        background-size: 16.72px 16.8px;
+      }
+
+
+    }
+  }
+
+  /* &_share .social__item {
+      width: 34.15px;
+      height: 35px;
+      margin-right: 19.82px;
+  
+      &:last-child {
+        margin-right: 0;
+      }
+    } */
+     
+  
 }

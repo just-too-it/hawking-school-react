@@ -22,3 +22,15 @@ export const socialGroups: ISocialBlock = {
         {name: 'facebook', link:'/mock-link'}
     ]
 }
+
+export const socialShare: ISocialBlock = {
+    title: 'Поделиться',
+    socials: [
+        {name: 'vk', link:'/mock-link'},
+        {name: 'facebook', link:'/mock-link'},
+        {name: 'viber', link:'/mock-link'},
+        {name: 'telegram', link:'/mock-link'},
+        {name: 'whatsapp', link:'/mock-link'}
+    ],
+    share: true
+}

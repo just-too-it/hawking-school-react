@@ -11,4 +11,5 @@ interface ISocial {
 export interface ISocialBlock {
     title: string;
     socials: ISocial[];
+    share?: boolean;
 }

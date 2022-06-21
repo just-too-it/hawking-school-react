@@ -5,6 +5,7 @@ import { PagesLinks } from '../../core/constants/pagesLinks.constant';
 import { ReactComponent as HomeIcon } from '../../assets/images/icons/home.svg';
 
 export const Breadcrumbs: FC<{ breadcrumbs: IBreadcrumbs[] }> = (props) => {
+  
   return (
     <>
       {props.breadcrumbs && (

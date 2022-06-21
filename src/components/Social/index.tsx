@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import { ISocialBlock } from './Social.type';
 
 export const Social: FC<{ socialBlock: ISocialBlock }> = (props) => {
-  const { title, socials } = props.socialBlock;
+  const { title, socials, share } = props.socialBlock;
+
+  const socialClassName = share ? "social social_share" : "social";
 
   return (
-    <article className="social">
+    <article className={socialClassName}>
       <div className="social__title">{title}</div>
       <ul className={'social__list'}>
         {socials.map((social) => (
