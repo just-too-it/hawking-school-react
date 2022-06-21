@@ -4,6 +4,7 @@ import { PagesLinks } from '../core/constants/pagesLinks.constant';
 import { Layout } from '../views/layouts/Layout';
 import { News } from '../views/pages/News';
 import { NewsItem } from '../views/pages/NewsItem';
+import { NotFound } from '../views/pages/NotFound';
 
 export const AppRouter = () => {
   return (
@@ -11,6 +12,7 @@ export const AppRouter = () => {
       <Route path="/" element={<Layout />}>
         <Route path={PagesLinks.NEWS_PAGE} element={<News />} />
         <Route path={`${PagesLinks.NEWS_PAGE}/:id`} element={<NewsItem />} /> 
+        <Route path='*' element={<NotFound />}/>
         {/*       <Route path={PagesLinks.SIGN_IN_PAGE} element={<SignIn />} />
       <Route path={PagesLinks.SIGN_UP_PAGE} element={<SignUp />} />
       <Route path={PagesLinks.REGISTRATION} element={<Registration />} />

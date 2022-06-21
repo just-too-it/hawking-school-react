@@ -13,4 +13,21 @@
   &:hover {
     background: $color-violet-linear-hover;
   }
+
+  &_yellow-icon {
+    background: $color-yellow;
+    padding: 12px 24px;
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-black;
+
+    & svg {
+      margin-right: 10px;
+      fill: black;
+    }
+
+    &:hover {
+      background: $color-yellow-hover;
+    }
+  }
 }

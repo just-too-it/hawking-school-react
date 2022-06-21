@@ -49,7 +49,6 @@
     }
   }
 
-
   &_share {
     width: 360px;
 
@@ -62,14 +61,14 @@
       width: 34.15px;
       height: 35px;
       margin-right: 19.82px;
-  
+
       &:last-child {
         margin-right: 0;
       }
     }
 
     & .social__link {
-      background: rgba(102, 78, 249, 0.1);
+      background: rgb(102 78 249 / 10%);
       border-radius: 19px;
       background-position: center;
       background-repeat: no-repeat;
@@ -84,7 +83,6 @@
         background-size: 8.54px 17.07px;
       }
 
-      
       &_viber {
         background-image: url('../../assets/images/icons/viber-share.svg');
         background-size: 16.53px 17.42px;
@@ -99,8 +97,6 @@
         background-image: url('../../assets/images/icons/whatsapp-share.svg');
         background-size: 16.72px 16.8px;
       }
-
-
     }
   }
 
@@ -113,6 +109,4 @@
         margin-right: 0;
       }
     } */
-     
-  
 }

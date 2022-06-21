@@ -34,7 +34,7 @@ export const FullNews = () => {
           <img src={news.img} alt={news.title} width={'844'} height={'auto'}/>
           </div>
           
-          <div style={{ whiteSpace: 'pre-line' }} className={styles.text}>{news.text}</div>
+          <div className={styles.text} dangerouslySetInnerHTML={{ __html: news.text} }></div>
     </>
   );
 };
