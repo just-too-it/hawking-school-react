@@ -5,7 +5,7 @@ import { ReactComponent as HomeIcon } from '../../../assets/images/icons/home.sv
 export const SButton: FC<IButton> = ({ label, type, btnOnClick, color, ...rest }) => {
   const [buttonClassName, setButtonClassName] = useState('button');
   const [iconBefore, setIconBefore] = useState(null as React.ReactElement);
-
+  const [iconAfter, setIconAfter] = useState(null as React.ReactElement);
 
   useEffect(()=>{
     switch (color) {
@@ -27,15 +27,12 @@ export const SButton: FC<IButton> = ({ label, type, btnOnClick, color, ...rest }
         break;
     }
   },[])
-  
-
-  
-
 
   return (
     <button type={type} onClick={btnOnClick} className={buttonClassName} {...rest}>
       {iconBefore ? iconBefore : null}
       {label}
+      {iconAfter ? iconAfter : null}
     </button>
   );
 };

@@ -24,7 +24,13 @@ export const SubNav: FC<{ menu: IItemSubNav[] }> = (props) => {
         </div>
         <ul className="subnav__list">
           {props.menu.map((item) => (
-            <li key={item.title} className="subnav__item" onClick={() => setIsActiveSubmenu(!isActiveSubmenu)}>
+            <li
+              key={item.title}
+              className="subnav__item"
+              onClick={() => {
+                item.list ? setIsActiveSubmenu(!isActiveSubmenu) : null;
+              }}
+            >
               <Link
                 to={item.link ? item.link : '#'}
                 title={item.title}

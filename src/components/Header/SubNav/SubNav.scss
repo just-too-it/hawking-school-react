@@ -64,6 +64,7 @@
     background: $color-white;
     box-shadow: 0 0 40px rgb(135 124 202 / 30%);
     border-radius: 10px;
+    z-index: 1;
   }
 
   &__sub-item {

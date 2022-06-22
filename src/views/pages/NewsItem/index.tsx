@@ -13,6 +13,8 @@ export const NewsItem = () => {
     setNewsList(news)
   },[newsList])
 
+
+
   return (
     <main className={styles.newsItem}>
       <div className={styles.container}>
