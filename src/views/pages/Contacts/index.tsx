@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Social } from '../../../components/Social';
-import { socialContactsLeft, socialGroups } from '../../../core/constants/social.constant';
+import { socialContactsLeft, socialContactsRight, socialGroups } from '../../../core/constants/social.constant';
 import styles from './Contacts.module.scss';
 import { CONTACT } from '../../../core/constants/contacts.constant';
 import { IContacts } from './Contacts.types';
@@ -12,7 +12,7 @@ import { ReactComponent as ClockIcon } from '../../../assets/images/icons/clock.
 
 export const Contacts = () => {
   const [contact, setContact] = useState({} as IContacts);
-  
+
   useEffect(() => {
     setContact(CONTACT);
   }, []);
@@ -60,7 +60,7 @@ export const Contacts = () => {
           </article>
         </section>
         <form></form>
-        
+        <Social socialBlock={socialContactsRight} />
       </div>
     </main>
   );

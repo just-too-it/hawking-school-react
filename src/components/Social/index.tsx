@@ -13,12 +13,9 @@ import { ReactComponent as TgShareIcon } from '../../assets/images/icons/telegra
 import { ReactComponent as WaShareIcon } from '../../assets/images/icons/whatsapp-share.svg';
 
 export const Social: FC<{ socialBlock: ISocialBlock }> = (props) => {
-  const { title, socials, placeOfUse } = props.socialBlock;
+  const { title, socials, placeOfUse, viewIsVertical } = props.socialBlock;
 
-  const socialClassNames = [
-    'social',
-    placeOfUse == 'news' ?  'social_news' : 'social_contacts'
-  ]
+  const socialClassNames = ['social', placeOfUse == 'news' ? 'social_news' : 'social_contacts', viewIsVertical ? 'social_contacts-right': ''];
 
   const settingIcon = (iconName) => {
     switch (iconName) {
@@ -63,3 +60,5 @@ export const Social: FC<{ socialBlock: ISocialBlock }> = (props) => {
     </article>
   );
 };
+
+

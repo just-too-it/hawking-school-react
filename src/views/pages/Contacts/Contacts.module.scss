@@ -1,8 +1,6 @@
 @import '../../../styles/helpers/variables';
 
-.info {
-    width: 515px;
-}
+
 
 .contacts {
     background: url('../../../assets/images/background.png'), linear-gradient(0deg, #7e6af3 1.04%, #6540cd 100%);
@@ -11,6 +9,13 @@
     padding-top: 77px;
     padding-bottom: 95px;
     color: $color-white;
+}
+.container {
+    display: flex;
+}
+
+.info {
+    width: 515px;
 }
 
 .title {

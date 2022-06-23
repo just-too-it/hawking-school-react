@@ -8,5 +8,6 @@ interface ISocial {
 export interface ISocialBlock {
     title?: string;
     socials: ISocial[];
-    placeOfUse?: 'footer' | 'news' | 'contacts'
+    placeOfUse?: 'footer' | 'news' | 'contacts';
+    viewIsVertical?: boolean;
 }

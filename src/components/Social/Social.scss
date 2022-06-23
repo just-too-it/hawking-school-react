@@ -69,6 +69,7 @@
 
   &_contacts {
       width: 110px;
+
     & .social__item {
       width: 30px;
       height: 30px;
@@ -90,5 +91,33 @@
     }
   }
 
+  &_contacts-right {
+
+    & .social__list {
+      flex-direction: column;
+    }
+    
+    & .social__item {
+      width: 45px;
+      height: 45px;
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    & .social__link {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+
+      & svg {
+        fill: $color-white;
+        width: 20px;
+        height: 20px;
+      }
+      
+    }
+  }
 
 }
