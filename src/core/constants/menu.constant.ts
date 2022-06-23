@@ -7,7 +7,7 @@ export const Menu: IItemNav[] = [
   { title: 'Новости', link: PagesLinks.NEWS_PAGE },
   { title: 'Размещение и тарифы', link: PagesLinks.RATES_PAGE },
   { title: 'Объявления на карте', link: PagesLinks.MAPS_PAGE },
-  { title: 'Контакты', link: PagesLinks.CONTANTS_PAGE },
+  { title: 'Контакты', link: PagesLinks.CONTACTS_PAGE },
 ];
 
 export const SubMenu: IItemSubNav[] = [

@@ -8,7 +8,7 @@ import { INewsPreview } from '../../../components/NewsPreview/NewsPreview.types'
 import { NewsList } from '../../../components/NewsList';
 
 export const News = () => {
-  const [newsList, setNewsList] = useState([] as INewsPreview[]);
+  const [newsList, setNewsList] = useState(null as INewsPreview[]);
 
   //заготовка на использование поиска
   const fileredList = (array: INewsPreview[], query: string) => {

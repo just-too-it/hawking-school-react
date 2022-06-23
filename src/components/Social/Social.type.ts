@@ -1,15 +1,12 @@
-/* export interface ISocial {
-    name: string;
-    link: string;
-} */
 
 interface ISocial {
     name: string;
     link: string;
+    icon: string;
 }
 
 export interface ISocialBlock {
-    title: string;
+    title?: string;
     socials: ISocial[];
-    share?: boolean;
+    placeOfUse?: 'footer' | 'news' | 'contacts'
 }

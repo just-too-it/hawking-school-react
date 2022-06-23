@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { PagesLinks } from '../core/constants/pagesLinks.constant';
 import { Layout } from '../views/layouts/Layout';
+import { Contacts } from '../views/pages/Contacts';
 import { Home } from '../views/pages/Home';
 import { News } from '../views/pages/News';
 import { NewsItem } from '../views/pages/NewsItem';
@@ -14,6 +15,7 @@ export const AppRouter = () => {
         <Route path={PagesLinks.MAIN_PAGE} element={<Home />} />
         <Route path={PagesLinks.NEWS_PAGE} element={<News />} />
         <Route path={`${PagesLinks.NEWS_PAGE}/:id`} element={<NewsItem />} /> 
+        <Route path={PagesLinks.CONTACTS_PAGE} element={<Contacts />} />
         <Route path='*' element={<NotFound />}/>
         {/*       <Route path={PagesLinks.SIGN_IN_PAGE} element={<SignIn />} />
       <Route path={PagesLinks.SIGN_UP_PAGE} element={<SignUp />} />

@@ -13,7 +13,7 @@ export const PagesLinks = {
   NEWS_PAGE: 'news',
   RATES_PAGE:'rates',
   MAPS_PAGE: 'maps',
-  CONTANTS_PAGE: 'contacts',
+  CONTACTS_PAGE: 'contacts',
   BOOKMARKS_PAGE: 'bookmarks',
   LOGIN_PAGE: 'login',
   APARTMENTS_PAGE: 'apartments',

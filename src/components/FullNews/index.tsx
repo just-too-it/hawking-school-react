@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { MONTHS } from '../../core/constants/months.constant';
-import { socialShare } from '../../core/constants/social.constant';
+import { socialNews } from '../../core/constants/social.constant';
 import { newsItems } from '../../core/mockData/mockData';
 import { INewsItem } from '../../views/pages/NewsItem/NewsItem.types';
 import { Social } from '../Social';
@@ -28,7 +28,7 @@ export const FullNews = () => {
                 {news.date.getDate()} {MONTHS[news.date.getMonth()]} {news.date.getFullYear()}
                 </span>
             ) : null}
-            <Social socialBlock={socialShare} />
+            <Social socialBlock={socialNews}/>
           </div>
           <div className={styles.img}>
           <img src={news.img} alt={news.title} width={'844'} height={'auto'}/>

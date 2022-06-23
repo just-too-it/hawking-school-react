@@ -27,29 +27,18 @@
   }
 
   &__link {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
 
-    &_vk {
-      background-image: url('../../assets/images/icons/vk-group.svg');
-      background-size: 24px 14px;
-    }
-
-    &_instagram {
-      background-image: url('../../assets/images/icons/insta-group.svg');
-      background-size: 24px 24px;
-    }
-
-    &_facebook {
-      background-image: url('../../assets/images/icons/fb-group.svg');
-      background-size: 20px 20px;
+    & svg {
+      fill: $color-black;
     }
   }
 
-  &_share {
+  &_news {
     width: 360px;
 
     & .social__title {
@@ -70,43 +59,36 @@
     & .social__link {
       background: rgb(102 78 249 / 10%);
       border-radius: 19px;
-      background-position: center;
-      background-repeat: no-repeat;
 
-      &_vk {
-        background-image: url('../../assets/images/icons/vk-share.svg');
-        background-size: 17.07px 9.96px;
+      & svg {
+        fill: $color-cobalt;
       }
-
-      &_facebook {
-        background-image: url('../../assets/images/icons/fb-share.svg');
-        background-size: 8.54px 17.07px;
-      }
-
-      &_viber {
-        background-image: url('../../assets/images/icons/viber-share.svg');
-        background-size: 16.53px 17.42px;
-      }
-
-      &_telegram {
-        background-image: url('../../assets/images/icons/telegram-share.svg');
-        background-size: 16.53px 13.86px;
-      }
-
-      &_whatsapp {
-        background-image: url('../../assets/images/icons/whatsapp-share.svg');
-        background-size: 16.72px 16.8px;
-      }
+      
     }
   }
 
-  /* &_share .social__item {
-      width: 34.15px;
-      height: 35px;
-      margin-right: 19.82px;
-  
+  &_contacts {
+      width: 110px;
+    & .social__item {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+
       &:last-child {
         margin-right: 0;
       }
-    } */
+    }
+
+    & .social__link {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+
+      & svg {
+        fill: $color-white;
+      }
+      
+    }
+  }
+
+
 }

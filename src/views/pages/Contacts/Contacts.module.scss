@@ -1,0 +1,99 @@
+@import '../../../styles/helpers/variables';
+
+.info {
+    width: 515px;
+}
+
+.contacts {
+    background: url('../../../assets/images/background.png'), linear-gradient(0deg, #7e6af3 1.04%, #6540cd 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 77px;
+    padding-bottom: 95px;
+    color: $color-white;
+}
+
+.title {
+    margin-bottom: 30px;
+}
+
+.description {
+    margin: 0;
+    margin-bottom: 30px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.address {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    font-style: normal;
+
+    & a {
+        color: $color-white;
+
+        &:last-child {
+            text-decoration: underline;
+        }
+    }
+
+    & span {
+        font-weight: 400;
+        font-size: 18px;
+    }
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 11px;
+
+    & ul {
+        margin-left: 20px;
+    }
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 17px;
+    margin-right: 20px;
+    
+    & svg {
+        fill: $color-white;
+    }
+}
+
+.company, .license {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.company {
+    margin-top: 19px;
+}
+
+.license {
+    margin-bottom: 39px;
+}
+
+.notice {
+    width: 515px;
+    height: 90px;
+    background: $color-violet;
+    border-radius: 10px;
+    padding: 21px 25px 21px 85px;
+    font-weight: 500;
+    line-height: 24px;
+
+    background-image: url('../../../assets/images/icons/notice.svg');
+    background-repeat: no-repeat;
+    background-size: 35px 35px;
+    background-position: 25px;
+}
