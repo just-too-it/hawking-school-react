@@ -48,11 +48,12 @@ for (let index = 0; index < 20; index++) {
   });
 }
 
-export const newsList: INewsList = {
-  newsPreviews: news,
+/* export const newsList: INewsList = {
+  data: news,
   newsPerPage: 9,
+  currentPage: 1
 };
-
+ */
 
 
 export const newsItems: INewsItem[] = [];

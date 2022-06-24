@@ -6,6 +6,7 @@ import styles from './News.module.scss';
 import { Pagination } from '../../../components/Pagination';
 import { INewsPreview } from '../../../components/NewsPreview/NewsPreview.types';
 import { NewsList } from '../../../components/NewsList';
+import { getPageCount } from '../../../core/utils/getPageCount';
 
 export const News = () => {
   const [newsList, setNewsList] = useState(null as INewsPreview[]);
@@ -27,8 +28,8 @@ export const News = () => {
         <div className={styles.search}>
           <Search />
         </div>
-        <div className={styles.list}>{newsList ? <NewsList newsPreviews={newsList} newsPerPage={9} /> : null}</div>
-        <Pagination currentPage={1} totalPage={10} />
+        <div className={styles.list}>{newsList ? <NewsList data={newsList} newsPerPage={9} currentPage={2}/> : null}</div>
+        <Pagination currentPage={2} totalPage={ newsList ? getPageCount(newsList.length, 9) : 1} />
       </section>
     </main>
   );

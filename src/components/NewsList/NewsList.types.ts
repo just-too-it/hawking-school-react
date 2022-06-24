@@ -1,6 +1,7 @@
 import { INewsPreview } from "../NewsPreview/NewsPreview.types"
 
 export interface INewsList {
-    newsPreviews: INewsPreview[];
+    data: INewsPreview[];
     newsPerPage: number;
+    currentPage: number;
 }

@@ -3,11 +3,17 @@ import { INewsList } from "./NewsList.types";
 import styles from './NewsList.module.scss'
 import { NewsPreview } from "../NewsPreview";
 
-export const NewsList: FC<INewsList> = ({newsPreviews, newsPerPage}) => {
-    const [visibleNews, setVisibleNews] = useState(newsPreviews);
+export const NewsList: FC<INewsList> = ({data, newsPerPage, currentPage}) => {
+    const [visibleNews, setVisibleNews] = useState(data);
+
+    const start = (currentPage - 1) * newsPerPage;
+    const end = start + newsPerPage;
+  
+    //const cardsOnDisplay = props.data?.slice(start, end);
+
 
     useEffect(()=>{
-        setVisibleNews(visibleNews.slice(0, newsPerPage))
+        setVisibleNews(visibleNews?.slice(start, end))
     },[])
    
     return (
