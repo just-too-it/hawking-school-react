@@ -10,6 +10,7 @@
 
   &__list {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
 
@@ -92,11 +93,13 @@
   }
 
   &_contacts-right {
+    width: 45px;
+    align-items: flex-start;
 
     & .social__list {
       flex-direction: column;
     }
-    
+
     & .social__item {
       width: 45px;
       height: 45px;
@@ -108,9 +111,6 @@
     }
 
     & .social__link {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 25px;
-
       & svg {
         fill: $color-white;
         width: 20px;

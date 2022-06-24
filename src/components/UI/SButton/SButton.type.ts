@@ -1,7 +1,7 @@
 export interface IButton {
     type: 'button' | 'submit';
     label: string;
-    color?: string;
+    view?: string;
     icon?: HTMLImageElement | string;
     btnOnClick(): void;
 }

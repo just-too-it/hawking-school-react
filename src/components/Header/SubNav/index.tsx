@@ -56,6 +56,7 @@ export const SubNav: FC<{ menu: IItemSubNav[] }> = (props) => {
           <SButton
             type={'button'}
             label={'+ Разместить объявление'}
+            view={'violetGradient'}
             btnOnClick={() => {
               console.log('');
             }}

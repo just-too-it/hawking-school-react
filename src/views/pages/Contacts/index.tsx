@@ -9,6 +9,8 @@ import { ReactComponent as MapIcon } from '../../../assets/images/icons/map.svg'
 import { ReactComponent as PhoneIcon } from '../../../assets/images/icons/phone.svg';
 import { ReactComponent as MailIcon } from '../../../assets/images/icons/mail.svg';
 import { ReactComponent as ClockIcon } from '../../../assets/images/icons/clock.svg';
+import { SInput } from '../../../components/UI/SInput';
+import { ContactsForm } from './ContactsForm';
 
 export const Contacts = () => {
   const [contact, setContact] = useState({} as IContacts);
@@ -59,7 +61,7 @@ export const Contacts = () => {
             Администрация сайта не владеет информацией о наличии свободных квартир
           </article>
         </section>
-        <form></form>
+        <ContactsForm />
         <Social socialBlock={socialContactsRight} />
       </div>
     </main>

@@ -1,5 +1,6 @@
 import React, { FC, ReactNode, useState } from 'react';
 import { Link } from 'react-router-dom';
+import clsx from 'clsx';
 
 import { ISocialBlock } from './Social.type';
 import { ReactComponent as VkGroupIcon } from '../../assets/images/icons/vk-group.svg';
@@ -13,9 +14,14 @@ import { ReactComponent as TgShareIcon } from '../../assets/images/icons/telegra
 import { ReactComponent as WaShareIcon } from '../../assets/images/icons/whatsapp-share.svg';
 
 export const Social: FC<{ socialBlock: ISocialBlock }> = (props) => {
-  const { title, socials, placeOfUse, viewIsVertical } = props.socialBlock;
+  const { title, socials, placeOfUse } = props.socialBlock;
 
-  const socialClassNames = ['social', placeOfUse == 'news' ? 'social_news' : 'social_contacts', viewIsVertical ? 'social_contacts-right': ''];
+  const socialClassNames = clsx(
+    'social',
+    placeOfUse == 'news' && 'social_news',
+    placeOfUse == 'contacts' && 'social_contacts',
+    placeOfUse == 'contacts-right' && 'social_contacts social_contacts-right'
+  );
 
   const settingIcon = (iconName) => {
     switch (iconName) {
@@ -41,7 +47,7 @@ export const Social: FC<{ socialBlock: ISocialBlock }> = (props) => {
   };
 
   return (
-    <article className={socialClassNames.join(' ')}>
+    <article className={socialClassNames}>
       <div className="social__title">{title}</div>
       <ul className={'social__list'}>
         {socials.map((social) => (
@@ -60,5 +66,3 @@ export const Social: FC<{ socialBlock: ISocialBlock }> = (props) => {
     </article>
   );
 };
-
-

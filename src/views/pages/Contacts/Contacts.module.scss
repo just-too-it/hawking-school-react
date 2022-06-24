@@ -1,7 +1,5 @@
 @import '../../../styles/helpers/variables';
 
-
-
 .contacts {
     background: url('../../../assets/images/background.png'), linear-gradient(0deg, #7e6af3 1.04%, #6540cd 100%);
     background-size: cover;
@@ -12,6 +10,7 @@
 }
 .container {
     display: flex;
+    justify-content: space-between;
 }
 
 .info {

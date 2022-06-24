@@ -19,7 +19,7 @@ export const NotFound = () => {
           <SButton
             label={'Вернуться на главную'}
             type={'button'}
-            color={'yellowIcon'}
+            view={'yellowIcon'}
             btnOnClick={() => {
               navigate(PagesLinks.MAIN_PAGE);
             }}

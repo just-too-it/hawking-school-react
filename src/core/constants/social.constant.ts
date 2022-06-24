@@ -27,8 +27,7 @@ export const socialContactsLeft: ISocialBlock = {
         {name: 'telegram', link:'/mock-link', icon: 'telegram-share'},
         {name: 'whatsapp', link:'/mock-link', icon: 'whatsapp-share'}
     ],
-    placeOfUse: 'contacts',
-    viewIsVertical: false,
+    placeOfUse: 'contacts'
 }
 
 export const socialContactsRight: ISocialBlock = {
@@ -37,6 +36,5 @@ export const socialContactsRight: ISocialBlock = {
         {name: 'vk', link:'/mock-link', icon: 'vk-group'},
         {name: 'facebook', link:'/mock-link', icon: 'facebook-group'}
     ],
-    placeOfUse: 'contacts',
-    viewIsVertical: true,
+    placeOfUse: 'contacts-right'
 }

@@ -12,13 +12,14 @@ $color-grey-light: #bdbdbd;
 $color-grey-default: #f8f8f8;
 $color-cobalt: #664ef9;
 $color-cobalt-10: rgb(102 78 249 / 10%);
+$color-cobalt-80: rgba(102, 78, 249, 0.8);
 $color-cobalt-light: #4e64f9;
 $color-cobalt-hover: #5c35f9;
 $color-violet: rgba(80, 57, 189, 0.5);
-$color-yellow-linear: linear-gradient(106.06deg, #ffd54f 1.12%, #fec100 97.96%);
-$color-violet-linear: linear-gradient(90deg, #9d94ff 0%, #6b50e9 94.5%);
-$color-violet-linear-hover: linear-gradient(90deg, #867cfc 0%, #6929f3 94.5%);
-$color-violet-linear-light: linear-gradient(90deg, #94afff 0%, #4e64f9 94.5%);
+$color-yellow-gradient: linear-gradient(106.06deg, #ffd54f 1.12%, #fec100 97.96%);
+$color-violet-gradient: linear-gradient(90deg, #9d94ff 0%, #6b50e9 94.5%);
+$color-violet-gradient-hover: linear-gradient(90deg, #867cfc 0%, #6929f3 94.5%);
+$color-violet-gradient-light: linear-gradient(90deg, #94afff 0%, #4e64f9 94.5%);
 
 // Device
 $desktop-width: 1440px;
