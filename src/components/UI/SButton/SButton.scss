@@ -9,23 +9,6 @@
   text-shadow: 0 1px 2px rgb(0 0 0 / 10%);
   padding: 10px 18px;
 
-  &_yellow-icon {
-    background: $color-yellow;
-    padding: 12px 24px;
-    font-size: 16px;
-    line-height: 24px;
-    color: $color-black;
-
-    & svg {
-      margin-right: 10px;
-      fill: black;
-    }
-
-    &:hover {
-      background: $color-yellow-hover;
-    }
-  }
-
   &_violet-gradient {
     background: $color-violet-gradient;
 
@@ -43,4 +26,26 @@
       background: $color-cobalt-hover;
     }
   }
+
+  &_yellow {
+    background: $color-yellow;
+    padding: 12px 24px;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 33px;
+    color: $color-black;
+
+    &:hover {
+      background: $color-yellow-hover;
+    }
+  }
+
+  &_yellow-icon {
+
+    & svg {
+      margin-right: 10px;
+      fill: black;
+    }
+  }
 }
+

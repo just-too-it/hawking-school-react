@@ -15,7 +15,7 @@ export const SButton: FC<IButton> = ({ label, type, btnOnClick, view, ...rest })
         setButtonClassName('button button_yellow');
         break;
       case 'yellowIcon':
-        setButtonClassName('button button_yellow-icon');
+        setButtonClassName('button button_yellow button_yellow-icon');
         setIconBefore(<HomeIcon/>)
         break;
       case 'cobalt':

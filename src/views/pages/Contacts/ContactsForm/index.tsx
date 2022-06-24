@@ -4,7 +4,12 @@ import styles from './ContactsForm.module.scss'
 import { SInput } from '../../../../components/UI/SInput';
 import { SButton } from '../../../../components/UI/SButton';
 
-
+const handlerSubmit = () => {
+//отменить действие по умолчанию
+//очистить поля
+//вывести модалку
+    console.log('submit')
+}
 export const ContactsForm = () => {
     return (
         <form action="" method="post" className={styles.form}>
@@ -18,7 +23,7 @@ export const ContactsForm = () => {
                     <textarea name={'message'} placeholder='Сообщение' className={styles.textarea}></textarea>
                 </label>
                 <div className={styles.button}>
-                    <SButton type={'submit'} label={'Отправить'} view={'cobalt'} btnOnClick={()=>{console.log('submit')}}/>
+                    <SButton type={'submit'} label={'Отправить'} view={'cobalt'} btnOnClick={()=>{handlerSubmit()}}/>
                 </div>
             </fieldset>
           

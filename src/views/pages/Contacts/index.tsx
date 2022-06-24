@@ -11,6 +11,7 @@ import { ReactComponent as MailIcon } from '../../../assets/images/icons/mail.sv
 import { ReactComponent as ClockIcon } from '../../../assets/images/icons/clock.svg';
 import { SInput } from '../../../components/UI/SInput';
 import { ContactsForm } from './ContactsForm';
+import { Modal } from '../../../components/Modal';
 
 export const Contacts = () => {
   const [contact, setContact] = useState({} as IContacts);
@@ -64,6 +65,12 @@ export const Contacts = () => {
         <ContactsForm />
         <Social socialBlock={socialContactsRight} />
       </div>
+      <Modal isActive={true} action={'Закрыть окно'}>
+        <div className={styles.modal}>
+          <h1 className={styles.modalTitle}>Ваше письмо отправлено!</h1>
+          <p className={styles.modalDescription}>Какое-то сообщение о том, что письмо отправлено, какое-то сообщение, что письмо отправлено.</p>
+        </div>
+      </Modal>
     </main>
   );
 };

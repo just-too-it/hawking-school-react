@@ -101,3 +101,19 @@
     background-size: 35px 35px;
     background-position: 25px;
 }
+
+.modal {
+    width: 310px;
+}
+
+.modalTitle {
+    font-size: 25px;
+    color: $color-total-black;
+    margin-bottom: 20px;
+}
+
+.modalDescription {
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0;
+}
