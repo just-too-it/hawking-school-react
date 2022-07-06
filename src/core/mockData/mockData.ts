@@ -3,7 +3,6 @@ import { INewsPreview } from '../../components/NewsPreview/NewsPreview.types';
 import { ISelector } from '../../components/UI/SSelect/SSelector.types';
 import { PagesLinks } from '../constants/pagesLinks.constant';
 import room from '../../assets/images/room.jpg';
-import { INewsList } from '../../components/NewsList/NewsList.types';
 import { INewsItem } from '../../views/pages/NewsItem/NewsItem.types';
 
 export const chooseCity: ISelector = {

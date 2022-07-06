@@ -12,7 +12,7 @@ export const Breadcrumbs: FC<{ breadcrumbs: IBreadcrumbs[] }> = (props) => {
         <ul className="breadcrumbs">
           <li className="breadcrumbs__item breadcrumbs__item_first">
             <Link to={PagesLinks.MAIN_PAGE} className={'breadcrumbs__link'}>
-              <HomeIcon/>
+              <HomeIcon fill='#4E64F9'/>
             </Link>
           </li>
           {props.breadcrumbs.map((crumb, index) => (
