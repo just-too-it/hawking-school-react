@@ -1,29 +1,21 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { PagesLinks } from '../core/constants/pagesLinks.constant';
+import { RootState } from '../store/store';
 import { Layout } from '../views/layouts/Layout';
-import { Contacts } from '../views/pages/Contacts';
-import { Home } from '../views/pages/Home';
-import { News } from '../views/pages/News';
-import { NewsItem } from '../views/pages/NewsItem';
-import { NotFound } from '../views/pages/NotFound';
+import { publicRoutes, authRoutes } from './routes';
 
 export const AppRouter = () => {
+  const { isAuth } = useSelector((state: RootState) => state.userReducer);
+
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route path={PagesLinks.MAIN_PAGE} element={<Home />} />
-        <Route path={PagesLinks.NEWS_PAGE} element={<News />} />
-        <Route path={`${PagesLinks.NEWS_PAGE}/:id`} element={<NewsItem />} /> 
-        <Route path={PagesLinks.CONTACTS_PAGE} element={<Contacts />} />
-        <Route path='*' element={<NotFound />}/>
-        {/*       <Route path={PagesLinks.SIGN_IN_PAGE} element={<SignIn />} />
-      <Route path={PagesLinks.SIGN_UP_PAGE} element={<SignUp />} />
-      <Route path={PagesLinks.REGISTRATION} element={<Registration />} />
-      <Route path={PagesLinks.MESSAGES} element={<Messanges />} />
-      <Route path={`${PagesLinks.MESSAGES}/:id`} element={<Messanges />} />
-      <Route path="/" element={<Main />} />
-      <Route path="*" element={<Error />} /> */}
+      <Route path={PagesLinks.MAIN_PAGE} element={<Layout />}>
+        {isAuth && authRoutes.map(({ path, Component }) => <Route path={path} element={<Component />} key={path} />)}
+        {publicRoutes.map(({ path, Component }) => (
+          <Route path={path} element={<Component />} key={path} />
+        ))}
       </Route>
     </Routes>
   );

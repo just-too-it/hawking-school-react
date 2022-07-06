@@ -1,13 +1,3 @@
-/* export enum PagesLinks {
-  MAIN_PAGE= '/',
-  NEWS_PAGE= 'news',
-  RATES_PAGE='rates',
-  MAPS_PAGE='maps',
-  CONTANTS_PAGE='contacts',
-  BOOKMARKS_PAGE= 'bookmarks',
-  LOGIN_PAGE= 'login'
-} */
-
 export const PagesLinks = {
   MAIN_PAGE: '/',
   NEWS_PAGE: 'news',
@@ -25,7 +15,8 @@ export const PagesLinks = {
   APARTMENTS_MOGILEV_PAGE: 'apartments/mogilev',
   COTTAGES_PAGE: 'cottages',
   SAUNAS_PAGE: 'saunas',
-  AUTO_PAGE: 'auto'
+  AUTO_PAGE: 'auto',
+  ADMIN_PAGE: 'admin'
 }
 
 
