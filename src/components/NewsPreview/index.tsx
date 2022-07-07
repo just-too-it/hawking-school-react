@@ -16,7 +16,7 @@ export const NewsPreview: FC<{ news: INewsPreview }> = (props) => {
         <div className="news-preview__description"><p>{description}</p></div>
         <footer className="news-preview__footer">
           <span className="news-preview__date">{date.getDate()} {MONTHS[date.getMonth()]} {date.getFullYear()}</span>
-          <Link to={`/${PagesLinks.NEWS_PAGE}/${id}`} className="news-preview__link" title={title}>
+          <Link to={`${PagesLinks.NEWS_PAGE}/${id}`} className="news-preview__link" title={title}>
             Читать
           </Link>
         </footer>

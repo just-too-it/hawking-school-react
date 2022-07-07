@@ -4,6 +4,7 @@ import { News } from '../views/pages/News';
 import { NewsItem } from '../views/pages/NewsItem';
 import { NotFound } from '../views/pages/NotFound';
 import { Admin } from '../views/pages/Admin';
+import { Login } from '../views/pages/Login';
 import { RoutesProps } from './routes.types';
 import { PagesLinks } from '../core/constants/pagesLinks.constant';
 
@@ -30,6 +31,14 @@ export const publicRoutes: RoutesProps[] = [
   {
     path: PagesLinks.CONTACTS_PAGE,
     Component: Contacts,
+  },
+  {
+    path: PagesLinks.LOGIN_PAGE,
+    Component: Login,
+  },
+  {
+    path: PagesLinks.REG_PAGE,
+    Component: Login,
   },
   {
     path: '*',

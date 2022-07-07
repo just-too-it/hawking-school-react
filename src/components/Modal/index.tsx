@@ -1,9 +1,13 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import { SButton } from '../UI/SButton';
 import styles from './Modal.module.scss'
 
 export const Modal:FC<{isActive: boolean, children, action: string}> = ({isActive, children, action}) => {
-    const [active, setActive] = useState(isActive);
+    const [active, setActive] = useState(null);
+
+    useEffect(()=>{
+        setActive(isActive)
+    },[isActive])
 
     return (
         <section className={active? styles.modal : styles.modal_close}>
