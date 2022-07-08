@@ -6,4 +6,5 @@ export type InputProps = {
     iconName?: string;
     addStyles?: React.CSSProperties;
     isWarning?: boolean;
+    width?: string;
 }

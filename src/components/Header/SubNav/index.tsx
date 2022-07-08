@@ -2,19 +2,10 @@ import React, { FC, useState } from 'react';
 import { Logo } from '../../Logo';
 import { Link } from 'react-router-dom';
 import { SButton } from '../../UI/SButton';
-import { IButton } from '../../UI/SButton/SButton.type';
 import { IItemSubNav } from './SubNav.type';
 
 export const SubNav: FC<{ menu: IItemSubNav[] }> = (props) => {
   const [isActiveSubmenu, setIsActiveSubmenu] = useState(false);
-
-  const btnPlaceAd: IButton = {
-    type: 'button',
-    label: '+ Разместить объявление',
-    btnOnClick: () => {
-      console.log('');
-    },
-  };
 
   return (
     <div className="subnav">

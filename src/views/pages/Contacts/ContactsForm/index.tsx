@@ -1,4 +1,4 @@
-import React, {useState, FC} from 'react';
+import React, { FC } from 'react';
 
 import styles from './ContactsForm.module.scss';
 import { SInput } from '../../../../components/UI/SInput';
@@ -24,18 +24,18 @@ export const ContactsForm: FC<{modalControl}> = (props) => {
     <Formik
       initialValues={initialValues}
       validateOnChange={false}
-      validateOnBlur={false}
+      validateOnBlur={true}
       onSubmit={(values, { resetForm, setSubmitting }) => {
         setTimeout(() => {
           console.log(JSON.stringify(values, null, 2));
           resetForm();
           setSubmitting(false);
           props.modalControl(true);
-        }, 100);
+        }, 400);
       }}
       validationSchema={validationSchema}
     >
-      {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isValid, dirty, setFieldValue }) => (
+      {({ errors, handleSubmit }) => (
         <Form className={styles.form}>
           <fieldset>
             <div className={styles.info}>
@@ -46,14 +46,16 @@ export const ContactsForm: FC<{modalControl}> = (props) => {
                 label="Ваше имя"
                 name={'name'}
                 isWarning={errors.name ? true : false}
+                width={'260px'}
               />
               <SInput
                 type="email"
                 placeholder="Введите почту"
-                iconName="mail"
+                iconName="email"
                 label="Ваша электронная почта"
                 name={'email'}
                 isWarning={errors.email ? true : false}
+                width={'260px'}
               />
             </div>
             <label className={styles.label}>

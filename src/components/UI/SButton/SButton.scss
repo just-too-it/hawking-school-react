@@ -8,6 +8,9 @@
   color: $color-white;
   text-shadow: 0 1px 2px rgb(0 0 0 / 10%);
   padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &_violet-gradient {
     background: $color-violet-gradient;
@@ -41,11 +44,25 @@
   }
 
   &_yellow-icon {
-
     & svg {
       margin-right: 10px;
       fill: black;
     }
   }
-}
 
+  &_warning {
+    background: $color-red;
+    border-radius: 33px;
+    font-size: 16px;
+    padding: 12px 24px;
+
+    & svg {
+      margin-left: 15px;
+      fill: $color-white-50;
+    }
+
+    &:hover {
+      background: $color-red-hover;
+    }
+  }
+}

@@ -1,10 +1,7 @@
-import React, { FC, useState, useEffect } from 'react';
+import React from 'react';
 
 
 export const Home = () => {
-
-
-
   return (
     <div>
       Main Page

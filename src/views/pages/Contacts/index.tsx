@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Social } from '../../../components/Social';
 import { socialContactsRight } from '../../../core/constants/social.constant';
 import styles from './Contacts.module.scss';

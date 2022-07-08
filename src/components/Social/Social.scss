@@ -39,6 +39,29 @@
     }
   }
 
+  &_contacts {
+    width: 110px;
+
+    & .social__item {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    & .social__link {
+      background: rgb(255 255 255 / 10%);
+      border-radius: 25px;
+
+      & svg {
+        fill: $color-white;
+      }
+    }
+  }
+
   &_news {
     width: 360px;
 
@@ -64,31 +87,6 @@
       & svg {
         fill: $color-cobalt;
       }
-      
-    }
-  }
-
-  &_contacts {
-      width: 110px;
-
-    & .social__item {
-      width: 30px;
-      height: 30px;
-      margin-right: 10px;
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
-    & .social__link {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 25px;
-
-      & svg {
-        fill: $color-white;
-      }
-      
     }
   }
 
@@ -116,8 +114,6 @@
         width: 20px;
         height: 20px;
       }
-      
     }
   }
-
 }

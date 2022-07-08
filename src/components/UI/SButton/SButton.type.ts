@@ -3,5 +3,6 @@ export interface IButton {
     label: string;
     view?: string;
     icon?: HTMLImageElement | string;
+    width?: string;
     btnOnClick(): void;
 }
