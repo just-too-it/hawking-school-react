@@ -4,5 +4,6 @@ export interface IButton {
     view?: string;
     icon?: HTMLImageElement | string;
     width?: string;
+    disabled?: boolean;
     btnOnClick(): void;
 }
