@@ -6,7 +6,7 @@ import room from '../../assets/images/room.jpg';
 import { INewsItem } from '../../views/pages/NewsItem/NewsItem.types';
 
 export const chooseCity: ISelector = {
-  title: 'Выбор города',
+  title: 'Выберите',
   list: [
     { id: 1, value: 'Минск' },
     { id: 2, value: 'Город 2' },

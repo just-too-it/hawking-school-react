@@ -3,22 +3,34 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
-  cursor: pointer;
 
   &__header {
+    display: flex;
+    align-items: center;
+    width: inherit;
     height: 37px;
     background: $color-grey-default;
+    color: $color-grey-dark;
     border: none;
     border-radius: 20px;
-    box-shadow: (0 5px 15px rgb(135 124 202 / 25%));
+    //box-shadow: (0 5px 15px rgb(135 124 202 / 25%));
     background-image: url('../../../assets/images/icons/arrow.svg');
     background-position: right 16px top 50%;
     background-size: 10px 10px;
     background-repeat: no-repeat;
-    color: $color-grey-dark;
     padding-left: 12px;
-    padding-top: 9px;
+    //padding-top: 9px;
     margin-bottom: 10px;
+    cursor: pointer;
+
+    &::placeholder { 
+      color: $color-grey-dark;
+     }
+
+    &::-moz-placeholder { 
+      color: $color-grey-dark;
+      opacity: 1;
+     }
 
     &:hover {
       background: rgb(102 78 249 / 10%);
@@ -27,19 +39,27 @@
       background-size: 10px 10px;
       background-repeat: no-repeat;
     }
+    &:focus {
+      outline: none;
+    }
 
     &_active {
       background: $color-white;
       background-image: url('../../../assets/images/icons/arrow.svg');
       background-size: 10px 10px;
       background-repeat: no-repeat;
-      border: 2px solid rgb(102 78 249 / 80%);
+      box-shadow: (0px 5px 15px rgba(135, 124, 202, 0.25));
+      border: 2px solid $color-cobalt-80;
       padding-left: 10px;
-      padding-top: 7px;
+      //padding-top: 7px;
       background-position: right 14px top 50%;
+      outline: none;
 
       &:hover {
         background-position: right 14px top 50%;
+      }
+      &:focus {
+        outline: none;
       }
     }
   }
@@ -56,9 +76,12 @@
   &__item {
     height: 37px;
     padding: 10px 15px;
+    border-radius: 10px;
 
     &:hover {
       background-color: $color-grey-default;
+      border-radius: 0px;
+      cursor:pointer;
     }
   }
 }
