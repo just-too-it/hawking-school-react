@@ -1,20 +1,21 @@
 import { IBreadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs.types';
 import { INewsPreview } from '../../components/NewsPreview/NewsPreview.types';
-import { ISelector } from '../../components/UI/SSelect/SSelector.types';
 import { PagesLinks } from '../constants/pagesLinks.constant';
 import room from '../../assets/images/room.jpg';
 import { INewsItem } from '../../views/pages/NewsItem/NewsItem.types';
+import { SelectorProps } from '../../components/UI/SSelector/SSelector.types';
 
-export const chooseCity: ISelector = {
+/* export const chooseCity: ISelector = {
   title: 'Выберите',
   list: [
     { id: 1, value: 'Минск' },
-    { id: 2, value: 'Город 2' },
-    { id: 3, value: 'Город 3' },
-    { id: 4, value: 'Город 4' },
-    { id: 5, value: 'Город 5' },
+    { id: 2, value: 'Гомель' },
+    { id: 3, value: 'Брест' },
+    { id: 4, value: 'Витебск' },
+    { id: 5, value: 'Гродно' },
+    { id: 6, value: 'Могилев' }
   ],
-};
+}; */
 
 export const breadcrumbsForNews: IBreadcrumbs[] = [
   {
@@ -70,7 +71,7 @@ for (let index = 0; index < 20; index++) {
 }
 
 
-export const rooms: ISelector = {
+/* export const rooms2: ISelector = {
   title: 'Выберите',
   list: [
     {
@@ -95,4 +96,37 @@ export const rooms: ISelector = {
     },
   ]
   
-}
+} */
+
+
+export const roomsList: SelectorProps[] = [
+  {
+    id: 1,
+    value: '1 комн.'
+  },
+  {
+    id: 2,
+    value: '2 комн.'
+  },
+  {
+    id: 3,
+    value: '3 комн.'
+  },
+  {
+    id: 4,
+    value: '4 комн.'
+  },
+  {
+    id: 5,
+    value: '5 комн.'
+  },
+]
+
+export const citysList: SelectorProps[] = [
+    { id: 1, value: 'Минск' },
+    { id: 2, value: 'Гомель' },
+    { id: 3, value: 'Брест' },
+    { id: 4, value: 'Витебск' },
+    { id: 5, value: 'Гродно' },
+    { id: 6, value: 'Могилев' }
+]

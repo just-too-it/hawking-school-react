@@ -1,4 +1,4 @@
-interface ISelectorItem {
+/* interface ISelectorItem {
     id: number;
     value: string
 }
@@ -6,4 +6,9 @@ interface ISelectorItem {
 export interface ISelector {
     title: string;
     list: ISelectorItem[]
-}
+} */
+
+export type SelectorProps = {
+    id: number;
+    value: string;
+  }

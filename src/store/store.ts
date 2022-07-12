@@ -1,10 +1,12 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { filterMainReducer } from './filterMain/filterMain.slice';
 import {newsReducer} from './news/news.slice';
 import { userReducer } from './user/user.slice';
 
 const rootReducer = combineReducers({
     newsReducer,
-    userReducer
+    userReducer,
+    filterMainReducer
 });
 
 export const setupStore = () => {

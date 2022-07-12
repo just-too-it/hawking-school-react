@@ -40,7 +40,7 @@
 
 .input {
   width: 100%;
-  background: #f8f8f8;
+  background: $color-grey-default;
   border-radius: 30px;
   border: 2px solid transparent;
   outline: none;
@@ -49,6 +49,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
+  color: $color-grey-dark;
 
   &_warning {
     border: 1px solid $color-red;
