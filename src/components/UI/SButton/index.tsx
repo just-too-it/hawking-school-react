@@ -4,6 +4,8 @@ import { IButton } from './SButton.type';
 
 import { ReactComponent as HomeIcon } from '../../../assets/images/icons/home.svg';
 import { ReactComponent as WarningIcon } from '../../../assets/images/icons/warning.svg';
+import { ReactComponent as OptionsIcon } from '../../../assets/images/icons/options.svg';
+import { ReactComponent as MapIcon } from '../../../assets/images/icons/map.svg';
 
 export const SButton: FC<IButton> = ({ label, type, btnOnClick, view, width, ...rest }) => {
   const [buttonClassName, setButtonClassName] = useState('button');
@@ -31,6 +33,14 @@ export const SButton: FC<IButton> = ({ label, type, btnOnClick, view, width, ...
       case 'warning':
         setButtonClassName('button button_warning');
         setIconAfter(<WarningIcon width={20} height={20}/>)
+        break;
+      case 'transparentOptions':
+        setButtonClassName('button button_transparent button_options');
+        setIconAfter(<OptionsIcon width={16} height={18}/>)
+        break;
+      case 'transparentMap':
+        setButtonClassName('button button_transparent button_map');
+        setIconAfter(<MapIcon width={12} height={15}/>)
         break;
       default:
         setButtonClassName('button');

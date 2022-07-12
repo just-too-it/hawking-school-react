@@ -69,4 +69,42 @@
       background: $color-red-hover;
     }
   }
+
+  &_transparent {
+    background: transparent;
+    font-size: 14px;
+    font-weight: 500;
+    color: $color-black;
+    padding: 0;
+  }
+
+  &_options {
+    & svg {
+      margin-left: 4px;
+      fill: $color-cobalt;
+    }
+
+    &:hover {
+      color: $color-total-black;
+
+      & svg {
+        fill: $color-cobalt-hover;
+      }
+    }
+  }
+
+  &_map {
+    & svg {
+      margin-left: 5px;
+      fill: $color-cobalt;
+    }
+
+    &:hover {
+      color: $color-total-black;
+
+      svg {
+        fill: $color-cobalt-hover;
+      }
+    }
+  }
 }
