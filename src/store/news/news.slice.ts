@@ -8,7 +8,8 @@ import { NewsListProps } from "../../components/NewsList/NewsList.types";
 const initialNewsState: NewsListProps = {
     data: [],
     newsPerPage: 9,
-    currentPage: 1
+    currentPage: 1,
+    query: ''
 }
 
 export const newsSlice = createSlice({
@@ -23,6 +24,9 @@ export const newsSlice = createSlice({
         },
         setCurrentPage(state, action: PayloadAction<number>) {
             state.currentPage = action.payload;
+        },
+        setQuery(state, action: PayloadAction<string>) {
+            state.query = action.payload;
         }
     }
 })

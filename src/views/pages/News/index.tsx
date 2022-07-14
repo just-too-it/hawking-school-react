@@ -11,22 +11,16 @@ import { RootState } from '../../../store/store';
 import { newsSlice } from '../../../store/news/news.slice';
 
 export const News = () => {
-  const { data, newsPerPage, currentPage } = useSelector((state: RootState) => state.newsReducer);
+  const { data, newsPerPage, currentPage, query } = useSelector((state: RootState) => state.newsReducer);
   const { setData } = newsSlice.actions;
   const dispatch = useDispatch();
 
-  //заготовка на использование поиска
-  // const fileredList = (array: INewsPreview[], query: string) => {
-  //   return array.filter((item) => item.title.includes(query));
-  // };
-
-  // useMemo(() => {
-  //   setNewsList(fileredList(news, 'Линия'));
-  // }, []);
-
   useEffect(() => {
-    dispatch(setData(news));
-  }, []);
+    const filteredNews = news.filter(
+      (news) => news.title.toLowerCase().includes(query) || news.description.toLowerCase().includes(query)
+    );
+    dispatch(setData(filteredNews));
+  }, [query]);
 
   return (
     <main className="container">
@@ -37,7 +31,7 @@ export const News = () => {
           <Search />
         </div>
         <div className={styles.list}>
-          {data ? <NewsList data={data} newsPerPage={newsPerPage} currentPage={currentPage} /> : null}
+          {data ? <NewsList data={data} newsPerPage={newsPerPage} currentPage={currentPage} query={query} /> : null}
         </div>
         <Pagination currentPage={currentPage} totalPage={data ? getPageCount(data.length, newsPerPage) : 1} />
       </section>

@@ -4,4 +4,5 @@ export type NewsListProps = {
     data: INewsPreview[];
     newsPerPage: number;
     currentPage: number;
+    query?: string;
 }

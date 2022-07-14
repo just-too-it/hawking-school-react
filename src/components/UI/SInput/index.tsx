@@ -8,12 +8,21 @@ import { ReactComponent as PassIcon } from '../../../assets/images/icons/pass.sv
 import { ReactComponent as WarningIcon } from '../../../assets/images/icons/warning.svg';
 import { Field } from 'formik';
 
-export const SInput: FC<InputProps> = ({ type, placeholder, iconName, label, name, addStyles, isWarning, width }) => {
+export const SInput: FC<InputProps> = ({
+  type,
+  placeholder,
+  iconName,
+  label,
+  name,
+  addStyles,
+  isWarning,
+  width,
+  className,
+}) => {
   const [iconLeft, setIconLeft] = useState(null as React.ReactElement);
   const [iconRight, setIconRight] = useState(null as React.ReactElement);
 
-  //const wrapperClassNames = clsx(styles.wrapper, iconName == 'name' && styles.user, iconName == 'email' && styles.mail);
-  const inputClassNames = clsx(styles.input, isWarning && styles.input_warning);
+  const inputClassNames = clsx(styles.input, isWarning && styles.input_warning, className);
 
   useEffect(() => {
     switch (iconName) {
@@ -36,7 +45,7 @@ export const SInput: FC<InputProps> = ({ type, placeholder, iconName, label, nam
   }, [isWarning]);
 
   return (
-    <div className={styles.container} style={{ width: width}}>
+    <div className={styles.container} style={{ width: width }}>
       {label && (
         <label htmlFor={name} className={styles.label}>
           {label}
@@ -44,7 +53,7 @@ export const SInput: FC<InputProps> = ({ type, placeholder, iconName, label, nam
       )}
 
       <div className={styles.wrapper}>
-        <div className={styles.iconLeft}>{iconLeft ? iconLeft : null}</div>
+        {iconLeft ? <div className={styles.iconLeft}>{iconLeft}</div> : null}
         <Field
           type={type}
           name={name}
@@ -53,7 +62,7 @@ export const SInput: FC<InputProps> = ({ type, placeholder, iconName, label, nam
           style={addStyles}
           id={name}
         />
-        <div className={styles.iconRight}>{iconRight ? iconRight : null}</div>
+        {iconRight ? <div className={styles.iconRight}>{iconRight}</div> : null}
       </div>
     </div>
   );

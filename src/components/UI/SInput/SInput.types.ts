@@ -7,4 +7,5 @@ export type InputProps = {
     addStyles?: React.CSSProperties;
     isWarning?: boolean;
     width?: string;
+    className?: string;
 }
