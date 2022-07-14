@@ -7,6 +7,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding: 20px 0;
   }
 
   &__logo {
@@ -19,7 +20,26 @@
 
   &__item {
     margin-right: 80px;
+    height: 40px;
+    margin-bottom: -20px;
     position: relative;
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+
+    &_active {
+      color: $color-black;
+      border-bottom: 3px solid $color-yellow;
+      display: inline-block;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+
+      & .subnav__map {
+        fill: $color-yellow-hover;
+      }
+    }
 
     &:last-child {
       margin-right: 0;
@@ -29,37 +49,24 @@
   &__link {
     display: inline-block;
     height: 40px;
-    margin-bottom: -15px;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
     color: $color-black;
+    border-bottom: 3px solid transparent;
 
     &:hover {
       border-bottom: 3px solid $color-yellow;
-    }
 
-    &_icon {
-      position: relative;
-      padding-right: 15px;
-
-      &::after {
-        position: absolute;
-        width: 12px;
-        height: 15px;
-        top: 12%;
-        right: -5px;
-        content: '';
-        background-color: $color-yellow;
-        mask-image: url('../../../assets/images/icons/map.svg');
-        mask-repeat: no-repeat;
+      & .subnav__map {
+        fill: $color-yellow-hover;
       }
     }
   }
 
   &__submenu {
     position: absolute;
-    top: 69px;
+    top: 64px;
     width: 242px;
     background: $color-white;
     box-shadow: 0 0 40px rgb(135 124 202 / 30%);
@@ -76,6 +83,11 @@
     }
 
     &:hover {
+      border-radius: 0px;
+      &:first-child,
+      &:last-child {
+        border-radius: 10px;
+      }
       background-color: $color-grey-default;
     }
   }
@@ -92,5 +104,10 @@
 
   &__button {
     margin-left: auto;
+  }
+
+  &__map {
+    fill: $color-yellow;
+    margin-left: 12px;
   }
 }

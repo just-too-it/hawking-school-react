@@ -1,22 +1,31 @@
 import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
 import { IItemNav } from './Nav.types';
+import { ReactComponent as MapIcon } from '../../../assets/images/icons/map.svg';
 
 export const Nav: FC<{ menu: IItemNav[] }> = (props) => {
+  const location = useLocation();
+
   return (
     <nav className="nav">
       <div className="container">
         <ul className="nav__main">
           {props.menu.map((item) => (
-            <li key={item.title} className="nav__item">
-              <Link
-                to={item.link}
-                title={item.title}
-                className={item.title == 'Объявления на карте' ? 'nav__link nav__link_icon' : 'nav__link'}
-              >
-                {item.title}
-              </Link>
+            <li key={item.title} className={location.pathname !== item.link ? "nav__item" : "nav__item nav__item_active"}>
+              {location.pathname === item.link ? (
+                <>
+                  {item.map && <MapIcon className={'map'} width={8} height={10} />} {item.title}
+                </>
+              ) : (
+                <Link
+                  to={item.link}
+                  title={item.title}
+                  className={'nav__link'}
+                >
+                  {item.map && <MapIcon className={'map'} width={8} height={10} />} {item.title}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

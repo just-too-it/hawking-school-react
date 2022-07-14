@@ -24,14 +24,14 @@
     margin-bottom: 10px;
     cursor: pointer;
 
-    &::placeholder { 
+    &::placeholder {
       color: $color-grey-dark;
-     }
+    }
 
-    &::-moz-placeholder { 
+    &::-moz-placeholder {
       color: $color-grey-dark;
       opacity: 1;
-     }
+    }
 
     &:hover {
       background: rgb(102 78 249 / 10%);
@@ -82,7 +82,7 @@
     &:hover {
       background-color: $color-grey-default;
       border-radius: 0px;
-      cursor:pointer;
+      cursor: pointer;
     }
   }
 }

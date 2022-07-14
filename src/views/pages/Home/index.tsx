@@ -1,15 +1,13 @@
 import React from 'react';
+
 import { Promo } from '../../../components/Promo';
-
 import { Filter } from './Filter';
-
-import styles from './Home.module.scss';
-import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
-import { useNavigate } from 'react-router-dom';
 import { promoCards } from '../../../core/mockData/mockData';
 
+import styles from './Home.module.scss';
+
 export const Home = () => {
-  const navigate = useNavigate();
+
   return (
     <main className="container">
       <section className={styles.filter}>

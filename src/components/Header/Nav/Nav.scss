@@ -21,7 +21,13 @@
     height: 28px;
     margin-bottom: -12px;
 
-    &_icon {
+    &:hover {
+      & .map {
+        fill: $color-black;
+      }
+    }
+
+    /* &_icon {
       padding-left: 13px;
       position: relative;
 
@@ -42,7 +48,7 @@
           background-color: $color-black;
         }
       }
-    }
+    } */
   }
 
   &__bookmarks {
@@ -86,10 +92,28 @@
   }
 
   &__item {
+    color: $color-grey-font;
     margin-right: 57px;
+
+    &_active {
+      color: $color-black;
+      border-bottom: 3px solid $color-yellow;
+      display: inline-block;
+      height: 28px;
+      margin-bottom: -12px;
+
+      & .map {
+        fill: $color-black;
+      }
+    }
 
     &:last-child {
       margin-right: 0;
     }
   }
+}
+
+.map {
+  fill: $color-grey-font;
+  margin-right: 5px;
 }

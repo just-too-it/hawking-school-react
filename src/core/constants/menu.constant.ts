@@ -6,7 +6,7 @@ export const Menu: IItemNav[] = [
   { title: 'Главная', link: PagesLinks.MAIN_PAGE },
   { title: 'Новости', link: PagesLinks.NEWS_PAGE },
   { title: 'Размещение и тарифы', link: PagesLinks.RATES_PAGE },
-  { title: 'Объявления на карте', link: PagesLinks.MAPS_PAGE },
+  { title: 'Объявления на карте', link: PagesLinks.MAPS_PAGE, map: true },
   { title: 'Контакты', link: PagesLinks.CONTACTS_PAGE },
 ];
 
@@ -21,6 +21,7 @@ export const SubMenu: IItemSubNav[] = [
       { title: 'Квартиры на сутки в Гродно', link: PagesLinks.APARTMENTS_GRODNO_PAGE },
       { title: 'Квартиры на сутки в Могилеве', link: PagesLinks.APARTMENTS_MOGILEV_PAGE },
     ],
+    map: true
   },
   { title: 'Коттеджи и усадьбы', link: PagesLinks.COTTAGES_PAGE },
   { title: 'Бани и Сауны', link: PagesLinks.SAUNAS_PAGE },
