@@ -107,4 +107,14 @@
       }
     }
   }
+
+  &_tag {
+    width: auto;
+    border-radius: 16px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $color-white-70;
+    padding: 8px 14px;
+  }
 }
