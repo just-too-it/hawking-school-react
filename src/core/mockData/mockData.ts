@@ -9,6 +9,7 @@ import promoApart from '../../assets/images/promo-apart.jpg';
 import promoCott from '../../assets/images/promo-cott.jpg';
 import promoSauna from '../../assets/images/promo-sauna.jpg';
 import promoAuto from '../../assets/images/promo-auto.jpg'
+import { PopularListProps } from '../../components/PopularList/PopularList.types';
 
 /* export const chooseCity: ISelector = {
   title: 'Выберите',
@@ -188,3 +189,128 @@ export const promoCards: PromoCardProps[] = [
     mode: 'wide'
   }
 ]
+
+
+export const popularApartmentsList: PopularListProps = {
+  title: 'Квартиры',
+  list: [
+    {
+      label: 'Квартиры в Минске',
+      link: PagesLinks.APARTMENTS_MINSK_PAGE,
+      count: 3567
+    },
+    {
+      label: 'Квартиры в Гомеле',
+      link: PagesLinks.APARTMENTS_GOMEL_PAGE,
+      count: 2032
+    },
+    {
+      label: 'Квартиры в Гродно',
+      link: PagesLinks.APARTMENTS_GRODNO_PAGE,
+      count: 2302
+    },
+    {
+      label: 'Квартиры в Могилеве',
+      link: PagesLinks.APARTMENTS_MOGILEV_PAGE,
+      count: 110
+    },
+    {
+      label: 'Квартиры в Бресте',
+      link: PagesLinks.APARTMENTS_BREST_PAGE,
+      count: 110
+    },
+    {
+      label: 'Квартиры в Витебске',
+      link: PagesLinks.APARTMENTS_VITEBSK_PAGE,
+      count: 110
+    }
+  ],
+  limit: 6
+}
+
+export const popularCottageList: PopularListProps = {
+  title: 'Коттеджи и усадьбы',
+  list: [
+    {
+      label: 'Агроусадьбы',
+      link: '/mock-link',
+      count: 110
+    },
+    {
+      label: 'Коттеджи',
+      link: '/mock-link',
+      count: 110
+    },
+    {
+      label: 'Загородный комплекс',
+      link: '/mock-link',
+      count: 110
+    },
+    {
+      label: 'Базы отдыха',
+      link: '/mock-link',
+      count: 110
+    },
+    {
+      label: 'Агроусадьбы2',
+      link: '/mock-link',
+      count: 110
+    },
+    {
+      label: 'Коттеджи2',
+      link: '/mock-link',
+      count: 110
+    },
+    {
+      label: 'Загородный комплекс2',
+      link: '/mock-link',
+      count: 110
+    },
+    {
+      label: 'Базы отдыха2',
+      link: '/mock-link',
+      count: 110
+    },
+    {
+      label: 'Агроусадьбы3',
+      link: '/mock-link',
+      count: 110
+    },
+    {
+      label: 'Коттеджи3',
+      link: '/mock-link',
+      count: 110
+    },
+    {
+      label: 'Загородный комплекс3',
+      link: '/mock-link',
+      count: 110
+    },
+    {
+      label: 'Базы отдыха3',
+      link: '/mock-link',
+      count: 110
+    }
+  ],
+  limit: 4
+}
+
+export const popularDestinationsList: PopularListProps = {
+  title: 'Популярные направления',
+  list: [
+    {
+      label: 'Коттеджи и усадьбы на о. Брасласких',
+      link: '/mock-link',
+    },
+    {
+      label: 'Коттеджи и усадьбы (жилье) на Нарочи',
+      link: '/mock-link',
+    },
+    {
+      label: 'Коттеджи и усадьбы (жилье) у воды, на берегу, на озере',
+      link: '/mock-link',
+    },
+  ],
+  limit: 3
+}
+

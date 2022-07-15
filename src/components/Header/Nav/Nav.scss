@@ -1,3 +1,8 @@
+.map {
+  fill: $color-grey-font;
+  margin-right: 5px;
+}
+
 .nav {
   background-color: $color-grey-default;
 
@@ -26,29 +31,6 @@
         fill: $color-black;
       }
     }
-
-    /* &_icon {
-      padding-left: 13px;
-      position: relative;
-
-      &::before {
-        position: absolute;
-        width: 8px;
-        height: 10px;
-        content: '';
-        background-color: $color-grey-font;
-        mask-image: url('../../../assets/images/icons/map.svg');
-        background-repeat: no-repeat;
-        top: 15%;
-        left: 0;
-      }
-
-      &:hover {
-        &::before {
-          background-color: $color-black;
-        }
-      }
-    } */
   }
 
   &__bookmarks {
@@ -111,9 +93,4 @@
       margin-right: 0;
     }
   }
-}
-
-.map {
-  fill: $color-grey-font;
-  margin-right: 5px;
 }

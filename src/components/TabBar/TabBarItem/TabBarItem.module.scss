@@ -1,15 +1,12 @@
 @import '../../../styles/helpers/variables';
 
-.tab {
-}
 .tabNav {
   width: 174px;
   height: 43px;
-  border-radius: 0px;
+  border-radius: 0;
   border: none;
-  background: rgba(45, 57, 136, 0.5);
+  background: rgb(45 57 136 / 50%);
   cursor: pointer;
-
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
@@ -19,7 +16,7 @@
 .tabNavActive {
   background: $color-white;
   color: $color-cobalt;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 10px 10px 0 0;
 }
 
 .tabNavLast {
@@ -38,9 +35,7 @@
   height: 100px;
   top: 43px;
   left: 0;
-
   background: $color-white;
-  border-radius: 0px 10px 10px 10px;
-  //padding: 15px 34px 43px 20px;
+  border-radius: 0 10px 10px;
   padding: 15px 34px 20px 20px;
 }
