@@ -47,6 +47,21 @@
     }
   }
 
+  &_yellowLight {
+    background: $color-yellow-10;
+    padding: 10px 15px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    border-radius: 17px;
+    color: $color-yellow-hover;
+    text-shadow: none;
+
+    &:hover {
+      background: $color-yellow-20;
+    }
+  }
+
   &_yellow-icon {
     & svg {
       margin-right: 10px;
@@ -116,5 +131,29 @@
     line-height: 17px;
     color: $color-white-70;
     padding: 8px 14px;
+  }
+
+  &_cobaltPhone {
+    background: $color-background-white;
+    box-shadow: 0px 5px 20px rgba(0, 96, 206, 0.1);
+    border-radius: 18px;
+    padding: 10px 15px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: $color-cobalt;
+
+    & svg {
+      fill: $color-cobalt;
+      margin-right: 10px;
+    }
+
+    &:hover {
+      background: #F5F3FF;
+    }
+
+    &:active {
+      background: $color-background-white;
+    }
   }
 }

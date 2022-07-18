@@ -1,13 +1,13 @@
-import React, { FC } from 'react'
+import React, { FC } from 'react';
 
-import styles from './SButtonIcon.module.scss'
-import { SButtonIconProps } from './SButtonIcon.types'
+import { SButtonIconProps } from './SButtonIcon.types';
 
-export const SButtonIcon:FC<SButtonIconProps> = ({ type='button', btnOnClick, children }) => {
-    
+import styles from './SButtonIcon.module.scss';
+
+export const SButtonIcon: FC<SButtonIconProps> = ({ type = 'button', btnOnClick, children, className }) => {
   return (
-    <button type={type} onClick={btnOnClick} className={styles.button}>
+    <button type={type} onClick={btnOnClick} className={`${styles.button} ${className}`}>
       {children}
     </button>
-  )
-}
+  );
+};

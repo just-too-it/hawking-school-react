@@ -2,10 +2,11 @@ import React from 'react';
 
 import { Promo } from '../../../components/Promo';
 import { Filter } from './Filter';
-import { promoCards } from '../../../core/mockData/mockData';
+import { apartmentsList, promoCards } from '../../../core/mockData/mockData';
 import { PopularPages } from './PopularPages';
 
 import styles from './Home.module.scss';
+import { ApartmentList } from '../../../components/ApartmentList';
 
 export const Home = () => {
   return (
@@ -18,7 +19,9 @@ export const Home = () => {
         <PopularPages />
       </div>
 
-      <section className={styles.rentApartment}></section>
+      <section className={styles.rentApartment}>
+        <ApartmentList apartments={apartmentsList} isListMode={true}/>
+      </section>
       <section className={styles.services}></section>
       <article className={styles.description}></article>
       <section className={styles.newsList}></section>

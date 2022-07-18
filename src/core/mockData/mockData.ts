@@ -2,6 +2,9 @@ import { IBreadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs.types';
 import { INewsPreview } from '../../components/NewsPreview/NewsPreview.types';
 import { PagesLinks } from '../constants/pagesLinks.constant';
 import room from '../../assets/images/room.jpg';
+import room1 from '../../assets/images/room1.jpg';
+import room2 from '../../assets/images/room2.jpg';
+import owner from '../../assets/images/owner.jpg';
 import { INewsItem } from '../../views/pages/NewsItem/NewsItem.types';
 import { SelectorProps } from '../../components/UI/SSelector/SSelector.types';
 import { PromoCardProps } from '../../components/Promo/PromoCard/PromoCard.types';
@@ -10,6 +13,7 @@ import promoCott from '../../assets/images/promo-cott.jpg';
 import promoSauna from '../../assets/images/promo-sauna.jpg';
 import promoAuto from '../../assets/images/promo-auto.jpg'
 import { PopularListProps } from '../../components/PopularList/PopularList.types';
+import { ApartmentCardProps } from '../../components/ApartmentCard/ApartmentCard.types';
 
 /* export const chooseCity: ISelector = {
   title: 'Выберите',
@@ -314,3 +318,34 @@ export const popularDestinationsList: PopularListProps = {
   limit: 3
 }
 
+const apartmentCard: ApartmentCardProps = {
+  id: 0,
+  title: '4-комн. апартаменты на Грушевке',
+  address: {
+    city: 'Минск',
+    street: 'б-р Мулявина, д. 10',
+    metro: 'Грушевка',
+    district: 'Шабаны',
+  },
+  img: [room1],
+  status: 'Gold',
+  price: 65.00,
+  peopleCount: 4,
+  peopleCountByRoom: '(2+2)',
+  rooms: '4 комн.',
+  square: 179,
+  description: 'Большая четырехкомнатная студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена, ',
+  owner: {
+    name: 'Dmitriy',
+    phone: '+375 (29) 291-14-44',
+    email: 'vladimir6234@tut.by',
+    img: owner,
+    status: 'Владелец'
+  }
+}
+
+export const apartmentsList: ApartmentCardProps[] = [];
+
+for (let i=1; i <= 10; i++) {
+  apartmentsList.push({...apartmentCard, id: i})
+}
