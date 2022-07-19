@@ -6,6 +6,7 @@ import { ReactComponent as HomeIcon } from '../../../assets/images/icons/home.sv
 import { ReactComponent as WarningIcon } from '../../../assets/images/icons/warning.svg';
 import { ReactComponent as OptionsIcon } from '../../../assets/images/icons/options.svg';
 import { ReactComponent as MapIcon } from '../../../assets/images/icons/map.svg';
+import { ReactComponent as MapGradientIcon } from '../../../assets/images/icons/mapGradient.svg';
 import { ReactComponent as PhoneIcon } from '../../../assets/images/icons/phone.svg';
 import { ReactComponent as ArrowIcon } from '../../../assets/images/icons/arrowSide.svg';
 
@@ -54,6 +55,10 @@ export const SButton: FC<IButton> = ({ label, type = 'button', btnOnClick, view,
       case 'cobaltPhone':
         setButtonClassName('button button_cobaltPhone');
         setIconBefore(<PhoneIcon />);
+        break;
+      case 'whiteMap':
+        setButtonClassName('button button_whiteMap');
+        setIconBefore(<MapGradientIcon width={12} height={15}/>);
         break;
       default:
         setButtonClassName('button');
