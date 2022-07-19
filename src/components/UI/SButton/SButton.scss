@@ -18,6 +18,50 @@
     &:hover {
       background: $color-violet-gradient-hover;
     }
+    &:active {
+      background: $color-violet-gradient;
+    }
+  }
+
+  &_yellow-gradient {
+    background: $color-yellow-gradient;
+    box-shadow: 0px 15px 40px rgba(254, 193, 0, 0.15);
+    border-radius: 17px;
+    color: $color-grey-text;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background: $color-yellow-gradient-hover;
+    }
+
+    &:active {
+      background: $color-yellow-gradient;
+    }
+
+    & svg {
+      stroke: $color-grey-text;
+      margin-left: 12px;
+    }
+  }
+
+  &_violet-gradient-arrow {
+    background: $color-violet-gradient-dark;
+    box-shadow: 0px 15px 40px rgba(0, 96, 206, 0.15);
+    border-radius: 17px;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background: $color-violet-gradient-hover;
+    }
+
+    &:active {
+      background: $color-violet-gradient-dark;
+    }
+
+    & svg {
+      stroke: $color-white;
+      margin-left: 12px;
+    }
   }
 
   &_cobalt {
@@ -28,13 +72,16 @@
     &:hover {
       background: $color-cobalt-hover;
     }
+
+    &:active {
+      background: $color-cobalt;
+    }
   }
 
   &_cobalt-arrow {
     background: $color-violet-gradient;
     box-shadow: 0px 15px 40px rgba(0, 96, 206, 0.15);
     border-radius: 17px;
-
     font-weight: 700;
     font-size: 14px;
     line-height: 17px;
@@ -59,6 +106,10 @@
       background: $color-yellow-hover;
     }
 
+    &:active {
+      background: $color-yellow;
+    }
+
     &:disabled {
       cursor: auto;
     }
@@ -76,6 +127,10 @@
 
     &:hover {
       background: $color-yellow-20;
+    }
+
+    &:active {
+      background: $color-yellow-10;
     }
   }
 
@@ -99,6 +154,10 @@
 
     &:hover {
       background: $color-red-hover;
+    }
+
+    &:active {
+      background: $color-red;
     }
   }
 
@@ -166,7 +225,7 @@
     }
 
     &:hover {
-      background: #F5F3FF;
+      background: #f5f3ff;
     }
 
     &:active {

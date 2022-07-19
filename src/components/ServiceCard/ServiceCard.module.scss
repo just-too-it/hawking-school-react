@@ -1,0 +1,65 @@
+@import '../../styles/helpers/variables.scss';
+
+.card {
+  width: 406px;
+  height: 345px;
+  background: $color-background-white;
+  box-shadow: 0px 20px 40px rgba(135, 124, 202, 0.15);
+  border-radius: 10px;
+  padding: 27px 37px;
+}
+
+.gold {
+  background-image: url('../../assets/images/backgroundGold.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  padding: 39px 65px 45px 38px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 98px;
+  height: 98px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $color-background-white;
+  box-shadow: 0px 11px 20px rgba(127, 155, 187, 0.16);
+  flex-shrink: 0;
+  margin-right: 27px;
+  margin-bottom: 25px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    color: $color-black-light;
+    margin: 0px auto;
+    margin-bottom: 35px;
+}
+
+.subtitle {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: $color-cobalt;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: $color-black;
+  margin-bottom: 34px;
+  overflow-y: hidden;
+
+  & p {
+    margin: 0;
+  }
+}

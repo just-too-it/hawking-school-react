@@ -5,6 +5,7 @@ import { Filter } from './Filter';
 import { apartmentsList, promoCards } from '../../../core/mockData/mockData';
 import { PopularPages } from './PopularPages';
 
+
 import styles from './Home.module.scss';
 import { ApartmentList } from '../../../components/ApartmentList';
 import { FilterMinsk } from './FilterMinsk';
@@ -12,9 +13,11 @@ import { RentApartment } from './RentApartment';
 import { SearchOnMap } from '../../../components/SearchOnMap';
 import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
 import { useNavigate } from 'react-router-dom';
+import { ServiceCard } from '../../../components/ServiceCard';
+import { Services } from './Services';
 
 export const Home = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <main>
       <div className="container">
@@ -37,9 +40,14 @@ export const Home = () => {
           height={'440px'}
         />
       </div>
-      <section className={styles.services}></section>
-      <article className={styles.description}></article>
-      <section className={styles.newsList}></section>
+      <div className="container">
+        <section className={styles.services}>
+          <Services />
+        </section>
+        <article className={styles.description}></article>
+        <section className={styles.newsList}></section>
+      </div>
+      
     </main>
   );
 };

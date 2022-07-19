@@ -32,10 +32,21 @@ export const SButton: FC<IButton> = ({ label, type = 'button', btnOnClick, view,
         break;
       case 'cobaltArrow':
         setButtonClassName('button button_cobalt-arrow');
-        setIconAfter(<ArrowIcon width={10} height={10} />)
+        setIconAfter(<ArrowIcon width={10} height={10} />);
         break;
       case 'violetGradient':
         setButtonClassName('button button_violet-gradient');
+        break;
+      case 'violetGradientArrow':
+        setButtonClassName('button button_violet-gradient-arrow');
+        setIconAfter(<ArrowIcon width={10} height={10} />);
+        break;
+      case 'yellowGradient':
+        setButtonClassName('button button_yellow-gradient');
+        break;
+      case 'yellowGradientArrow':
+        setButtonClassName('button button_yellow-gradient');
+        setIconAfter(<ArrowIcon width={10} height={10} />);
         break;
       case 'warning':
         setButtonClassName('button button_warning');
@@ -58,7 +69,7 @@ export const SButton: FC<IButton> = ({ label, type = 'button', btnOnClick, view,
         break;
       case 'whiteMap':
         setButtonClassName('button button_whiteMap');
-        setIconBefore(<MapGradientIcon width={12} height={15}/>);
+        setIconBefore(<MapGradientIcon width={12} height={15} />);
         break;
       default:
         setButtonClassName('button');
