@@ -12,7 +12,7 @@ import { newsSlice } from '../../../store/news/news.slice';
 
 export const News = () => {
   const { data, newsPerPage, currentPage, query } = useSelector((state: RootState) => state.newsReducer);
-  const { setData } = newsSlice.actions;
+  const { setData, setCurrentPage } = newsSlice.actions;
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export const News = () => {
         <div className={styles.list}>
           {data ? <NewsList data={data} newsPerPage={newsPerPage} currentPage={currentPage} query={query} /> : null}
         </div>
-        <Pagination currentPage={currentPage} totalPage={data ? getPageCount(data.length, newsPerPage) : 1} />
+        <Pagination currentPage={currentPage} totalPage={data ? getPageCount(data.length, newsPerPage) : 1} action={setCurrentPage}/>
       </section>
     </main>
   );

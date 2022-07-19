@@ -1,20 +1,25 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { apartmentListReducer } from './apartments/apartments.slice';
 import { filterMainReducer } from './filterMain/filterMain.slice';
-import {newsReducer} from './news/news.slice';
+import { filterMinskReducer } from './filterMinsk/filterMinsk.slice';
+import { newsReducer } from './news/news.slice';
 import { userReducer } from './user/user.slice';
 
 const rootReducer = combineReducers({
-    newsReducer,
-    userReducer,
-    filterMainReducer
+  newsReducer,
+  userReducer,
+  filterMainReducer,
+  filterMinskReducer,
+  apartmentListReducer
 });
 
 export const setupStore = () => {
   return configureStore({
     reducer: rootReducer,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-      serializableCheck: false, //при загрузке массива новостей была проблема с тем, что данные с датой передавались с ошибкой. возможно, при загрузке с бэка этой проблемы не будет
-    }),
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        serializableCheck: false, //при загрузке массива новостей была проблема с тем, что данные с датой передавались с ошибкой. возможно, при загрузке с бэка этой проблемы не будет
+      }),
   });
 };
 

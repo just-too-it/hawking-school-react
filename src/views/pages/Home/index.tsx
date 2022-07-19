@@ -7,6 +7,8 @@ import { PopularPages } from './PopularPages';
 
 import styles from './Home.module.scss';
 import { ApartmentList } from '../../../components/ApartmentList';
+import { FilterMinsk } from './FilterMinsk';
+import { RentApartment } from './RentApartment';
 
 export const Home = () => {
   return (
@@ -18,10 +20,9 @@ export const Home = () => {
         <Promo promoList={promoCards} />
         <PopularPages />
       </div>
-
-      <section className={styles.rentApartment}>
-        <ApartmentList apartments={apartmentsList} isListMode={true}/>
-      </section>
+      <div className={styles.rentApartment}>
+      <RentApartment/>
+      </div>
       <section className={styles.services}></section>
       <article className={styles.description}></article>
       <section className={styles.newsList}></section>

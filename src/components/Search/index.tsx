@@ -7,6 +7,7 @@ import { SInput } from '../UI/SInput';
 import { RootState } from '../../store/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { newsSlice } from '../../store/news/news.slice';
+import { SearchWrapper } from '../SearchWrapper';
 
 export const Search = () => {
   const { query } = useSelector((state: RootState) => state.newsReducer);
@@ -31,10 +32,10 @@ export const Search = () => {
       }}
     >
       {({ handleSubmit }) => (
-        <Form className={styles.search}>
+        <SearchWrapper>
+          <Form>
           <fieldset className={styles.wrapper}>
             <SInput type="text" placeholder="Поиск по статьям" name={'query'} className={styles.input} />
-
             <div className={styles.button}>
               <SButtonIcon type="submit" btnOnClick={handleSubmit}>
                 <SearchIcon width={'17.07'} height={'17.07'} />
@@ -42,6 +43,8 @@ export const Search = () => {
             </div>
           </fieldset>
         </Form>
+        </SearchWrapper>
+        
       )}
     </Formik>
   );

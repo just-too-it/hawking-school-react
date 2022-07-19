@@ -4,10 +4,15 @@ import { ApartmentCardProps } from '../ApartmentCard/ApartmentCard.types';
 import clsx from 'clsx';
 
 import styles from './ApartmentList.module.scss';
+import { ApartmentListProps } from './ApartmentListProps.types';
 
-export const ApartmentList: FC<{ apartments: ApartmentCardProps[]; isListMode: boolean }> = (props) => {
-  const { apartments, isListMode } = props;
+export const ApartmentList: FC<ApartmentListProps> = ({apartments, isListMode, cardsPerPage, currentPage}) => {
   const [listView, setListView] = useState(null);
+
+  const start: number = (currentPage - 1) * cardsPerPage;
+  const end: number = start + cardsPerPage;
+
+  const apartmentsOnDisplay = apartments?.slice(start, end);
 
   useEffect(() => {
     setListView(isListMode);
@@ -15,8 +20,8 @@ export const ApartmentList: FC<{ apartments: ApartmentCardProps[]; isListMode: b
 
   return (
     <ul className={clsx(styles.list, !isListMode && styles.tile)}>
-      {apartments.map((apartment) => (
-        <ApartmentCard apartment={apartment} isListMode={props.isListMode} key={apartment.id} />
+      {apartmentsOnDisplay.map((apartment) => (
+        <ApartmentCard apartment={apartment} isListMode={isListMode} key={apartment.id} />
       ))}
     </ul>
   );

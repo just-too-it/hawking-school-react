@@ -1,15 +1,17 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { Logo } from '../../Logo';
 import { Link, useLocation } from 'react-router-dom';
 import { SButton } from '../../UI/SButton';
 import { IItemSubNav } from './SubNav.type';
 import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
 import { ReactComponent as MapIcon } from '../../../assets/images/icons/map.svg';
+import { useRefCloseOut } from '../../../hooks/useRefCloseOut';
 
 export const SubNav: FC<{ menu: IItemSubNav[] }> = (props) => {
   const [isActiveSubmenu, setIsActiveSubmenu] = useState(false);
   const location = useLocation();
   const [titleForApartments, setTitleForApartments] = useState('Квартиры на сутки');
+  const refSubMenu = useRef() as React.MutableRefObject<HTMLUListElement>;
 
   const getTitleForApartments = (path) => {
     switch (path) {
@@ -40,6 +42,8 @@ export const SubNav: FC<{ menu: IItemSubNav[] }> = (props) => {
   useEffect(() => {
     getTitleForApartments(location.pathname);
   }, [location]);
+
+  useRefCloseOut(refSubMenu, setIsActiveSubmenu);
 
   return (
     <div className="subnav">
@@ -75,7 +79,7 @@ export const SubNav: FC<{ menu: IItemSubNav[] }> = (props) => {
               )}
 
               {item.list && isActiveSubmenu ? (
-                <ul className="subnav__submenu">
+                <ul className="subnav__submenu" ref={refSubMenu}>
                   {item.list.map((item) => (
                     <li key={item.title} className="subnav__sub-item">
                       <Link to={item.link ? item.link : '#'} title={item.title} className="subnav__sub-link">

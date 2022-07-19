@@ -349,3 +349,125 @@ export const apartmentsList: ApartmentCardProps[] = [];
 for (let i=1; i <= 10; i++) {
   apartmentsList.push({...apartmentCard, id: i})
 }
+
+export const metroMinskList: SelectorProps[] = [
+  { id: 1, value: 'Борисовский тракт' },
+  { id: 2, value: 'Московская' },
+  { id: 3, value: 'Академия наук' },
+  { id: 4, value: 'Площадь Победы' },
+  { id: 5, value: 'Михалово' },
+  { id: 6, value: 'Грушевка' },
+];
+
+export const districtsMinskList: SelectorProps[] = [
+  { id: 1, value: 'Шабаны' },
+  { id: 2, value: 'Советский' },
+  { id: 3, value: 'Заводской' },
+  { id: 4, value: 'Ленинский' },
+  { id: 5, value: 'Октябрьский' },
+  { id: 6, value: 'Фрунзенский' },
+];
+
+
+export const apartmentsMinsk: ApartmentCardProps[] = [
+  {
+    id: 0,
+    title: '4-комн. апартаменты на Грушевке',
+    address: {
+      city: 'Минск',
+      street: 'б-р Мулявина, д. 10',
+      metro: 'Грушевка',
+      district: 'Шабаны',
+    },
+    img: [room1],
+    status: 'Gold',
+    price: 65.00,
+    peopleCount: 4,
+    peopleCountByRoom: '(2+2)',
+    rooms: '4 комн.',
+    square: 179,
+    description: 'Большая четырехкомнатная студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена, ',
+    owner: {
+      name: 'Dmitriy',
+      phone: '+375 (29) 291-14-44',
+      email: 'vladimir6234@tut.by',
+      img: owner,
+      status: 'Владелец'
+    }
+  },
+  {
+    id: 1,
+    title: '3-комн. апартаменты на Московской',
+    address: {
+      city: 'Минск',
+      street: 'б-р Мулявина, д. 10',
+      metro: 'Московская',
+      district: 'Шабаны',
+    },
+    img: [room1],
+    status: 'Gold',
+    price: 40.00,
+    peopleCount: 3,
+    peopleCountByRoom: '(2+1)',
+    rooms: '3 комн.',
+    square: 140,
+    description: 'Большая 3х комн студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена, ',
+    owner: {
+      name: 'Dmitriy',
+      phone: '+375 (29) 291-14-44',
+      email: 'vladimir6234@tut.by',
+      img: owner,
+      status: 'Владелец'
+    }
+  },
+  {
+    id: 3,
+    title: '4-комн. апартаменты на Грушевке',
+    address: {
+      city: 'Минск',
+      street: 'б-р Мулявина, д. 10',
+      metro: 'Грушевка',
+      district: 'Шабаны',
+    },
+    img: [room1],
+    status: 'Gold',
+    price: 65.00,
+    peopleCount: 4,
+    peopleCountByRoom: '(2+2)',
+    rooms: '4 комн.',
+    square: 179,
+    description: 'Большая четырехкомнатная студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена, ',
+    owner: {
+      name: 'Dmitriy',
+      phone: '+375 (29) 291-14-44',
+      email: 'vladimir6234@tut.by',
+      img: owner,
+      status: 'Владелец'
+    }
+  },
+  {
+    id: 4,
+    title: '3-комн. апартаменты на Московской',
+    address: {
+      city: 'Минск',
+      street: 'б-р Мулявина, д. 10',
+      metro: 'Московская',
+      district: 'Шабаны',
+    },
+    img: [room1],
+    status: 'Gold',
+    price: 40.00,
+    peopleCount: 3,
+    peopleCountByRoom: '(2+1)',
+    rooms: '3 комн.',
+    square: 140,
+    description: 'Большая 3х комн студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена, ',
+    owner: {
+      name: 'Dmitriy',
+      phone: '+375 (29) 291-14-44',
+      email: 'vladimir6234@tut.by',
+      img: owner,
+      status: 'Владелец'
+    }
+  }
+] 

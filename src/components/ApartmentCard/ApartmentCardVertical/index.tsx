@@ -10,6 +10,7 @@ import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
 import { UserCard } from '../../UserCard';
 
 import styles from './ApartmentCardVertical.module.scss';
+import { useRefCloseOut } from '../../../hooks/useRefCloseOut';
 
 export const ApartmentCardVertical: FC<{ apartment: ApartmentCardProps }> = (props) => {
   const { id, title, address, img, status, price, peopleCount, peopleCountByRoom, rooms, square, description, owner } =
@@ -17,22 +18,9 @@ export const ApartmentCardVertical: FC<{ apartment: ApartmentCardProps }> = (pro
 
   const navigate = useNavigate();
   const [ownerOpen, setOwnerOpen] = useState(false);
-
   const ownerRef = useRef() as React.MutableRefObject<HTMLDivElement>;
 
-  useEffect(() => {
-    const handler = (event) => {
-      if (ownerRef.current && !ownerRef.current.contains(event.target)) {
-        setOwnerOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handler);
-
-    return () => {
-      document.removeEventListener('mousedown', handler);
-    };
-  }, [ownerRef]);
+  useRefCloseOut(ownerRef, setOwnerOpen);
 
   return (
     <article className={styles.card}>

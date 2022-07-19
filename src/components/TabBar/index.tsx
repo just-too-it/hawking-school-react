@@ -10,8 +10,6 @@ import { TabFormCity } from './TabFormCity';
 export const TabBar = () => {
   const [tab, setTab] = useState(1);
 
-  
-
   return (
     <section className={styles.tabBar}>
       <TabBarItem isActive={tab === 1 ? true : false} nav={'Квартиры на сутки'} tabHandler={() => setTab(1)}>

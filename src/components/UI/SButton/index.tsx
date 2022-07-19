@@ -7,6 +7,7 @@ import { ReactComponent as WarningIcon } from '../../../assets/images/icons/warn
 import { ReactComponent as OptionsIcon } from '../../../assets/images/icons/options.svg';
 import { ReactComponent as MapIcon } from '../../../assets/images/icons/map.svg';
 import { ReactComponent as PhoneIcon } from '../../../assets/images/icons/phone.svg';
+import { ReactComponent as ArrowIcon } from '../../../assets/images/icons/arrowSide.svg';
 
 export const SButton: FC<IButton> = ({ label, type = 'button', btnOnClick, view, width, ...rest }) => {
   const [buttonClassName, setButtonClassName] = useState('button');
@@ -30,6 +31,7 @@ export const SButton: FC<IButton> = ({ label, type = 'button', btnOnClick, view,
         break;
       case 'cobaltArrow':
         setButtonClassName('button button_cobalt-arrow');
+        setIconAfter(<ArrowIcon width={10} height={10} />)
         break;
       case 'violetGradient':
         setButtonClassName('button button_violet-gradient');
