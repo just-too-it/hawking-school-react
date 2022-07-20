@@ -2,8 +2,9 @@ import React from 'react';
 
 import { Promo } from '../../../components/Promo';
 import { Filter } from './Filter';
-import { apartmentsList, promoCards } from '../../../core/mockData/mockData';
+import { about, apartmentsList, promoCards } from '../../../core/mockData/mockData';
 import { PopularPages } from './PopularPages';
+
 
 
 import styles from './Home.module.scss';
@@ -15,6 +16,7 @@ import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
 import { useNavigate } from 'react-router-dom';
 import { ServiceCard } from '../../../components/ServiceCard';
 import { Services } from './Services';
+import { About } from '../../../components/About';
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -41,11 +43,13 @@ export const Home = () => {
         />
       </div>
       <div className="container">
-        <section className={styles.services}>
+        <div className={styles.services}>
           <Services />
-        </section>
-        <article className={styles.description}></article>
-        <section className={styles.newsList}></section>
+        </div>
+        <div className={styles.about}>
+          <About about={about} />
+        </div>
+        <div className={styles.newsList}></div>
       </div>
       
     </main>

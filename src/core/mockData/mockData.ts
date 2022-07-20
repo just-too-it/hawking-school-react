@@ -4,6 +4,7 @@ import { PagesLinks } from '../constants/pagesLinks.constant';
 import room from '../../assets/images/room.jpg';
 import room1 from '../../assets/images/room1.jpg';
 import room2 from '../../assets/images/room2.jpg';
+import roomAbout from '../../assets/images/room-about.jpg';
 import owner from '../../assets/images/owner.jpg';
 import { INewsItem } from '../../views/pages/NewsItem/NewsItem.types';
 import { SelectorProps } from '../../components/UI/SSelector/SSelector.types';
@@ -14,6 +15,7 @@ import promoSauna from '../../assets/images/promo-sauna.jpg';
 import promoAuto from '../../assets/images/promo-auto.jpg'
 import { PopularListProps } from '../../components/PopularList/PopularList.types';
 import { ApartmentCardProps } from '../../components/ApartmentCard/ApartmentCard.types';
+import { AboutProps } from '../../components/About/About.types';
 
 /* export const chooseCity: ISelector = {
   title: 'Выберите',
@@ -471,3 +473,10 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
     }
   }
 ] 
+
+export const about: AboutProps = {
+  title: 'Квартира на сутки в Минске',
+  subtitle: 'что такое SDAEM.BY',
+  description: '<p><strong>Нужна квартира на сутки в Минске?</strong><br /> На веб-сайте sdaem.by вас ждет масса выгодных предложений. Каталог насчитывает <strong>более 500 квартир</strong>. Благодаря удобной навигации вы быстро найдете подходящий вариант.</p> <p>В каталоге представлены комфортабельные однокомнатные квартиры на сутки и квартиры с большим количеством комнат в разных районах города, с различной степенью удобства от дешевых до VIP с джакузи.</p> <p>Чтобы снять квартиру на сутки в Минске, вам достаточно определиться с выбором и связаться с владельцем для уточнения условий аренды и заключить договор. Заметим, на сайте представлены исключительно квартиры на сутки без посредников, что избавляет посетителей от необходимости взаимодействовать с агентствами, тратя свое время и деньги. Также пользователи сайта могут совершенно бесплатно размещать объявления о готовности сдать квартиру на сутки.</p>',
+  img: roomAbout 
+}
