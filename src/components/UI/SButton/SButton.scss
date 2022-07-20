@@ -44,7 +44,7 @@
     }
   }
 
-  &_violet-gradient-arrow {
+  &_violet-gradient {
     background: $color-violet-gradient-dark;
     box-shadow: 0px 15px 40px rgba(0, 96, 206, 0.15);
     border-radius: 17px;
@@ -58,10 +58,10 @@
       background: $color-violet-gradient-dark;
     }
 
-    & svg {
+/*     & svg {
       stroke: $color-white;
       margin-left: 12px;
-    }
+    } */
   }
 
   &_cobalt {
@@ -249,6 +249,36 @@
 
     &:hover {
       color: $color-yellow-hover;
+    }
+  }
+
+  &_arrowWhite {
+    & svg {
+      margin-left: 12px;
+      stroke: $color-white;
+    }
+  }
+
+  &_arrowCobalt {
+    & svg {
+      margin-left: 12px;
+      stroke: $color-cobalt;
+    }
+  }
+
+  &_transparentCobalt {
+    color: $color-cobalt;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0;
+
+    &:hover {
+      color: $color-cobalt-hover;
+    }
+
+    &:active {
+      color: $color-cobalt;
     }
   }
 }

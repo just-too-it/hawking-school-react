@@ -1,22 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { Promo } from '../../../components/Promo';
 import { Filter } from './Filter';
-import { about, apartmentsList, promoCards } from '../../../core/mockData/mockData';
+import { about, promoCards } from '../../../core/mockData/mockData';
 import { PopularPages } from './PopularPages';
-
-
-
-import styles from './Home.module.scss';
-import { ApartmentList } from '../../../components/ApartmentList';
-import { FilterMinsk } from './FilterMinsk';
 import { RentApartment } from './RentApartment';
 import { SearchOnMap } from '../../../components/SearchOnMap';
 import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
-import { useNavigate } from 'react-router-dom';
-import { ServiceCard } from '../../../components/ServiceCard';
 import { Services } from './Services';
 import { About } from '../../../components/About';
+import { NewsHeading } from './NewsHeading';
+
+import styles from './Home.module.scss';
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -46,12 +42,15 @@ export const Home = () => {
         <div className={styles.services}>
           <Services />
         </div>
-        <div className={styles.about}>
-          <About about={about} />
+        <div className={styles.info}>
+          <div className={styles.about}>
+            <About about={about} />
+          </div>
+          <div className={styles.newsHeadlines}>
+            <NewsHeading />
+          </div>
         </div>
-        <div className={styles.newsList}></div>
       </div>
-      
     </main>
   );
 };

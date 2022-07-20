@@ -38,7 +38,7 @@ export const SButton: FC<IButton> = ({ label, type = 'button', btnOnClick, view,
         setButtonClassName('button button_violet-gradient');
         break;
       case 'violetGradientArrow':
-        setButtonClassName('button button_violet-gradient-arrow');
+        setButtonClassName('button button_violet-gradient button_arrowWhite');
         setIconAfter(<ArrowIcon width={10} height={10} />);
         break;
       case 'yellowGradient':
@@ -70,6 +70,10 @@ export const SButton: FC<IButton> = ({ label, type = 'button', btnOnClick, view,
       case 'whiteMap':
         setButtonClassName('button button_whiteMap');
         setIconBefore(<MapGradientIcon width={12} height={15} />);
+        break;
+      case 'transparentCobaltArrow':
+        setButtonClassName('button button_transparentCobalt button_arrowCobalt');
+        setIconAfter(<ArrowIcon width={10} height={10} />);
         break;
       default:
         setButtonClassName('button');

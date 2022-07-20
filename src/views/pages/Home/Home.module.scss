@@ -12,10 +12,16 @@
 .services {
   margin-top: -125px;
   position: relative;
-  z-index:2;
+  z-index: 2;
   margin-bottom: 125px;
 }
 
-.about {
-  margin-bottom: 99px;
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.newsHeadlines {
+  margin-top: 14px;
 }
