@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { apartmentListReducer } from './apartments/apartments.slice';
+import { apartmentsMinskReducer } from './apartments/apartmentsMinsk.slice';
 import { filterMainReducer } from './filterMain/filterMain.slice';
 import { filterMinskReducer } from './filterMinsk/filterMinsk.slice';
 import { newsReducer } from './news/news.slice';
@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
   userReducer,
   filterMainReducer,
   filterMinskReducer,
-  apartmentListReducer
+  apartmentsMinskReducer
 });
 
 export const setupStore = () => {

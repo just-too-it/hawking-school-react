@@ -16,6 +16,7 @@ import promoAuto from '../../assets/images/promo-auto.jpg'
 import { PopularListProps } from '../../components/PopularList/PopularList.types';
 import { ApartmentCardProps } from '../../components/ApartmentCard/ApartmentCard.types';
 import { AboutProps } from '../../components/About/About.types';
+import { RecommendationProps } from '../../components/ApartmentList/ApartmentListProps.types';
 
 /* export const chooseCity: ISelector = {
   title: 'Выберите',
@@ -32,7 +33,6 @@ import { AboutProps } from '../../components/About/About.types';
 export const breadcrumbsForNews: IBreadcrumbs[] = [
   {
     title: 'Новости',
-    link: PagesLinks.NEWS_PAGE,
   },
 ];
 
@@ -43,7 +43,12 @@ export const breadcrumbsForNewsItem: IBreadcrumbs[] = [
   },
   {
     title: 'Линия Сталина: суровый отдых в усадьбах на сутки ',
-    link: PagesLinks.NEWS_PAGE,
+  },
+];
+
+export const breadcrumbsForApartmentsMinsk: IBreadcrumbs[] = [
+  {
+    title: 'Квартиры в Минске',
   },
 ];
 
@@ -480,3 +485,21 @@ export const about: AboutProps = {
   description: '<p><strong>Нужна квартира на сутки в Минске?</strong><br /> На веб-сайте sdaem.by вас ждет масса выгодных предложений. Каталог насчитывает <strong>более 500 квартир</strong>. Благодаря удобной навигации вы быстро найдете подходящий вариант.</p> <p>В каталоге представлены комфортабельные однокомнатные квартиры на сутки и квартиры с большим количеством комнат в разных районах города, с различной степенью удобства от дешевых до VIP с джакузи.</p> <p>Чтобы снять квартиру на сутки в Минске, вам достаточно определиться с выбором и связаться с владельцем для уточнения условий аренды и заключить договор. Заметим, на сайте представлены исключительно квартиры на сутки без посредников, что избавляет посетителей от необходимости взаимодействовать с агентствами, тратя свое время и деньги. Также пользователи сайта могут совершенно бесплатно размещать объявления о готовности сдать квартиру на сутки.</p>',
   img: roomAbout 
 }
+
+export const recommendationsMinsk: RecommendationProps[] = [
+  {label: 'Недорогие', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?tag=cheap`},
+  {label: '1-комнатные', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?room=1kkv`},
+  {label: '2-комнатные', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?room=2kkv`},
+  {label: '3-комнатные', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?room=3kkv`},
+  {label: '4-комнатные', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?room=4kkv`},
+  {label: '5-комнатные', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?room=5kkv`},
+  {label: 'Заводской р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?district=zavodskoj`},
+  {label: 'Ленинский р. ', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?district=leninskij`},
+  {label: 'Московский р.  ', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?district=moskovskij`},
+  {label: 'Октябрьский р.    ', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?district=oktyabrskij`},
+  {label: 'Партизанский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?district=partizanskij`},
+  {label: 'Первомайский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?district=pervomajskij`},
+  {label: 'Советский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?district=sovetskij`},
+  {label: 'Фрунзенский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?district=frunzenskij`},
+  {label: 'Центральный р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?district=centralnyj`}
+]

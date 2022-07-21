@@ -7,7 +7,7 @@ import { SButton } from '../../../../components/UI/SButton';
 import { apartmentsList, apartmentsMinsk } from '../../../../core/mockData/mockData';
 import { getPageCount } from '../../../../core/utils/getPageCount';
 import { useNavPageCity } from '../../../../hooks/useNavPageCity';
-import { apartmentListSlice } from '../../../../store/apartments/apartments.slice';
+import { apartmentsMinskSlice } from '../../../../store/apartments/apartmentsMinsk.slice';
 import { filterMinskSlice } from '../../../../store/filterMinsk/filterMinsk.slice';
 import { newsSlice } from '../../../../store/news/news.slice';
 import { RootState } from '../../../../store/store';
@@ -16,12 +16,13 @@ import { FilterMinsk } from '../FilterMinsk';
 import styles from './RentApartment.module.scss';
 
 export const RentApartment = () => {
-  const { apartments, cardsPerPage, currentPage, isListMode } = useSelector(
-    (state: RootState) => state.apartmentListReducer
+  const { apartments, currentPage } = useSelector(
+    (state: RootState) => state.apartmentsMinskReducer
   );
-  const { setApartments, setCurrentPage } = apartmentListSlice.actions;
+  const { setApartments, setCurrentPage } = apartmentsMinskSlice.actions;
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const CARDS_PER_PAGE_HOME = 3;
 
   useEffect(() => {
     dispatch(setApartments(apartmentsMinsk));
@@ -38,8 +39,7 @@ export const RentApartment = () => {
         {apartments && (
           <ApartmentList
             apartments={apartments}
-            isListMode={isListMode}
-            cardsPerPage={cardsPerPage}
+            cardsPerPage={CARDS_PER_PAGE_HOME}
             currentPage={currentPage}
           />
         )}
@@ -47,7 +47,7 @@ export const RentApartment = () => {
       <div className={styles.pagination}>
       <Pagination
         currentPage={currentPage}
-        totalPage={apartments ? getPageCount(apartments.length, cardsPerPage) : 1}
+        totalPage={apartments ? getPageCount(apartments.length, CARDS_PER_PAGE_HOME) : 1}
         action={setCurrentPage}
       />
       </div>

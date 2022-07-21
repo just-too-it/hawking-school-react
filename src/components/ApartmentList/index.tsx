@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import styles from './ApartmentList.module.scss';
 import { ApartmentListProps } from './ApartmentListProps.types';
 
-export const ApartmentList: FC<ApartmentListProps> = ({apartments, isListMode, cardsPerPage, currentPage}) => {
+export const ApartmentList: FC<ApartmentListProps> = ({apartments, isListMode=true, cardsPerPage, currentPage}) => {
   const [listView, setListView] = useState(null);
 
   const start: number = (currentPage - 1) * cardsPerPage;

@@ -6,16 +6,14 @@ import { SearchWrapper } from '../../../../components/SearchWrapper';
 import { SSelector } from '../../../../components/UI/SSelector';
 import { metroMinskList, districtsMinskList } from '../../../../core/mockData/mockData';
 import { RootState } from '../../../../store/store';
-import { filterMinskSlice } from '../../../../store/filterMinsk/filterMinsk.slice';
+import { apartmentsMinskSlice } from '../../../../store/apartments/apartmentsMinsk.slice';
 
 import styles from './FilterMinsk.module.scss';
-import { apartmentListSlice } from '../../../../store/apartments/apartments.slice';
-import { validateLocaleAndSetLanguage } from 'typescript';
 
 export const FilterMinsk = () => {
   const dispatch = useDispatch();
-  const { setMetro, setDistrict } = apartmentListSlice.actions;
-  const { metro, district } = useSelector((state: RootState) => state.apartmentListReducer);
+  const { setMetro, setDistrict } = apartmentsMinskSlice.actions;
+  const { metro, district } = useSelector((state: RootState) => state.apartmentsMinskReducer);
 
   const initialValues = {
     metro: metro,

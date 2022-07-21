@@ -1,6 +1,6 @@
 export type SButtonIconProps = {
     type?: 'button' | 'submit';
-    children: any;
+    children: React.ReactNode;
     className?: string;
-    btnOnClick(): void;
+    btnOnClick?: () => void;
 }

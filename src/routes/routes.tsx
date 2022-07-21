@@ -7,6 +7,7 @@ import { Admin } from '../views/pages/Admin';
 import { Login } from '../views/pages/Login';
 import { RoutesProps } from './routes.types';
 import { PagesLinks } from '../core/constants/pagesLinks.constant';
+import { ApartmentsMinsk } from '../views/pages/ApartmentsMinsk';
 
 export const authRoutes: RoutesProps[] = [
   {
@@ -39,6 +40,10 @@ export const publicRoutes: RoutesProps[] = [
   {
     path: PagesLinks.REG_PAGE,
     Component: Login,
+  },
+  {
+    path: PagesLinks.APARTMENTS_MINSK_PAGE,
+    Component: ApartmentsMinsk,
   },
   {
     path: '*',
