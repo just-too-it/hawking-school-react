@@ -4,12 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { ApartmentList } from '../../../../components/ApartmentList';
 import { Pagination } from '../../../../components/Pagination';
 import { SButton } from '../../../../components/UI/SButton';
-import { apartmentsList, apartmentsMinsk } from '../../../../core/mockData/mockData';
+import { apartmentsMinsk } from '../../../../core/mockData/mockData';
 import { getPageCount } from '../../../../core/utils/getPageCount';
 import { useNavPageCity } from '../../../../hooks/useNavPageCity';
 import { apartmentsMinskSlice } from '../../../../store/apartments/apartmentsMinsk.slice';
-import { filterMinskSlice } from '../../../../store/filterMinsk/filterMinsk.slice';
-import { newsSlice } from '../../../../store/news/news.slice';
 import { RootState } from '../../../../store/store';
 import { FilterMinsk } from '../FilterMinsk';
 

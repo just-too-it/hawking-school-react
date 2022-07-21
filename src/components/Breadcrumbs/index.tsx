@@ -4,20 +4,20 @@ import { IBreadcrumbs } from './Breadcrumbs.types';
 import { PagesLinks } from '../../core/constants/pagesLinks.constant';
 import { ReactComponent as HomeIcon } from '../../assets/images/icons/home.svg';
 
-export const Breadcrumbs: FC<{ breadcrumbs: IBreadcrumbs[] }> = (props) => {
+export const Breadcrumbs: FC<{ breadcrumbs: IBreadcrumbs[] }> = ({ breadcrumbs }) => {
   
   return (
     <>
-      {props.breadcrumbs && (
+      {breadcrumbs && (
         <ul className="breadcrumbs">
           <li className="breadcrumbs__item breadcrumbs__item_first">
             <Link to={PagesLinks.MAIN_PAGE} className={'breadcrumbs__link'}>
               <HomeIcon fill='#4E64F9'/>
             </Link>
           </li>
-          {props.breadcrumbs.map((crumb, index) => (
+          {breadcrumbs.map((crumb, index) => (
             <li className="breadcrumbs__item" key={crumb.title}>
-              {props.breadcrumbs.length == index + 1 ? (
+              {breadcrumbs.length == index + 1 ? (
                 <span className="breadcrumbs__link breadcrumbs__link_last">{crumb.title}</span>
               ) : (
                 <Link

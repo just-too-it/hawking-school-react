@@ -38,7 +38,7 @@ export const SButton: FC<IButton> = ({ label, type = 'button', btnOnClick, view,
         setButtonClassName('button button_violet-gradient');
         break;
       case 'violetGradientArrow':
-        setButtonClassName('button button_violet-gradient button_arrowWhite');
+        setButtonClassName('button button_violet-grad button_arrowWhite');
         setIconAfter(<ArrowIcon width={10} height={10} />);
         break;
       case 'yellowGradient':

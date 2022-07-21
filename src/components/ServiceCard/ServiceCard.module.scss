@@ -1,10 +1,10 @@
-@import '../../styles/helpers/variables.scss';
+@import '../../styles/helpers/variables';
 
 .card {
   width: 406px;
   height: 345px;
   background: $color-background-white;
-  box-shadow: 0px 20px 40px rgba(135, 124, 202, 0.15);
+  box-shadow: 0 20px 40px rgb(135 124 202 / 15%);
   border-radius: 10px;
   padding: 27px 37px;
 }
@@ -29,19 +29,19 @@
   justify-content: center;
   align-items: center;
   background: $color-background-white;
-  box-shadow: 0px 11px 20px rgba(127, 155, 187, 0.16);
+  box-shadow: 0 11px 20px rgb(127 155 187 / 16%);
   flex-shrink: 0;
   margin-right: 27px;
   margin-bottom: 25px;
 }
 
 .title {
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 36px;
-    color: $color-black-light;
-    margin: 0px auto;
-    margin-bottom: 35px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  color: $color-black-light;
+  margin: 0 auto;
+  margin-bottom: 35px;
 }
 
 .subtitle {

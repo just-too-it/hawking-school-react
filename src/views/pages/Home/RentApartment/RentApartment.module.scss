@@ -1,4 +1,4 @@
-@import '../../../../styles/helpers/variables.scss';
+@import '../../../../styles/helpers/variables';
 
 .rent {
   position: relative;
@@ -17,6 +17,7 @@
   text-transform: uppercase;
   margin-bottom: 15px;
 }
+
 .title {
   font-weight: 700;
   font-size: 25px;

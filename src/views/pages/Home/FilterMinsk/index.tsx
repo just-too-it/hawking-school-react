@@ -39,7 +39,7 @@ export const FilterMinsk = () => {
             }, 400);
           }}
         >
-          {({ values, handleSubmit, setFieldValue }) => (
+          {({ values, setFieldValue }) => (
             <Form className={styles.form}>
               {
                 <fieldset className={styles.fieldset}>

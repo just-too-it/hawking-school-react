@@ -2,10 +2,10 @@ import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { IItemSubNav } from '../../Header/SubNav/SubNav.type';
 
-export const FooterSubNav: FC<{ menu: IItemSubNav[] }> = (props) => {
+export const FooterSubNav: FC<{ menu: IItemSubNav[] }> = ({ menu }) => {
   return (
     <ul className="footer-subnav">
-      {props.menu.map((item) => (
+      {menu.map((item) => (
         <li key={item.title} className="footer-subnav__item">
           <Link
             to={item.link ? item.link : '#'}

@@ -1,9 +1,9 @@
-@import '../../../styles/helpers/variables.scss';
+@import '../../../styles/helpers/variables';
 
 .card {
   width: 406px;
   height: 522px;
-  box-shadow: 0px 20px 40px rgba(135, 124, 202, 0.15);
+  box-shadow: 0 20px 40px rgb(135 124 202 / 15%);
   background: $color-background-white;
   border-radius: 10px;
   position: relative;
@@ -31,17 +31,17 @@
   right: 0;
   height: 37px;
   background: $color-yellow-gradient;
-  border-radius: 0px 10px 10px 10px;
+  border-radius: 0 10px 10px;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
   color: $color-white;
-  text-shadow: 0px 1px 0px rgba(147, 79, 0, 0.3);
+  text-shadow: 0 1px 0 rgb(147 79 0 / 30%);
   padding: 7px 12px;
 }
 
 .container {
-  padding: 20px 20px 12px 20px;
+  padding: 20px 20px 12px;
 }
 
 .info {
@@ -117,8 +117,7 @@
   font-style: normal;
 
   &:first-child {
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column: 1 / 4;
   }
 }
 

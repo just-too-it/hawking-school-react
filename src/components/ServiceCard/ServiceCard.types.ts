@@ -1,9 +1,9 @@
-import { Component } from "react";
+import React from "react";
 import { IButton } from "../UI/SButton/SButton.type";
 
 export type ServiceCardProps = {
     title?: string;
-    icon?: any;
+    icon?: React.ReactNode;
     subTitle?: string;
     description?: string;
     btn?: IButton;

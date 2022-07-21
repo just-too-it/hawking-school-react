@@ -3,7 +3,7 @@ import { INewsPreview } from '../../components/NewsPreview/NewsPreview.types';
 import { PagesLinks } from '../constants/pagesLinks.constant';
 import room from '../../assets/images/room.jpg';
 import room1 from '../../assets/images/room1.jpg';
-import room2 from '../../assets/images/room2.jpg';
+/* import room2 from '../../assets/images/room2.jpg'; */
 import roomAbout from '../../assets/images/room-about.jpg';
 import owner from '../../assets/images/owner.jpg';
 import { INewsItem } from '../../views/pages/NewsItem/NewsItem.types';
