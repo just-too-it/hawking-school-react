@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import { RecommendationProps } from '../../../../components/ApartmentList/ApartmentListProps.types';
+import { RecommendationProps } from './Recommendations.types';
 
 import styles from './Recommendations.module.scss';
 

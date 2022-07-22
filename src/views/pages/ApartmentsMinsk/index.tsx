@@ -11,6 +11,7 @@ import { apartmentsMinskSlice } from '../../../store/apartments/apartmentsMinsk.
 import { Recommendations } from './Recommendations';
 
 import styles from './ApartmentsMinsk.module.scss';
+import { ApartmentsForm } from '../../../components/ApartmentsForm';
 
 export const ApartmentsMinsk = () => {
   const { apartments, cardsPerPage, currentPage, recommendations } = useSelector(
@@ -34,13 +35,18 @@ export const ApartmentsMinsk = () => {
             <Recommendations recommendations={recommendations} />
           </div>
         </div>
-
+      </div>
+      <div className={styles.form}>
+        <ApartmentsForm />
+      </div>
+        <div className="container">
         <section>
           <div className={styles.list}>
             {apartments && (
               <ApartmentList apartments={apartments} cardsPerPage={cardsPerPage} currentPage={currentPage} />
             )}
           </div>
+
           <Pagination
             currentPage={currentPage}
             totalPage={apartments ? getPageCount(apartments.length, cardsPerPage) : 1}

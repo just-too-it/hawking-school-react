@@ -5,7 +5,7 @@ import { TabBarItem } from './TabBarItem';
 
 import styles from './TabBar.module.scss';
 
-import { TabFormCity } from './TabFormCity';
+import { ApartmentsForm } from '../ApartmentsForm'
 
 export const TabBar = () => {
   const [tab, setTab] = useState(1);
@@ -13,7 +13,7 @@ export const TabBar = () => {
   return (
     <section className={styles.tabBar}>
       <TabBarItem isActive={tab === 1 ? true : false} nav={'Квартиры на сутки'} tabHandler={() => setTab(1)}>
-        <TabFormCity />
+        <ApartmentsForm />
       </TabBarItem>
       <TabBarItem isActive={tab === 2 ? true : false} nav={'Коттеджи и усадьбы'} tabHandler={() => setTab(2)}>
         <div>Фильтр для контента Коттеджи и усадьбы</div>

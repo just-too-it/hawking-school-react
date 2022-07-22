@@ -4,7 +4,7 @@ import { Field } from 'formik';
 import { ReactComponent as MetroIcon } from '../../../assets/images/icons/metro.svg';
 import { useRefCloseOut } from '../../../hooks/useRefCloseOut';
 
-export const SSelector: FC<{ options: SelectorProps[]; placeholder: string; name: string; setValue?: any; className?: string; setSelectedSwiftly?: any;}> = ({
+export const SSelector: FC<{ options: SelectorProps[]; placeholder: string | number; name: string; setValue?: any; className?: string; setSelectedSwiftly?: any;}> = ({
   options,
   placeholder,
   name,

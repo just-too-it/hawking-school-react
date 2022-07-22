@@ -1,6 +1,6 @@
-export type filterMainProps = {
+export type FilterMainProps = {
     city: string;
-    rooms: string;
+    rooms: string | number;
     priceFrom: number | string;
     priceTo: number | string;
 }

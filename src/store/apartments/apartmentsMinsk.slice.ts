@@ -1,16 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { ApartmentListProps, RecommendationProps } from '../../components/ApartmentList/ApartmentListProps.types';
 import { ApartmentCardProps } from '../../components/ApartmentCard/ApartmentCard.types';
+import { ApartmentsMinskProps } from '../../views/pages/ApartmentsMinsk/ApartmentsMinsk.types';
+import { RecommendationProps } from '../../views/pages/ApartmentsMinsk/Recommendations/Recommendations.types';
 
-const initialApartmentsMinskState: ApartmentListProps = {
+
+const initialApartmentsMinskState: ApartmentsMinskProps = {
   apartments: null,
   cardsPerPage: 6,
   currentPage: 1,
   isListMode: true,
+  city: 'Минск',
   metro: '',
   district: '',
   recommendations: [],
+  rooms: '',
+  priceFrom: '',
+  priceTo: '',
+  peopleCount: ''
 };
 
 export const apartmentsMinskSlice = createSlice({
@@ -38,9 +45,20 @@ export const apartmentsMinskSlice = createSlice({
     setRecommendations(state, action: PayloadAction<RecommendationProps[]>) {
       state.recommendations = action.payload;
     },
+    setRooms(state, action: PayloadAction<number|string>) {
+      state.rooms = action.payload;
+    },
+    setPriceFrom(state, action: PayloadAction<number|string>) {
+      state.priceFrom = action.payload;
+    },
+    setPriceTo(state, action: PayloadAction<number|string>) {
+      state.priceTo = action.payload;
+    },
+    setPeopleCount(state, action: PayloadAction<number|string>) {
+      state.peopleCount = action.payload;
+    },
   },
 });
 
-//export default newsSlice.reducer;
 export const apartmentsMinskReducer = apartmentsMinskSlice.reducer;
 export const apartmentsMinskActions = apartmentsMinskSlice.actions;

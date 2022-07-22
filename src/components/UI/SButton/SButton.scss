@@ -74,7 +74,7 @@
     }
   }
 
-  &_cobalt-arrow {
+  &_cobalt-arrowGrad {
     background: $color-violet-gradient;
     box-shadow: 0 15px 40px rgb(0 96 206 / 15%);
     border-radius: 17px;
@@ -86,6 +86,28 @@
 
     & svg {
       margin-left: 12px;
+      stroke: $color-white;
+    }
+  }
+
+  &_cobalt-arrow {
+    background: $color-cobalt;
+    border-radius: 22px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: $color-white;
+
+    &:hover {
+      background: $color-cobalt-hover;
+    }
+
+    &:active {
+      background: $color-cobalt;
+    }
+
+    & svg {
+      margin-left: 10px;
       stroke: $color-white;
     }
   }
@@ -182,7 +204,7 @@
 
   &_options {
     & svg {
-      margin-left: 4px;
+      margin-left: 10px;
       fill: $color-cobalt;
     }
 
@@ -255,6 +277,13 @@
     }
   }
 
+  &_arrowBlack {
+    & svg {
+      margin-left: 12px;
+      stroke: $color-grey-text;
+    }
+  }
+
   &_arrowCobalt {
     & svg {
       margin-left: 12px;
@@ -275,6 +304,41 @@
 
     &:active {
       color: $color-cobalt;
+    }
+  }
+
+  &_yellowArrow {
+    padding: 9px 16px;
+    background: $color-yellow;
+    color: $color-grey-text;
+
+    &:hover {
+      background: $color-yellow-hover;
+    }
+
+    &:active {
+      background: $color-yellow;
+    }
+
+    & svg {
+      margin-left: 12px;
+      stroke: $color-grey-text;
+    }
+  }
+
+  &_clear {
+    background: $color-grey-default;
+    border-radius: 22px;
+    padding: 10px 16px;
+    font-weight: 600;
+    color: $color-black;
+
+    &:hover {
+      background: $color-grey-default-hover;
+    }
+
+    &:active {
+      background: $color-grey-default;
     }
   }
 }

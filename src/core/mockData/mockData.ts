@@ -16,7 +16,7 @@ import promoAuto from '../../assets/images/promo-auto.jpg'
 import { PopularListProps } from '../../components/PopularList/PopularList.types';
 import { ApartmentCardProps } from '../../components/ApartmentCard/ApartmentCard.types';
 import { AboutProps } from '../../components/About/About.types';
-import { RecommendationProps } from '../../components/ApartmentList/ApartmentListProps.types';
+import { RecommendationProps } from '../../views/pages/ApartmentsMinsk/Recommendations/Recommendations.types';
 
 /* export const chooseCity: ISelector = {
   title: 'Выберите',

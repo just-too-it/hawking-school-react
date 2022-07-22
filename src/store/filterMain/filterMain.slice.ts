@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-import { filterMainProps } from "./filterMain.types";
+import { FilterMainProps } from "./filterMain.types";
 
 
-const initialFilterMainState: filterMainProps = {
+const initialFilterMainState: FilterMainProps = {
     city: '',
     rooms: '',
     priceFrom: '',
@@ -18,7 +18,7 @@ export const filterMainSlice = createSlice({
         setCity(state, action: PayloadAction<string>) {
             state.city = action.payload;
         },
-        setRooms(state, action: PayloadAction<string>) {
+        setRooms(state, action: PayloadAction<number|string>) {
             state.rooms = action.payload;
         },
         setPriceFrom(state, action: PayloadAction<number|string>) {

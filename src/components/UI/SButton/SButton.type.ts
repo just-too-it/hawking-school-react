@@ -1,5 +1,5 @@
 export interface IButton {
-    type?: 'button' | 'submit';
+    type?: 'button' | 'submit' | 'reset';
     label: string;
     view?: string;
     icon?: HTMLImageElement | string;
