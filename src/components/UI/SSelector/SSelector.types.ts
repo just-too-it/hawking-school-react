@@ -10,5 +10,5 @@ export interface ISelector {
 
 export type SelectorProps = {
     id: number;
-    value: string;
+    value: string | number;
   }

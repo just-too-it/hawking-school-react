@@ -1,4 +1,5 @@
 import { ApartmentCardProps } from "../../../components/ApartmentCard/ApartmentCard.types"; 
+import { CheckboxProps } from "../../../components/UI/SCheckbox/SCheckbox.types";
 import { RecommendationProps } from "./Recommendations/Recommendations.types";
 
 export type ApartmentsMinskProps = {
@@ -14,4 +15,5 @@ export type ApartmentsMinskProps = {
     priceTo?: number | string;
     peopleCount?: number | string;
     recommendations?: RecommendationProps[];
+    options?: string[];
 }

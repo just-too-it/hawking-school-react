@@ -17,6 +17,7 @@ import { PopularListProps } from '../../components/PopularList/PopularList.types
 import { ApartmentCardProps } from '../../components/ApartmentCard/ApartmentCard.types';
 import { AboutProps } from '../../components/About/About.types';
 import { RecommendationProps } from '../../views/pages/ApartmentsMinsk/Recommendations/Recommendations.types';
+import { CheckboxProps } from '../../components/UI/SCheckbox/SCheckbox.types';
 
 /* export const chooseCity: ISelector = {
   title: 'Выберите',
@@ -144,6 +145,12 @@ export const citysList: SelectorProps[] = [
   { id: 5, value: 'Гродно' },
   { id: 6, value: 'Могилев' },
 ];
+
+export const peopleList: SelectorProps[] = [
+  { id: 1, value: 1 },
+  { id: 2, value: 2 },
+];
+
 
 export const promoCards: PromoCardProps[] = [
   {
@@ -374,6 +381,27 @@ export const districtsMinskList: SelectorProps[] = [
   { id: 5, value: 'Октябрьский' },
   { id: 6, value: 'Фрунзенский' },
 ];
+
+export const optionsList: CheckboxProps[] = [
+  {id: 1, name: 'options', value: 'stove', label: 'Газовая плита', checked: true},
+  {id: 2, name: 'options', value: 'oven', label: 'Духовка'},
+  {id: 3, name: 'options', value: 'coffee-maker', label: 'Кофеварка'},
+  {id: 4, name: 'options', value: 'microwave', label: 'Микроволновая печь', checked: true},
+  {id: 5, name: 'options', value: 'cookware', label: 'Посуда'},
+  {id: 6, name: 'options', value: 'dishwasher', label: 'Посудомоечная машина'},
+  {id: 7, name: 'options', value: 'stove2', label: 'Газовая плита2', checked: true},
+  {id: 8, name: 'options', value: 'oven2', label: 'Духовка2'},
+  {id: 9, name: 'options', value: 'coffee-maker2', label: 'Кофеварка2'},
+  {id: 10, name: 'options', value: 'microwave2', label: 'Микроволновка2', checked: true},
+  {id: 11, name: 'options', value: 'cookware2', label: 'Посуда2'},
+  {id: 12, name: 'options', value: 'dishwasher2', label: 'Посудомойка2'},
+  {id: 13, name: 'options', value: 'stove3', label: 'Газовая плита3', checked: true},
+  {id: 14, name: 'options', value: 'oven3', label: 'Духовка3'},
+  {id: 15, name: 'options', value: 'coffee-maker3', label: 'Кофеварка3'},
+  {id: 16, name: 'options', value: 'microwave3', label: 'Микроволновка3', checked: true},
+  {id: 17, name: 'options', value: 'cookware3', label: 'Посуда3'},
+  {id: 18, name: 'options', value: 'dishwasher3', label: 'Посудомойка3'},
+]
 
 
 export const apartmentsMinsk: ApartmentCardProps[] = [

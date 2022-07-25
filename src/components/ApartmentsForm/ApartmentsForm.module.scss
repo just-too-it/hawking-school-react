@@ -1,11 +1,29 @@
 @import '../../styles/helpers/variables';
 
 .fieldset {
-  display: flex;
-  justify-content: flex-start;
   border: none;
   padding: 0;
   margin: 0;
+}
+
+.fieldsetCity {
+  box-shadow: 0px 20px 40px rgba(135, 124, 202, 0.15);
+  margin-bottom: 22.5px;
+}
+
+.top {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.topCity {
+  border-top: 1px solid $color-cobalt-10;
+  border-bottom: 1px solid $color-cobalt-10;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .item {
@@ -50,6 +68,13 @@
       width: 100px;
     }
   }
+  
+}
+
+.input {
+  & ~ ul {
+    width: 200px;
+  }
 }
 
 .itemTitle {
@@ -86,3 +111,26 @@
   display: flex;
   align-items: center;
 }
+
+.options {
+    height: 0;
+    max-height: 315px;
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in;
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    gap: 48px;
+    
+
+    & .item {
+      border-right: none;
+      padding: 0;
+      margin: 0;
+    
+      & input {
+        width: 200px;
+      }
+    }
+}
+

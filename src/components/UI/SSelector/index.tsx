@@ -3,25 +3,28 @@ import { SelectorProps } from './SSelector.types';
 import { Field } from 'formik';
 import { ReactComponent as MetroIcon } from '../../../assets/images/icons/metro.svg';
 import { useRefCloseOut } from '../../../hooks/useRefCloseOut';
+import { useLocation } from 'react-router-dom';
+import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
 
 export const SSelector: FC<{ options: SelectorProps[]; placeholder: string | number; name: string; setValue?: any; className?: string; setSelectedSwiftly?: any;}> = ({
   options,
   placeholder,
   name,
   setValue,
-  className,
+  className='',
   setSelectedSwiftly
 }) => {
   const [isActive, setIsActive] = useState(false);
-  const [selected, setSelected] = useState('');
+  const [selected, setSelected] = useState<string | number>('');
   const listRef = useRef() as React.MutableRefObject<HTMLUListElement>;
   const headerClassName = isActive ? `select__header select__header_active ${className}` : `select__header ${className}`;
+  const location = useLocation();
 
   useRefCloseOut(listRef, setIsActive);
 
   return (
     <div className={"select"} onClick={() => setIsActive(!isActive)}>
-      {name === 'metro' ? <MetroIcon width={20} height={13} fill={'#BDBDBD'} className={'select_metroIcon'}/> : null}{' '}
+      {name === 'metro' && location.pathname==PagesLinks.MAIN_PAGE ? <MetroIcon width={20} height={13} fill={'#BDBDBD'} className={'select_metroIcon'}/> : null}{' '}
       <Field
         type="text"
         className={headerClassName}

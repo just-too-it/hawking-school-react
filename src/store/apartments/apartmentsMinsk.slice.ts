@@ -3,6 +3,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { ApartmentCardProps } from '../../components/ApartmentCard/ApartmentCard.types';
 import { ApartmentsMinskProps } from '../../views/pages/ApartmentsMinsk/ApartmentsMinsk.types';
 import { RecommendationProps } from '../../views/pages/ApartmentsMinsk/Recommendations/Recommendations.types';
+import { CheckboxProps } from '../../components/UI/SCheckbox/SCheckbox.types';
 
 
 const initialApartmentsMinskState: ApartmentsMinskProps = {
@@ -17,7 +18,8 @@ const initialApartmentsMinskState: ApartmentsMinskProps = {
   rooms: '',
   priceFrom: '',
   priceTo: '',
-  peopleCount: ''
+  peopleCount: '',
+  options: ["stove", "microwave"]
 };
 
 export const apartmentsMinskSlice = createSlice({
@@ -56,6 +58,9 @@ export const apartmentsMinskSlice = createSlice({
     },
     setPeopleCount(state, action: PayloadAction<number|string>) {
       state.peopleCount = action.payload;
+    },
+    setOptions(state, action: PayloadAction<string[]>) {
+      state.options = action.payload;
     },
   },
 });
