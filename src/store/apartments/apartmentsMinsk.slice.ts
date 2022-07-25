@@ -47,7 +47,7 @@ export const apartmentsMinskSlice = createSlice({
     setRecommendations(state, action: PayloadAction<RecommendationProps[]>) {
       state.recommendations = action.payload;
     },
-    setRooms(state, action: PayloadAction<number|string>) {
+    setRooms(state, action: PayloadAction<string>) {
       state.rooms = action.payload;
     },
     setPriceFrom(state, action: PayloadAction<number|string>) {

@@ -457,7 +457,7 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
   },
   {
     id: 3,
-    title: '4-комн. апартаменты на Грушевке',
+    title: '1 комн. апартаменты на Грушевке',
     address: {
       city: 'Минск',
       street: 'б-р Мулявина, д. 10',
@@ -469,7 +469,7 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
     price: 65.00,
     peopleCount: 4,
     peopleCountByRoom: '(2+2)',
-    rooms: '4 комн.',
+    rooms: '1 комн.',
     square: 179,
     description: 'Большая четырехкомнатная студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена, ',
     owner: {

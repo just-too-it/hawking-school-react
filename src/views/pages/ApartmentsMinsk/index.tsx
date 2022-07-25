@@ -14,7 +14,7 @@ import styles from './ApartmentsMinsk.module.scss';
 import { ApartmentsForm } from '../../../components/ApartmentsForm';
 
 export const ApartmentsMinsk = () => {
-  const { apartments, cardsPerPage, currentPage, recommendations } = useSelector(
+  const { apartments, cardsPerPage, currentPage, recommendations, metro, district, rooms, priceFrom, priceTo } = useSelector(
     (state: RootState) => state.apartmentsMinskReducer
   );
   const { setApartments, setCurrentPage, setRecommendations } = apartmentsMinskSlice.actions;
@@ -24,6 +24,19 @@ export const ApartmentsMinsk = () => {
     dispatch(setApartments(apartmentsMinsk));
     dispatch(setRecommendations(recommendationsMinsk));
   }, []);
+
+  useEffect(() => {
+    if (metro || district || rooms || priceFrom || priceTo) {
+      const filteredApartments = apartmentsMinsk.filter(
+        (apart) =>
+          apart.address.metro.toLowerCase() == metro.toLowerCase() ||
+          apart.address.district.toLowerCase() == district.toLowerCase() ||
+          apart.rooms.toLowerCase() == rooms.toLowerCase() /* ||
+          ((priceFrom && !priceTo) && apart.price > priceFrom) &&
+          ((!priceFrom && priceTo) && apart.price < priceTo) */);
+      dispatch(setApartments(filteredApartments));
+    }
+  }, [metro, district, rooms, priceFrom, priceTo]);
 
   return (
     <main className={styles.apartments}>

@@ -10,7 +10,7 @@ export type ApartmentsMinskProps = {
     city?: string;
     metro?: string;
     district?: string;
-    rooms?: number | string;
+    rooms?: string;
     priceFrom?: number | string;
     priceTo?: number | string;
     peopleCount?: number | string;
