@@ -14,9 +14,7 @@ import { FilterMinsk } from '../FilterMinsk';
 import styles from './RentApartment.module.scss';
 
 export const RentApartment = () => {
-  const { apartments, currentPage } = useSelector(
-    (state: RootState) => state.apartmentsMinskReducer
-  );
+  const { apartments, currentPage, metro, district } = useSelector((state: RootState) => state.apartmentsMinskReducer);
   const { setApartments, setCurrentPage } = apartmentsMinskSlice.actions;
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -25,6 +23,17 @@ export const RentApartment = () => {
   useEffect(() => {
     dispatch(setApartments(apartmentsMinsk));
   }, []);
+
+  useEffect(() => {
+    if (metro || district) {
+      const filteredApartments = apartmentsMinsk.filter(
+        (apart) =>
+          apart.address.metro.toLowerCase() == metro.toLowerCase() ||
+          apart.address.district.toLowerCase() == district.toLowerCase()
+      );
+      dispatch(setApartments(filteredApartments));
+    }
+  }, [metro, district]);
 
   return (
     <section className={styles.rent}>
@@ -35,26 +44,24 @@ export const RentApartment = () => {
       </div>
       <div className={styles.apartments}>
         {apartments && (
-          <ApartmentList
-            apartments={apartments}
-            cardsPerPage={CARDS_PER_PAGE_HOME}
-            currentPage={currentPage}
-          />
+          <ApartmentList apartments={apartments} cardsPerPage={CARDS_PER_PAGE_HOME} currentPage={currentPage} />
         )}
       </div>
       <div className={styles.pagination}>
-      <Pagination
-        currentPage={currentPage}
-        totalPage={apartments ? getPageCount(apartments.length, CARDS_PER_PAGE_HOME) : 1}
-        action={setCurrentPage}
-      />
+        <Pagination
+          currentPage={currentPage}
+          totalPage={apartments ? getPageCount(apartments.length, CARDS_PER_PAGE_HOME) : 1}
+          action={setCurrentPage}
+        />
       </div>
-      
+
       <div className={styles.offers}>
         <div>
-          <div className={styles.count}>
-            {apartmentsMinsk.length} <span>+</span>
-          </div>
+          {apartments ? (
+            <div className={styles.count}>
+              {apartments.length} <span>+</span>
+            </div>
+          ) : null}
           <div className={styles.description}>Предложений по Минску</div>
         </div>
         <div className={styles.button}>

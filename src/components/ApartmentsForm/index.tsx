@@ -218,7 +218,13 @@ export const ApartmentsForm = () => {
                     </div>
                     {viewForm !== 'Home' && (
                       <div className={clsx(styles.item, viewForm == 'Minsk' && styles.itemCity)}>
-                        <SButton type="reset" label="Очистить" view={'clear'} width={'100px'} btnOnClick={()=>resetForm()} />
+                        <SButton type="reset" label="Очистить" view={'clear'} width={'100px'} btnOnClick={()=>{
+                          resetForm();
+
+/*                           dispatch(setRoomsMinsk(''));
+                          values.rooms = '' */
+                        }
+                          } />
                       </div>
                     )}
                     {viewForm == 'Home' && (
