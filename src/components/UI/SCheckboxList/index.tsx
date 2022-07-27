@@ -1,13 +1,13 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { apartmentsMinskSlice } from '../../../store/apartments/apartmentsMinsk.slice';
 
 import { SCheckbox } from '../SCheckbox';
 import { CheckboxProps } from '../SCheckbox/SCheckbox.types';
 
 import styles from './SCheckboxList.module.scss';
 
-export const SCheckboxList: FC<{ options: CheckboxProps[]; setValue }> = ({ options=[], setValue }) => {
-  const [selected, setSelected] = useState([]);
- /*  const [checked, setChecked] = useState(false) */
+export const SCheckboxList: FC<{ options: CheckboxProps[]/* ; setValue */ }> = ({ options/* , setValue */ }) => {
 
   return (
     <ul className={styles.list}>
@@ -18,12 +18,6 @@ export const SCheckboxList: FC<{ options: CheckboxProps[]; setValue }> = ({ opti
             id={option.id}
             name={option.name}
             value={option.value}
-            checked={option.checked /* ? !checked : checked */}
-            onClick={() => {
-              setSelected([...selected, option.value]);
-              setValue(option.name, selected);
-              /* setChecked(!checked) */
-            }}
           />
         </li>
       ))}

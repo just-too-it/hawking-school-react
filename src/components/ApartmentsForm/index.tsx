@@ -66,7 +66,6 @@ export const ApartmentsForm = () => {
     peopleCount,
     district,
     metro,
-    options,
   } = useSelector((state: RootState) => state.apartmentsMinskReducer);
 
   const initialValuesHome = {
@@ -84,7 +83,7 @@ export const ApartmentsForm = () => {
     peopleCount: peopleCount,
     district: district,
     metro: metro,
-    options: options,
+    options: ['oven', 'microwave'],
   };
 
   const validationSchema: unknown = yup.object().shape({
@@ -123,6 +122,10 @@ export const ApartmentsForm = () => {
         break;
     }
   }, [viewForm]);
+
+  useEffect(() => {
+    dispatch(setOptions(initialValuesMinsk.options));
+  }, []);
 
   return (
     <>
@@ -165,7 +168,7 @@ export const ApartmentsForm = () => {
           }}
           validationSchema={validationSchema}
         >
-          {({ handleSubmit, setFieldValue, handleReset }) => (
+          {({ values, handleSubmit, setFieldValue, handleReset }) => (
             <Form className={styles.form}>
               <fieldset className={clsx(styles.fieldset, viewForm == 'Minsk' && styles.fieldsetCity)}>
                 <div className={clsx(styles.top, viewForm == 'Minsk' && styles.topCity)}>
@@ -222,6 +225,7 @@ export const ApartmentsForm = () => {
                             dispatch(setDistrict(''));
                             dispatch(setMetro(''));
                             dispatch(setOptions([]));
+                            values.options = [];
                           }}
                         />
                       </div>
@@ -295,7 +299,7 @@ export const ApartmentsForm = () => {
                       </div>
                       <div></div>
                       <div></div>
-                      <SCheckboxList options={optionsList} setValue={setFieldValue} />
+                      <SCheckboxList options={optionsList} />
                     </div>
                   </div>
                 )}
