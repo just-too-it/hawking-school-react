@@ -1,3 +1,4 @@
+import { CheckboxProps } from "../UI/SCheckbox/SCheckbox.types";
 import { UserCardProps } from "../UserCard/UserCard.types";
 
 export type ApartmentCardProps = {
@@ -17,5 +18,6 @@ export type ApartmentCardProps = {
     rooms?: string;
     square?: number;
     description?: string;
+    options?: string[];
     owner?: UserCardProps;
 }

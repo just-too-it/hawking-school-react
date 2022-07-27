@@ -19,7 +19,7 @@ const initialApartmentsMinskState: ApartmentsMinskProps = {
   priceFrom: '',
   priceTo: '',
   peopleCount: '',
-  options: ["stove", "microwave"]
+  options: [/* "stove", "microwave" */]
 };
 
 export const apartmentsMinskSlice = createSlice({

@@ -149,6 +149,9 @@ export const citysList: SelectorProps[] = [
 export const peopleList: SelectorProps[] = [
   { id: 1, value: 1 },
   { id: 2, value: 2 },
+  { id: 3, value: 3 },
+  { id: 4, value: 4 },
+  { id: 5, value: 5 }
 ];
 
 
@@ -428,7 +431,8 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       email: 'vladimir6234@tut.by',
       img: owner,
       status: 'Владелец'
-    }
+    },
+    options: ['coffee-maker']
   },
   {
     id: 1,
@@ -453,7 +457,8 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       email: 'vladimir6234@tut.by',
       img: owner,
       status: 'Владелец'
-    }
+    },
+    options: ['coffee-maker', 'dishwasher']
   },
   {
     id: 3,
@@ -478,7 +483,8 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       email: 'vladimir6234@tut.by',
       img: owner,
       status: 'Владелец'
-    }
+    },
+    options: ['stove']
   },
   {
     id: 4,
@@ -491,7 +497,7 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
     },
     img: [room1],
     status: 'Gold',
-    price: 40.00,
+    price: 55.00,
     peopleCount: 3,
     peopleCountByRoom: '(2+1)',
     rooms: '3 комн.',
@@ -503,7 +509,34 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       email: 'vladimir6234@tut.by',
       img: owner,
       status: 'Владелец'
-    }
+    },
+    options: ['microwave']
+  },
+  {
+    id: 5,
+    title: '2-комн. апартаменты на Московской',
+    address: {
+      city: 'Минск',
+      street: 'б-р Мулявина, д. 10',
+      metro: 'Академия наук',
+      district: 'Советский',
+    },
+    img: [room1],
+    status: 'Gold',
+    price: 50.00,
+    peopleCount: 1,
+    peopleCountByRoom: '(1)',
+    rooms: '2 комн.',
+    square: 140,
+    description: 'Большая 2х комн студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена, ',
+    owner: {
+      name: 'Dmitriy',
+      phone: '+375 (29) 291-14-44',
+      email: 'vladimir6234@tut.by',
+      img: owner,
+      status: 'Владелец'
+    },
+    options: ['microwave']
   }
 ] 
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Formik, Form, validateYupSchema } from 'formik';
+import { Formik, Form } from 'formik';
 import * as yup from 'yup';
 import clsx from 'clsx';
 
@@ -32,7 +32,6 @@ export const ApartmentsForm = () => {
   const [viewForm, setViewForm] = useState<string>('');
   const [initialValues, setInitialValues] = useState<FilterMainProps | ApartmentsMinskProps | any>();
   const optionsRef = useRef() as React.MutableRefObject<HTMLDivElement>;
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const {
@@ -125,14 +124,6 @@ export const ApartmentsForm = () => {
     }
   }, [viewForm]);
 
-  /*   useEffect(()=>{
-    optionsList.forEach((option)=> {
-      if (option.checked) {
-        dispatch(setOptions([...options, option.value]))
-      }
-    })
-  },[]) */
-
   return (
     <>
       {initialValues && (
@@ -166,7 +157,6 @@ export const ApartmentsForm = () => {
                   dispatch(setDistrict(values.district));
                   dispatch(setMetro(values.metro));
                   dispatch(setOptions(values.options));
-                  console.log('Фильтрация квартир в Минске');
                   break;
                 default:
                   break;
@@ -175,7 +165,7 @@ export const ApartmentsForm = () => {
           }}
           validationSchema={validationSchema}
         >
-          {({ errors, handleSubmit, setFieldValue, isValid, resetForm, values }) => (
+          {({ handleSubmit, setFieldValue, handleReset }) => (
             <Form className={styles.form}>
               <fieldset className={clsx(styles.fieldset, viewForm == 'Minsk' && styles.fieldsetCity)}>
                 <div className={clsx(styles.top, viewForm == 'Minsk' && styles.topCity)}>
@@ -195,7 +185,7 @@ export const ApartmentsForm = () => {
                       <div className={styles.itemTitle}>Комнаты</div>
                       <SSelector
                         options={roomsList}
-                        placeholder={initialValues.rooms ? initialValues.rooms : 'Выберите'}
+                        placeholder={roomsMinsk ? roomsMinsk : 'Выберите'}
                         name={'rooms'}
                         setValue={setFieldValue}
                       />
@@ -218,13 +208,22 @@ export const ApartmentsForm = () => {
                     </div>
                     {viewForm !== 'Home' && (
                       <div className={clsx(styles.item, viewForm == 'Minsk' && styles.itemCity)}>
-                        <SButton type="reset" label="Очистить" view={'clear'} width={'100px'} btnOnClick={()=>{
-                          resetForm();
-
-/*                           dispatch(setRoomsMinsk(''));
-                          values.rooms = '' */
-                        }
-                          } />
+                        <SButton
+                          type="reset"
+                          label="Очистить"
+                          view={'clear'}
+                          width={'100px'}
+                          btnOnClick={() => {
+                            handleReset();
+                            dispatch(setRoomsMinsk(''));
+                            dispatch(setPriceFromMinsk(''));
+                            dispatch(setPriceToMinsk(''));
+                            dispatch(setPeopleCount(''));
+                            dispatch(setDistrict(''));
+                            dispatch(setMetro(''));
+                            dispatch(setOptions([]));
+                          }}
+                        />
                       </div>
                     )}
                     {viewForm == 'Home' && (

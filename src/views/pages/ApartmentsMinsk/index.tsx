@@ -9,14 +9,23 @@ import { breadcrumbsForApartmentsMinsk, apartmentsMinsk, recommendationsMinsk } 
 import { getPageCount } from '../../../core/utils/getPageCount';
 import { apartmentsMinskSlice } from '../../../store/apartments/apartmentsMinsk.slice';
 import { Recommendations } from './Recommendations';
-
-import styles from './ApartmentsMinsk.module.scss';
 import { ApartmentsForm } from '../../../components/ApartmentsForm';
 
+import styles from './ApartmentsMinsk.module.scss';
+
 export const ApartmentsMinsk = () => {
-  const { apartments, cardsPerPage, currentPage, recommendations, metro, district, rooms, priceFrom, priceTo } = useSelector(
-    (state: RootState) => state.apartmentsMinskReducer
-  );
+  const {
+    apartments,
+    cardsPerPage,
+    currentPage,
+    recommendations,
+    metro,
+    district,
+    rooms,
+    priceFrom,
+    priceTo,
+    peopleCount, options
+  } = useSelector((state: RootState) => state.apartmentsMinskReducer);
   const { setApartments, setCurrentPage, setRecommendations } = apartmentsMinskSlice.actions;
   const dispatch = useDispatch();
 
@@ -26,17 +35,38 @@ export const ApartmentsMinsk = () => {
   }, []);
 
   useEffect(() => {
-    if (metro || district || rooms || priceFrom || priceTo) {
-      const filteredApartments = apartmentsMinsk.filter(
-        (apart) =>
-          apart.address.metro.toLowerCase() == metro.toLowerCase() ||
-          apart.address.district.toLowerCase() == district.toLowerCase() ||
-          apart.rooms.toLowerCase() == rooms.toLowerCase() /* ||
-          ((priceFrom && !priceTo) && apart.price > priceFrom) &&
-          ((!priceFrom && priceTo) && apart.price < priceTo) */);
-      dispatch(setApartments(filteredApartments));
+    let filteredApartments = apartmentsMinsk;
+
+    if (rooms && rooms !== '') {
+      filteredApartments = filteredApartments.filter((apart) => apart.rooms.toLowerCase() == rooms.toLowerCase());
     }
-  }, [metro, district, rooms, priceFrom, priceTo]);
+    if (priceFrom) {
+      filteredApartments = filteredApartments.filter((apart) => Number(apart.price) >= Number(priceFrom));
+    }
+    if (priceTo) {
+      filteredApartments = filteredApartments.filter((apart) => Number(apart.price) <= Number(priceTo));
+    }
+    if (peopleCount && peopleCount !== '') {
+      filteredApartments = filteredApartments.filter((apart) => Number(apart.peopleCount) == Number(peopleCount));
+    }
+    if (district && district !== '') {
+      filteredApartments = filteredApartments.filter(
+        (apart) => apart.address.district.toLowerCase() == district.toLowerCase()
+      );
+    }
+    if (metro && metro !== '') {
+      filteredApartments = filteredApartments.filter(
+        (apart) => apart.address.metro.toLowerCase() == metro.toLowerCase()
+      );
+    }
+    if (options && options.length !== 0) {
+      filteredApartments = filteredApartments.filter(
+        (apart) => options.some((item) => apart.options.includes(item))
+      );
+    }
+    
+    dispatch(setApartments(filteredApartments));
+  }, [metro, district, rooms, priceFrom, priceTo, peopleCount, options]);
 
   return (
     <main className={styles.apartments}>
@@ -52,14 +82,13 @@ export const ApartmentsMinsk = () => {
       <div className={styles.form}>
         <ApartmentsForm />
       </div>
-        <div className="container">
+      <div className="container">
         <section>
           <div className={styles.list}>
             {apartments && (
               <ApartmentList apartments={apartments} cardsPerPage={cardsPerPage} currentPage={currentPage} />
             )}
           </div>
-
           <Pagination
             currentPage={currentPage}
             totalPage={apartments ? getPageCount(apartments.length, cardsPerPage) : 1}
