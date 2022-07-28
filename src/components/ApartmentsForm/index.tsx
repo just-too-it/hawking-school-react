@@ -29,7 +29,7 @@ import styles from './ApartmentsForm.module.scss';
 
 export const ApartmentsForm = () => {
   const location = useLocation();
-  const [viewForm, setViewForm] = useState<string>('');
+  const [viewForm, setViewForm] = useState('');
   const [initialValues, setInitialValues] = useState<FilterMainProps | ApartmentsMinskProps | any>();
   const optionsRef = useRef() as React.MutableRefObject<HTMLDivElement>;
   const navigate = useNavigate();

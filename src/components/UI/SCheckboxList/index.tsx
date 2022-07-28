@@ -1,13 +1,11 @@
-import React, { FC, useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { apartmentsMinskSlice } from '../../../store/apartments/apartmentsMinsk.slice';
+import React, { FC } from 'react';
 
 import { SCheckbox } from '../SCheckbox';
 import { CheckboxProps } from '../SCheckbox/SCheckbox.types';
 
 import styles from './SCheckboxList.module.scss';
 
-export const SCheckboxList: FC<{ options: CheckboxProps[]/* ; setValue */ }> = ({ options/* , setValue */ }) => {
+export const SCheckboxList: FC<{ options: CheckboxProps[] }> = ({ options }) => {
 
   return (
     <ul className={styles.list}>

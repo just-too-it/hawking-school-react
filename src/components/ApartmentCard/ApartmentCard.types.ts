@@ -20,4 +20,5 @@ export type ApartmentCardProps = {
     description?: string;
     options?: string[];
     owner?: UserCardProps;
+    like?: boolean;
 }

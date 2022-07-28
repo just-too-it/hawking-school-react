@@ -3,7 +3,7 @@ import { INewsPreview } from '../../components/NewsPreview/NewsPreview.types';
 import { PagesLinks } from '../constants/pagesLinks.constant';
 import room from '../../assets/images/room.jpg';
 import room1 from '../../assets/images/room1.jpg';
-/* import room2 from '../../assets/images/room2.jpg'; */
+import room2 from '../../assets/images/room2.jpg';
 import roomAbout from '../../assets/images/room-about.jpg';
 import owner from '../../assets/images/owner.jpg';
 import { INewsItem } from '../../views/pages/NewsItem/NewsItem.types';
@@ -351,7 +351,7 @@ const apartmentCard: ApartmentCardProps = {
   peopleCountByRoom: '(2+2)',
   rooms: '4 комн.',
   square: 179,
-  description: 'Большая четырехкомнатная студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена, ',
+  description: 'Большая четырехкомнатная студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена.',
   owner: {
     name: 'Dmitriy',
     phone: '+375 (29) 291-14-44',
@@ -417,14 +417,14 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       metro: 'Грушевка',
       district: 'Шабаны',
     },
-    img: [room1],
+    img: [room2],
     status: 'Gold',
     price: 65.00,
     peopleCount: 4,
     peopleCountByRoom: '(2+2)',
     rooms: '4 комн.',
     square: 179,
-    description: 'Большая четырехкомнатная студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена, ',
+    description: 'Большая четырехкомнатная студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена.',
     owner: {
       name: 'Dmitriy',
       phone: '+375 (29) 291-14-44',
@@ -443,14 +443,14 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       metro: 'Московская',
       district: 'Шабаны',
     },
-    img: [room1],
+    img: [room],
     status: 'Gold',
     price: 40.00,
     peopleCount: 3,
     peopleCountByRoom: '(2+1)',
     rooms: '3 комн.',
     square: 140,
-    description: 'Большая 3х комн студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена, ',
+    description: 'Большая 3х комн студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена. Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена. ',
     owner: {
       name: 'Dmitriy',
       phone: '+375 (29) 291-14-44',
@@ -458,7 +458,8 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       img: owner,
       status: 'Владелец'
     },
-    options: ['coffee-maker', 'dishwasher']
+    options: ['coffee-maker', 'dishwasher'],
+    like: true
   },
   {
     id: 3,
@@ -469,14 +470,14 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       metro: 'Грушевка',
       district: 'Шабаны',
     },
-    img: [room1],
+    img: [room],
     status: 'Gold',
     price: 65.00,
     peopleCount: 4,
     peopleCountByRoom: '(2+2)',
     rooms: '1 комн.',
     square: 179,
-    description: 'Большая четырехкомнатная студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена, ',
+    description: 'Большая четырехкомнатная студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена. ',
     owner: {
       name: 'Dmitriy',
       phone: '+375 (29) 291-14-44',
@@ -495,14 +496,14 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       metro: 'Московская',
       district: 'Шабаны',
     },
-    img: [room1],
+    img: [room],
     status: 'Gold',
     price: 55.00,
     peopleCount: 3,
     peopleCountByRoom: '(2+1)',
     rooms: '3 комн.',
     square: 140,
-    description: 'Большая 3х комн студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена, ',
+    description: 'Большая 3х комн студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена.',
     owner: {
       name: 'Dmitriy',
       phone: '+375 (29) 291-14-44',
@@ -521,14 +522,14 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       metro: 'Академия наук',
       district: 'Советский',
     },
-    img: [room1],
-    status: 'Gold',
+    img: [room],
+    status: '',
     price: 50.00,
     peopleCount: 1,
     peopleCountByRoom: '(1)',
     rooms: '2 комн.',
     square: 140,
-    description: 'Большая 2х комн студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена, ',
+    description: 'Большая 2х комн студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена.  Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону!',
     owner: {
       name: 'Dmitriy',
       phone: '+375 (29) 291-14-44',

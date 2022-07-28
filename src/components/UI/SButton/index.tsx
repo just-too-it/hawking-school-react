@@ -34,10 +34,10 @@ export const SButton: FC<IButton> = ({ label, type = 'button', btnOnClick, view,
         setButtonClassName('button button_cobalt-arrowGrad');
         setIconAfter(<ArrowIcon width={10} height={10} />);
         break;
-        case 'cobaltArrow':
-          setButtonClassName('button button_cobalt-arrow');
-          setIconAfter(<ArrowIcon width={10} height={10} />);
-          break;
+      case 'cobaltArrow':
+        setButtonClassName('button button_cobalt-arrow');
+        setIconAfter(<ArrowIcon width={10} height={10} />);
+        break;
       case 'violetGradient':
         setButtonClassName('button button_violet-gradient');
         break;
@@ -52,10 +52,10 @@ export const SButton: FC<IButton> = ({ label, type = 'button', btnOnClick, view,
         setButtonClassName('button button_yellow-gradient');
         setIconAfter(<ArrowIcon width={10} height={10} />);
         break;
-        case 'yellowArrow':
-          setButtonClassName('button button_yellowArrow');
-          setIconAfter(<ArrowIcon width={10} height={10}/>);
-          break;
+      case 'yellowArrow':
+        setButtonClassName('button button_yellowArrow');
+        setIconAfter(<ArrowIcon width={10} height={10} />);
+        break;
       case 'warning':
         setButtonClassName('button button_warning');
         setIconAfter(<WarningIcon width={20} height={20} />);
@@ -83,14 +83,20 @@ export const SButton: FC<IButton> = ({ label, type = 'button', btnOnClick, view,
         setButtonClassName('button button_transparentCobalt button_arrowCobalt');
         setIconAfter(<ArrowIcon width={10} height={10} />);
         break;
-        case 'clear':
-          setButtonClassName('button button_clear');
-          break;
+      case 'clear':
+        setButtonClassName('button button_clear');
+        break;
+      case 'liked':
+        setButtonClassName('button button_liked');
+        break;
+      case 'likedActive':
+        setButtonClassName('button button_liked button_likedActive');
+        break;
       default:
         setButtonClassName('button');
         break;
     }
-  }, []);
+  }, [view]);
 
   return (
     <button type={type} onClick={btnOnClick} className={buttonClassName} style={{ width: width }} {...rest}>

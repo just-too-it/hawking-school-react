@@ -4,17 +4,21 @@ import { ReactComponent as MapIcon } from '../../../assets/images/icons/map.svg'
 import { ReactComponent as MetroIcon } from '../../../assets/images/icons/metro.svg';
 import { ReactComponent as PointIcon } from '../../../assets/images/icons/point.svg';
 import { ReactComponent as UserIcon } from '../../../assets/images/icons/user.svg';
+import { ReactComponent as HeartIcon } from '../../../assets/images/icons/heart4.svg';
 import { SButton } from '../../UI/SButton';
 import { useNavigate } from 'react-router-dom';
 import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
 import { UserCard } from '../../UserCard';
 
-import styles from './ApartmentCardVertical.module.scss';
+import styles from '../ApartmentCard.module.scss';
 import { useRefCloseOut } from '../../../hooks/useRefCloseOut';
+import { SButtonIcon } from '../../UI/SButtonIcon';
+import clsx from 'clsx';
 
 export const ApartmentCardVertical: FC<{ apartment: ApartmentCardProps }> = (props) => {
-  const { id, title, address, img, status, price, peopleCount, peopleCountByRoom, rooms, square, description, owner } =
+  const { id, title, address, img, status, price, peopleCount, peopleCountByRoom, rooms, square, description, owner, like=false } =
     props.apartment;
+    const [liked, setLiked] = useState(like)
 
   const navigate = useNavigate();
   const [ownerOpen, setOwnerOpen] = useState(false);
@@ -27,7 +31,7 @@ export const ApartmentCardVertical: FC<{ apartment: ApartmentCardProps }> = (pro
       <div className={styles.img}>
         <img src={img[0]} alt={title ? title : address.street} />
       </div>
-      <div className={styles.status}>{status}</div>
+      {status && <div className={styles.status}>{status}</div>}
       <div className={styles.container}>
         <div className={styles.info}>
           <div className={styles.price}>
@@ -39,7 +43,7 @@ export const ApartmentCardVertical: FC<{ apartment: ApartmentCardProps }> = (pro
               {peopleCount} {peopleCountByRoom}
             </div>
             <div className={styles.tag}>{rooms}</div>
-            {square && (
+            {location.pathname == PagesLinks.MAIN_PAGE && square && (
               <div className={styles.tag}>
                 {square} м<sup>2</sup>
               </div>
@@ -67,6 +71,7 @@ export const ApartmentCardVertical: FC<{ apartment: ApartmentCardProps }> = (pro
           </div>
         )}
         <footer className={styles.footer}>
+          {location.pathname !== PagesLinks.MAIN_PAGE && <button className={clsx(styles.like, liked && styles.likeActive)} type="button" onClick={() => setLiked(!liked)} />}
           <SButton
             label={'Контакты'}
             type={'button'}

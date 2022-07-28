@@ -86,7 +86,7 @@ export const ApartmentsMinsk = () => {
         <section>
           <div className={styles.list}>
             {apartments && (
-              <ApartmentList apartments={apartments} cardsPerPage={cardsPerPage} currentPage={currentPage} />
+              <ApartmentList apartments={apartments} isListMode={false} cardsPerPage={cardsPerPage} currentPage={currentPage} />
             )}
           </div>
           <Pagination

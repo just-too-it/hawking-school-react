@@ -341,4 +341,48 @@
       background: $color-grey-default;
     }
   }
+
+  &_liked {
+    background: $color-red-10;
+    border-radius: 22px;
+    font-weight: 600;
+    color: $color-red;
+    padding: 9px 40px 9px 15px;
+    text-shadow: none;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      width: 15px;
+      height: 13px;
+      content: '';
+      background-color: $color-red;
+      mask-image: url('../../../assets/images/icons/heart2-default.png');
+      mask-size: 15px 13px;
+      background-repeat: no-repeat;
+      top: calc(50% - 7px);
+      right: 15px;
+    }
+
+    &:hover {
+      &::after {
+        transition: mask-image 0.2s ease-in;
+        mask-image: url('../../../assets/images/icons/heart2-hover.png');
+      }
+    }
+  }
+
+  &_likedActive {
+    &::after {
+      transition: mask-image 0.2s ease-in;
+      mask-image: url('../../../assets/images/icons/heart2-active.png');
+    }
+  
+    &:hover {
+      &::after {
+        transition: mask-image 0.2s ease-in;
+        mask-image: url('../../../assets/images/icons/heart2-active.png');
+      }
+    }
+  }
 }
