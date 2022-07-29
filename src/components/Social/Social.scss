@@ -116,4 +116,34 @@
       }
     }
   }
+
+  &_apartments {  
+    width: 345px;
+
+    & .social__title {
+      font-size: 14px;
+      line-height: 17px;
+      color: $color-grey-dark;
+      margin-right: 20px;
+    }
+
+    & .social__item {
+      width: 35px;
+      height: 35px;
+      margin-right: 14px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    & .social__link {
+      background: #F4F5FA;
+      border-radius: 25px;
+
+      & svg {
+        fill: $color-black;
+      }
+    }
+  }
 }

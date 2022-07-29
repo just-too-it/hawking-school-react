@@ -17,6 +17,11 @@ import { Recommendations } from './Recommendations';
 import { ApartmentsForm } from '../../../components/ApartmentsForm';
 
 import styles from './ApartmentsMinsk.module.scss';
+import { SearchOnMap } from '../../../components/SearchOnMap';
+import { useNavigate } from 'react-router-dom';
+import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
+import { Social } from '../../../components/Social';
+import { socialApartments, socialNews } from '../../../core/constants/social.constant';
 
 export const ApartmentsMinsk = () => {
   const {
@@ -36,6 +41,7 @@ export const ApartmentsMinsk = () => {
   } = useSelector((state: RootState) => state.apartmentsMinskReducer);
   const { setApartments, setCurrentPage, setRecommendations } = apartmentsMinskSlice.actions;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(setApartments(apartmentsMinsk));
@@ -97,24 +103,31 @@ export const ApartmentsMinsk = () => {
         <ApartmentsForm />
       </div>
       <div className="container">
-        <section>
-          <div className={styles.list}>
-            {apartments && (
-              <ApartmentList
-                apartments={apartments}
-                isListMode={listMode}
-                cardsPerPage={cardsPerPage}
-                currentPage={currentPage}
-              />
-            )}
-          </div>
+        <div className={styles.list}>
+          {apartments && (
+            <ApartmentList
+              apartments={apartments}
+              isListMode={listMode}
+              cardsPerPage={cardsPerPage}
+              currentPage={currentPage}
+            />
+          )}
+        </div>
+        <div className={styles.footer}>
           <Pagination
             currentPage={currentPage}
             totalPage={apartments ? getPageCount(apartments.length, cardsPerPage) : 1}
             action={setCurrentPage}
           />
-        </section>
+          <Social socialBlock={socialApartments} />
+        </div>
       </div>
+      <SearchOnMap
+        title={'Показать найденные квартиры на карте'}
+        description={'Ищите новостройки рядом с работой, парком или родственниками'}
+        btn={{ label: 'Открыть карту', btnOnClick: () => navigate(PagesLinks.MAPS_PAGE) }}
+        height={'310px'}
+      />
     </main>
   );
 };

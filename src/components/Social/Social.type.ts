@@ -8,5 +8,5 @@ interface ISocial {
 export interface ISocialBlock {
     title?: string;
     socials: ISocial[];
-    placeOfUse?: 'footer' | 'news' | 'contacts' | 'contacts-right';
+    placeOfUse?: 'footer' | 'news' | 'contacts' | 'contacts-right' | 'apartments';
 }

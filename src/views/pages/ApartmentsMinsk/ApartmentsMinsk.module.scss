@@ -25,20 +25,12 @@
   font-size: 25px;
 }
 
-/* .form {
-  background: $color-white;
-  box-shadow: 0px 20px 40px rgba(39, 95, 158, 0.08);
-  margin-bottom: 21px;
-
-  & form {
-    max-width: 1310px;
-    width: 100%;
-    margin: 0 auto;
-    padding-left: 35px;
-    padding-right: 35px;
-  }
-} */
-
 .list {
   margin-bottom: 80px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
 }

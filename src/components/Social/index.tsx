@@ -20,7 +20,9 @@ export const Social: FC<{ socialBlock: ISocialBlock }> = (props) => {
     'social',
     placeOfUse == 'news' && 'social_news',
     placeOfUse == 'contacts' && 'social_contacts',
-    placeOfUse == 'contacts-right' && 'social_contacts social_contacts-right'
+    placeOfUse == 'contacts-right' && 'social_contacts social_contacts-right',
+    placeOfUse == 'apartments' && 'social_apartments',
+
   );
 
   const settingIcon = (iconName) => {

@@ -21,6 +21,18 @@ export const socialNews: ISocialBlock = {
     placeOfUse: 'news'
 }
 
+export const socialApartments: ISocialBlock = {
+    title: 'Поделиться',
+    socials: [
+        {name: 'vk', link:'/mock-link', icon: 'vk-share'},
+        {name: 'facebook', link:'/mock-link', icon: 'facebook-share'},
+        {name: 'viber', link:'/mock-link', icon: 'viber-share'},
+        {name: 'telegram', link:'/mock-link', icon: 'telegram-share'},
+        {name: 'whatsapp', link:'/mock-link', icon: 'whatsapp-share'}
+    ],
+    placeOfUse: 'apartments'
+}
+
 export const socialContactsLeft: ISocialBlock = {
     socials: [
         {name: 'viber', link:'/mock-link', icon: 'viber-share'},
