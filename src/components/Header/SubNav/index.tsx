@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
 import { Logo } from '../../Logo';
 import { Link, useLocation } from 'react-router-dom';
 import { SButton } from '../../UI/SButton';
@@ -45,6 +45,22 @@ export const SubNav: FC<{ menu: IItemSubNav[] }> = (props) => {
 
   useRefCloseOut(refSubMenu, setIsActiveSubmenu);
 
+  const memoizedItemClassName = useCallback(
+    (item) => {
+      let itemClassName = 'subnav__item'
+     
+      if (item.link) {
+        itemClassName = location.pathname == item.link ? 'subnav__item subnav__item_active' : 'subnav__item'
+      } else {
+        if (location.pathname.includes('apartments')) {
+          itemClassName = 'subnav__item subnav__item_active';
+        } 
+      }
+      return itemClassName;
+    },
+    [location.pathname]
+  );
+
   return (
     <div className="subnav">
       <div className="container">
@@ -61,7 +77,7 @@ export const SubNav: FC<{ menu: IItemSubNav[] }> = (props) => {
           {props.menu.map((item) => (
             <li
               key={item.title}
-              className={location.pathname !== item.link ? 'subnav__item' : 'subnav__item subnav__item_active'}
+              className={memoizedItemClassName(item)}
               onClick={() => {
                 item.list ? setIsActiveSubmenu(!isActiveSubmenu) : null;
               }}
