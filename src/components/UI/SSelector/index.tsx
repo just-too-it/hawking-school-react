@@ -2,6 +2,7 @@ import React, { useState, FC, useRef, useEffect } from 'react';
 import { SelectorProps } from './SSelector.types';
 import { Field } from 'formik';
 import { ReactComponent as MetroIcon } from '../../../assets/images/icons/metro.svg';
+import { ReactComponent as SortIcon } from '../../../assets/images/icons/sort.svg';
 import { useRefCloseOut } from '../../../hooks/useRefCloseOut';
 import { useLocation } from 'react-router-dom';
 import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
@@ -29,6 +30,9 @@ export const SSelector: FC<{
       {name === 'metro' && location.pathname == PagesLinks.MAIN_PAGE ? (
         <MetroIcon width={20} height={13} fill={'#BDBDBD'} className={'select_metroIcon'} />
       ) : null}{' '}
+            {name === 'sort' ? (
+        <SortIcon width={15} height={15} fill={'#7A7F86'} className={'select_sortIcon'} />
+      ) : null}{' '}
       <Field type="text" className={headerClassName} placeholder={placeholder} name={name} />
       {isActive && (
         <ul className="select__list" ref={listRef}>
@@ -40,7 +44,7 @@ export const SSelector: FC<{
                 setSelected(option.value);
                 setIsActive(false);
                 setValue(name, option.value); //для Formik (основной формы) - установка значения для передачи в форме
-                setSelectedSwiftly; //для Formik (формы на главной) - когда нет кнопки и нужна мгновенная фильтрация по выбранному значению
+                setSelectedSwiftly; //для формы на главной - когда нет кнопки и нужна мгновенная фильтрация по выбранному значению
               }}
             >
               {option.value}

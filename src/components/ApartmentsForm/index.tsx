@@ -15,6 +15,7 @@ import {
   districtsMinskList,
   metroMinskList,
   optionsList,
+  sortList,
 } from '../../core/mockData/mockData';
 import { filterMainSlice } from '../../store/filterMain/filterMain.slice';
 import { useNavPageCity } from '../../hooks/useNavPageCity';
@@ -32,6 +33,8 @@ export const ApartmentsForm = () => {
   const [viewForm, setViewForm] = useState('');
   const [initialValues, setInitialValues] = useState<FilterMainProps | ApartmentsMinskProps | any>();
   const optionsRef = useRef() as React.MutableRefObject<HTMLDivElement>;
+  const [isListMode, setIsListMode] = useState(true);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const {
@@ -49,6 +52,8 @@ export const ApartmentsForm = () => {
     setDistrict,
     setMetro,
     setOptions,
+    setListMode,
+    setSortMode,
   } = apartmentsMinskSlice.actions;
 
   const {
@@ -66,6 +71,8 @@ export const ApartmentsForm = () => {
     peopleCount,
     district,
     metro,
+    listMode,
+    sortMode,
   } = useSelector((state: RootState) => state.apartmentsMinskReducer);
 
   const initialValuesHome = {
@@ -84,6 +91,8 @@ export const ApartmentsForm = () => {
     district: district,
     metro: metro,
     options: ['oven', 'microwave'],
+    listMode: listMode,
+    sort: sortMode,
   };
 
   const validationSchema: unknown = yup.object().shape({
@@ -105,6 +114,12 @@ export const ApartmentsForm = () => {
   };
 
   const handleBtnOptionsHome = (handleSubmit) => handleSubmit;
+
+  const useUpdateFilter = (action, value) => {
+    useEffect(() => {
+      dispatch(action(value));
+    }, [value]);
+  };
 
   useEffect(() => {
     switch (location.pathname) {
@@ -160,6 +175,7 @@ export const ApartmentsForm = () => {
                   dispatch(setDistrict(values.district));
                   dispatch(setMetro(values.metro));
                   dispatch(setOptions(values.options));
+                  dispatch(setSortMode(values.sort));
                   break;
                 default:
                   break;
@@ -219,13 +235,14 @@ export const ApartmentsForm = () => {
                           btnOnClick={() => {
                             handleReset();
                             dispatch(setRoomsMinsk(''));
-                            dispatch(setPriceFromMinsk(''));
-                            dispatch(setPriceToMinsk(''));
+                            dispatch(setPriceFromMinsk(0));
+                            dispatch(setPriceToMinsk(0));
                             dispatch(setPeopleCount(''));
                             dispatch(setDistrict(''));
                             dispatch(setMetro(''));
-                            dispatch(setOptions([]));
+                            dispatch(setOptions([])); 
                             values.options = [];
+                            dispatch(setSortMode(''));
                           }}
                         />
                       </div>
@@ -265,43 +282,80 @@ export const ApartmentsForm = () => {
                 </div>
 
                 {viewForm == 'Minsk' && (
-                  <div className={clsx(styles.container, 'container')}>
-                    <div className={clsx(styles.options)} ref={optionsRef}>
-                      <div className={clsx(styles.item, styles.itemAdd)}>
-                        <div className={styles.itemTitle}>Спальные места</div>
-                        <SSelector
-                          options={peopleList}
-                          placeholder={initialValues.peopleCount ? initialValues.peopleCount : 'Выберите'}
-                          name={'peopleCount'}
-                          setValue={setFieldValue}
-                          className={styles.input}
-                        />
+                  <>
+                    <div className={clsx(styles.container, 'container')}>
+                      <div className={clsx(styles.options)} ref={optionsRef}>
+                        <div className={clsx(styles.item, styles.itemAdd)}>
+                          <div className={styles.itemTitle}>Спальные места</div>
+                          <SSelector
+                            options={peopleList}
+                            placeholder={initialValues.peopleCount ? initialValues.peopleCount : 'Выберите'}
+                            name={'peopleCount'}
+                            setValue={setFieldValue}
+                            className={styles.input}
+                          />
+                        </div>
+                        <div className={clsx(styles.item, styles.itemAdd)}>
+                          <div className={styles.itemTitle}>Район</div>
+                          <SSelector
+                            options={districtsMinskList}
+                            placeholder={initialValues.district ? initialValues.district : 'Выберите'}
+                            name={'district'}
+                            setValue={setFieldValue}
+                            className={styles.input}
+                          />
+                        </div>
+                        <div className={clsx(styles.item)}>
+                          <div className={styles.itemTitle}>Метро</div>
+                          <SSelector
+                            options={metroMinskList}
+                            placeholder={initialValues.metro ? initialValues.metro : 'Выберите'}
+                            name={'metro'}
+                            setValue={setFieldValue}
+                            className={styles.input}
+                          />
+                        </div>
+                        <div></div>
+                        <div></div>
+                        <SCheckboxList options={optionsList} />
                       </div>
-                      <div className={clsx(styles.item, styles.itemAdd)}>
-                        <div className={styles.itemTitle}>Район</div>
-                        <SSelector
-                          options={districtsMinskList}
-                          placeholder={initialValues.district ? initialValues.district : 'Выберите'}
-                          name={'district'}
-                          setValue={setFieldValue}
-                          className={styles.input}
-                        />
-                      </div>
-                      <div className={clsx(styles.item)}>
-                        <div className={styles.itemTitle}>Метро</div>
-                        <SSelector
-                          options={metroMinskList}
-                          placeholder={initialValues.metro ? initialValues.metro : 'Выберите'}
-                          name={'metro'}
-                          setValue={setFieldValue}
-                          className={styles.input}
-                        />
-                      </div>
-                      <div></div>
-                      <div></div>
-                      <SCheckboxList options={optionsList} />
                     </div>
-                  </div>
+                    <div className="container">
+                      <section className={styles.controls}>
+                        <div className={styles.sort}>
+                          <SSelector
+                            options={sortList}
+                            placeholder={initialValues.sort ? initialValues.sort : 'По умолчанию'}
+                            name={'sort'}
+                            setValue={setFieldValue}
+                            setSelectedSwiftly={useUpdateFilter(setSortMode, values.sort)}
+                          />
+                        </div>
+                        <div className={styles.view}>
+                          <SButton
+                            label={'Список'}
+                            type={'button'}
+                            view={listMode ? 'listActive' : 'list'}
+                            btnOnClick={() => dispatch(setListMode(true))}
+                          />
+                          <SButton
+                            label={'Плитки'}
+                            type={'button'}
+                            view={!listMode ? 'tileActive' : 'tile'}
+                            btnOnClick={() => dispatch(setListMode(false))}
+                          />
+                        </div>
+                        <div className={styles.map}>
+                          <SButton
+                            type="button"
+                            label="Показать на карте"
+                            view={'transparentLeftMap'}
+                            btnOnClick={() => navigate(PagesLinks.MAPS_PAGE)}
+                          />
+                        </div>
+                      </section>
+                    </div>
+                  </>
                 )}
               </fieldset>
             </Form>

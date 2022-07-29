@@ -377,12 +377,72 @@
       transition: mask-image 0.2s ease-in;
       mask-image: url('../../../assets/images/icons/heart2-active.png');
     }
-  
+
     &:hover {
       &::after {
         transition: mask-image 0.2s ease-in;
         mask-image: url('../../../assets/images/icons/heart2-active.png');
       }
+    }
+  }
+
+  &_view {
+    padding: 10px 15px 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $color-black;
+    background: transparent;
+    border-radius: 18px;
+
+    & svg {
+      fill: $color-grey-light;
+      margin-right: 10px;
+    }
+
+    &:hover {
+      background: $color-grey-default;
+    }
+    &:active {
+      background: $color-white;
+
+      & svg {
+        fill: $color-cobalt;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &_viewActive {
+    background: $color-white;
+    box-shadow: 0px 5px 20px rgba(0, 96, 206, 0.1);
+
+      & svg {
+        fill: $color-cobalt;
+        margin-right: 10px;
+      }
+  }
+
+  &_transparentMap {
+    background: $color-white;
+    padding: 10px 15px;
+    box-shadow: 0px 5px 20px rgba(0, 96, 206, 0.1);
+    text-shadow: none;
+    border-radius: 18px;
+    color: $color-black;
+    font-weight: 600;
+
+    & svg {
+      fill: $color-cobalt;
+      margin-right: 10px;
+    }
+
+    &:hover {
+      background: $color-grey-default;
+    }
+
+    &:active {
+      background: $color-white;
     }
   }
 }

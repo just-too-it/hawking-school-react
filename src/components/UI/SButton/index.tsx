@@ -9,6 +9,8 @@ import { ReactComponent as MapIcon } from '../../../assets/images/icons/map.svg'
 import { ReactComponent as MapGradientIcon } from '../../../assets/images/icons/mapGradient.svg';
 import { ReactComponent as PhoneIcon } from '../../../assets/images/icons/phone.svg';
 import { ReactComponent as ArrowIcon } from '../../../assets/images/icons/arrowSide.svg';
+import { ReactComponent as ListIcon } from '../../../assets/images/icons/list.svg';
+import { ReactComponent as TileIcon } from '../../../assets/images/icons/tile.svg';
 
 export const SButton: FC<IButton> = ({ label, type = 'button', btnOnClick, view, width, ...rest }) => {
   const [buttonClassName, setButtonClassName] = useState('button');
@@ -92,6 +94,26 @@ export const SButton: FC<IButton> = ({ label, type = 'button', btnOnClick, view,
       case 'likedActive':
         setButtonClassName('button button_liked button_likedActive');
         break;
+      case 'list':
+        setButtonClassName('button button_view');
+        setIconBefore(<ListIcon width={14} height={14} />);
+        break;
+      case 'listActive':
+        setButtonClassName('button button_view button_viewActive');
+        setIconBefore(<ListIcon width={14} height={14} />);
+        break;
+      case 'tile':
+        setButtonClassName('button button_view');
+        setIconBefore(<TileIcon width={14} height={14} />);
+        break;
+      case 'tileActive':
+        setButtonClassName('button button_view button_viewActive');
+        setIconBefore(<TileIcon width={14} height={14} />);
+        break;
+        case 'transparentLeftMap':
+          setButtonClassName('button button_transparentMap');
+          setIconBefore(<MapIcon width={11} height={14} />);
+          break;
       default:
         setButtonClassName('button');
         break;

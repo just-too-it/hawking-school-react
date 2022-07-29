@@ -16,4 +16,6 @@ export type ApartmentsMinskProps = {
     peopleCount?: number | string;
     recommendations?: RecommendationProps[];
     options?: string[];
+    listMode?: boolean;
+    sortMode?: string;
 }

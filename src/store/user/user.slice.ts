@@ -22,7 +22,7 @@ const initialUserState: UserProps = {
     name: '',
     img: ''
   },
-  isAuth: false,
+  isAuth: true,
 };
 
 export const userSlice = createSlice({

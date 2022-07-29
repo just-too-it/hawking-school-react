@@ -1,7 +1,10 @@
 import React from 'react'
+import { SSwiper } from '../../../components/UI/SSwiper'
 
 export const Admin = () => {
   return (
-    <div>admin page</div>
+    <div>
+      <h1>Тестовая страница</h1>
+      <SSwiper /></div>
   )
 }

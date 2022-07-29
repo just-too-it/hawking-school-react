@@ -1,11 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../store/store';
 
 import { ApartmentList } from '../../../components/ApartmentList';
 import { Breadcrumbs } from '../../../components/Breadcrumbs';
 import { Pagination } from '../../../components/Pagination';
-import { breadcrumbsForApartmentsMinsk, apartmentsMinsk, recommendationsMinsk } from '../../../core/mockData/mockData';
+import {
+  breadcrumbsForApartmentsMinsk,
+  apartmentsMinsk,
+  recommendationsMinsk,
+  sortList,
+} from '../../../core/mockData/mockData';
 import { getPageCount } from '../../../core/utils/getPageCount';
 import { apartmentsMinskSlice } from '../../../store/apartments/apartmentsMinsk.slice';
 import { Recommendations } from './Recommendations';
@@ -24,7 +29,10 @@ export const ApartmentsMinsk = () => {
     rooms,
     priceFrom,
     priceTo,
-    peopleCount, options
+    peopleCount,
+    options,
+    listMode,
+    sortMode,
   } = useSelector((state: RootState) => state.apartmentsMinskReducer);
   const { setApartments, setCurrentPage, setRecommendations } = apartmentsMinskSlice.actions;
   const dispatch = useDispatch();
@@ -60,13 +68,19 @@ export const ApartmentsMinsk = () => {
       );
     }
     if (options && options.length !== 0) {
-      filteredApartments = filteredApartments.filter(
-        (apart) => options.some((item) => apart.options.includes(item))
-      );
+      filteredApartments = filteredApartments.filter((apart) => options.some((item) => apart.options.includes(item)));
     }
-    
+
+    if (sortMode == 'По возрастанию') {
+      filteredApartments = [...filteredApartments].sort((a, b) => a.price - b.price);
+    }
+
+    if (sortMode == 'По убыванию') {
+      filteredApartments = [...filteredApartments].sort((a, b) => b.price - a.price);
+    }
+
     dispatch(setApartments(filteredApartments));
-  }, [metro, district, rooms, priceFrom, priceTo, peopleCount, options]);
+  }, [metro, district, rooms, priceFrom, priceTo, peopleCount, options, sortMode]);
 
   return (
     <main className={styles.apartments}>
@@ -86,7 +100,12 @@ export const ApartmentsMinsk = () => {
         <section>
           <div className={styles.list}>
             {apartments && (
-              <ApartmentList apartments={apartments} isListMode={false} cardsPerPage={cardsPerPage} currentPage={currentPage} />
+              <ApartmentList
+                apartments={apartments}
+                isListMode={listMode}
+                cardsPerPage={cardsPerPage}
+                currentPage={currentPage}
+              />
             )}
           </div>
           <Pagination

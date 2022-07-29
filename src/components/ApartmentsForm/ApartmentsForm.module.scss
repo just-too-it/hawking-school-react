@@ -7,23 +7,26 @@
 }
 
 .fieldsetCity {
-  box-shadow: 0px 20px 40px rgba(135, 124, 202, 0.15);
   margin-bottom: 22.5px;
 }
 
 .top {
   display: flex;
   justify-content: flex-start;
+  
 }
 
 .topCity {
   border-top: 1px solid $color-cobalt-10;
   border-bottom: 1px solid $color-cobalt-10;
+  margin-bottom: 22px;
+  box-shadow: 0px 20px 40px rgba(135, 124, 202, 0.15);
 }
 
 .container {
   display: flex;
   justify-content: flex-start;
+  padding-right: 35px;
 }
 
 .item {
@@ -134,3 +137,30 @@
     }
 }
 
+.controls {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sort {
+  margin-right: auto;
+
+  & input {
+    padding-left: 37px;
+    font-weight: 600;
+    background-color: $color-white;
+    box-shadow: 0px 5px 20px rgba(0, 96, 206, 0.1);
+    width: 232px;
+
+    & ~ ul {
+      width: 232px;
+    }
+  }
+}
+
+.view {
+  display: flex;
+  width: 235px;
+  margin-right: 65px;
+  justify-content: space-between;
+}

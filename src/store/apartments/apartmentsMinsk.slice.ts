@@ -19,7 +19,9 @@ const initialApartmentsMinskState: ApartmentsMinskProps = {
   priceFrom: '',
   priceTo: '',
   peopleCount: '',
-  options: [/* "stove", "microwave" */]
+  options: [],
+  listMode: true,
+  sortMode: ''
 };
 
 export const apartmentsMinskSlice = createSlice({
@@ -61,6 +63,12 @@ export const apartmentsMinskSlice = createSlice({
     },
     setOptions(state, action: PayloadAction<string[]>) {
       state.options = action.payload;
+    },
+    setListMode(state, action: PayloadAction<boolean>) {
+      state.listMode = action.payload;
+    },
+    setSortMode(state, action: PayloadAction<string>) {
+      state.sortMode = action.payload;
     },
   },
 });

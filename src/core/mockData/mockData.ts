@@ -385,6 +385,11 @@ export const districtsMinskList: SelectorProps[] = [
   { id: 6, value: 'Фрунзенский' },
 ];
 
+export const sortList: SelectorProps[] = [
+  { id: 1, value: 'По возрастанию' },
+  { id: 2, value: 'По убыванию' },
+];
+
 export const optionsList: CheckboxProps[] = [
   {id: 1, name: 'options', value: 'stove', label: 'Газовая плита'},
   {id: 2, name: 'options', value: 'oven', label: 'Духовка'},
@@ -460,6 +465,32 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
     },
     options: ['coffee-maker', 'dishwasher'],
     like: true
+  },
+  {
+    id: 2,
+    title: '1 комн. апартаменты на Грушевке',
+    address: {
+      city: 'Минск',
+      street: 'б-р Мулявина, д. 10',
+      metro: 'Грушевка',
+      district: 'Шабаны',
+    },
+    img: [room],
+    status: 'Gold',
+    price: 70.00,
+    peopleCount: 4,
+    peopleCountByRoom: '(2+2)',
+    rooms: '1 комн.',
+    square: 179,
+    description: 'Большая четырехкомнатная студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена. ',
+    owner: {
+      name: 'Dmitriy',
+      phone: '+375 (29) 291-14-44',
+      email: 'vladimir6234@tut.by',
+      img: owner,
+      status: 'Владелец'
+    },
+    options: ['stove']
   },
   {
     id: 3,
