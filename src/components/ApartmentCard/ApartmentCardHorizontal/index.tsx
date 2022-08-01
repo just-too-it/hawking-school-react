@@ -14,7 +14,7 @@ import styles from '../ApartmentCard.module.scss';
 import { useRefCloseOut } from '../../../hooks/useRefCloseOut';
 import { SButtonIcon } from '../../UI/SButtonIcon';
 import clsx from 'clsx';
-import { SSwiper } from '../../UI/SSwiper';
+// import { SSwiper } from '../../UI/SSwiper';
 
 export const ApartmentCardHorizontal: FC<{ apartment: ApartmentCardProps }> = (props) => {
   const { id, title, address, img, status, price, peopleCount, peopleCountByRoom, rooms, square, description, owner, like=false } =

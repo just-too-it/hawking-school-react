@@ -4,6 +4,8 @@ import { PagesLinks } from '../constants/pagesLinks.constant';
 import room from '../../assets/images/room.jpg';
 import room1 from '../../assets/images/room1.jpg';
 import room2 from '../../assets/images/room2.jpg';
+import room3 from '../../assets/images/room3.jpg';
+import room4 from '../../assets/images/room4.jpg';
 import roomAbout from '../../assets/images/room-about.jpg';
 import owner from '../../assets/images/owner.jpg';
 import { INewsItem } from '../../views/pages/NewsItem/NewsItem.types';
@@ -422,7 +424,7 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       metro: 'Грушевка',
       district: 'Шабаны',
     },
-    img: [room2],
+    img: [room2, room1, room],
     status: 'Gold',
     price: 65.00,
     peopleCount: 4,
@@ -448,7 +450,7 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       metro: 'Московская',
       district: 'Шабаны',
     },
-    img: [room],
+    img: [room1, room3, room4],
     status: 'Gold',
     price: 40.00,
     peopleCount: 3,
@@ -475,7 +477,7 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       metro: 'Грушевка',
       district: 'Шабаны',
     },
-    img: [room],
+    img: [room1, room3, room4],
     status: 'Gold',
     price: 70.00,
     peopleCount: 4,
@@ -501,7 +503,7 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       metro: 'Грушевка',
       district: 'Шабаны',
     },
-    img: [room],
+    img: [room1],
     status: 'Gold',
     price: 65.00,
     peopleCount: 4,
@@ -527,7 +529,7 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       metro: 'Московская',
       district: 'Шабаны',
     },
-    img: [room],
+    img: [room1, room3, room4],
     status: 'Gold',
     price: 55.00,
     peopleCount: 3,
@@ -553,7 +555,7 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       metro: 'Академия наук',
       district: 'Советский',
     },
-    img: [room],
+    img: [room1, room3, room4],
     status: '',
     price: 50.00,
     peopleCount: 1,

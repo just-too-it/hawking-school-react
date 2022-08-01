@@ -3,4 +3,5 @@ export type SButtonIconProps = {
     children: React.ReactNode;
     className?: string;
     btnOnClick?: () => void;
+    forwardRef?: any
 }

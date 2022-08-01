@@ -14,6 +14,7 @@ import styles from '../ApartmentCard.module.scss';
 import { useRefCloseOut } from '../../../hooks/useRefCloseOut';
 import { SButtonIcon } from '../../UI/SButtonIcon';
 import clsx from 'clsx';
+import { SSwiper } from '../../UI/SSwiper';
 
 export const ApartmentCardVertical: FC<{ apartment: ApartmentCardProps }> = (props) => {
   const { id, title, address, img, status, price, peopleCount, peopleCountByRoom, rooms, square, description, owner, like=false } =
@@ -29,7 +30,8 @@ export const ApartmentCardVertical: FC<{ apartment: ApartmentCardProps }> = (pro
   return (
     <article className={styles.card}>
       <div className={styles.img}>
-        <img src={img[0]} alt={title ? title : address.street} />
+        <SSwiper images={img} />
+        {/* <img src={img[0]} alt={title ? title : address.street} /> */}
       </div>
       {status && <div className={styles.status}>{status}</div>}
       <div className={styles.container}>

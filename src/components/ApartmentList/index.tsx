@@ -5,7 +5,6 @@ import clsx from 'clsx';
 
 import styles from './ApartmentList.module.scss';
 import { ApartmentListProps } from './ApartmentListProps.types';
-import { SSwiper } from '../UI/SSwiper';
 
 export const ApartmentList: FC<ApartmentListProps> = ({apartments, isListMode=true, cardsPerPage, currentPage}) => {
   const [listView, setListView] = useState(null);
