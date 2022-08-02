@@ -6,7 +6,6 @@ export const Admin = () => {
   return (
     <div className='container'>
       <h1>Тестовая страница</h1>
-      {/* <MySwiper /> */}
       </div>
   )
 }
