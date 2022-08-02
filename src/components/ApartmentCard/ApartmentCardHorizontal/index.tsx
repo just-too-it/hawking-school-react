@@ -1,25 +1,36 @@
-import React, { FC, useState, useEffect, useRef } from 'react';
+import React, { FC, useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import clsx from 'clsx';
+
 import { ApartmentCardProps } from '../ApartmentCard.types';
 import { ReactComponent as MapIcon } from '../../../assets/images/icons/map.svg';
 import { ReactComponent as MetroIcon } from '../../../assets/images/icons/metro.svg';
-import { ReactComponent as PointIcon } from '../../../assets/images/icons/point.svg';
 import { ReactComponent as UserIcon } from '../../../assets/images/icons/user.svg';
-import { ReactComponent as HeartIcon } from '../../../assets/images/icons/heart4.svg';
 import { SButton } from '../../UI/SButton';
-import { useNavigate } from 'react-router-dom';
 import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
 import { UserCard } from '../../UserCard';
+import { useRefCloseOut } from '../../../hooks/useRefCloseOut';
+import { SSwiper } from '../../UI/SSwiper';
 
 import styles from '../ApartmentCard.module.scss';
-import { useRefCloseOut } from '../../../hooks/useRefCloseOut';
-import { SButtonIcon } from '../../UI/SButtonIcon';
-import clsx from 'clsx';
-// import { SSwiper } from '../../UI/SSwiper';
 
 export const ApartmentCardHorizontal: FC<{ apartment: ApartmentCardProps }> = (props) => {
-  const { id, title, address, img, status, price, peopleCount, peopleCountByRoom, rooms, square, description, owner, like=false } =
-    props.apartment;
-    const [liked, setLiked] = useState(like)
+  const {
+    id,
+    title,
+    address,
+    img,
+    status,
+    price,
+    peopleCount,
+    peopleCountByRoom,
+    rooms,
+    square,
+    description,
+    owner,
+    like = false,
+  } = props.apartment;
+  const [liked, setLiked] = useState(like);
 
   const navigate = useNavigate();
   const [ownerOpen, setOwnerOpen] = useState(false);
@@ -30,7 +41,7 @@ export const ApartmentCardHorizontal: FC<{ apartment: ApartmentCardProps }> = (p
   return (
     <article className={clsx(styles.card, styles.cardTile)}>
       <div className={clsx(styles.img)}>
-        <img src={img[0]} alt={title ? title : address.street} />
+        <SSwiper data={img} />
       </div>
       {status && <div className={styles.status}>{status}</div>}
       <div className={clsx(styles.container)}>
@@ -48,23 +59,23 @@ export const ApartmentCardHorizontal: FC<{ apartment: ApartmentCardProps }> = (p
         </address>
         <div className={styles.tags}>
           <div className={styles.tag}>
-                <UserIcon fill={'#686868'} width={15} height={15} className={styles.user} />
-                {peopleCount} {peopleCountByRoom}
-              </div>
-              <div className={styles.tag}>{rooms}</div>
-              {location.pathname == PagesLinks.MAIN_PAGE && square && (
-                <div className={styles.tag}>
-                  {square} м<sup>2</sup>
-                </div>
-              )}
+            <UserIcon fill={'#686868'} width={15} height={15} className={styles.user} />
+            {peopleCount} {peopleCountByRoom}
+          </div>
+          <div className={styles.tag}>{rooms}</div>
+          {location.pathname == PagesLinks.MAIN_PAGE && square && (
             <div className={styles.tag}>
-              <MetroIcon fill={'#664EF9'} width={20} height={13} />
-              {address.metro}
+              {square} м<sup>2</sup>
             </div>
-            <div className={styles.tag}>
-              <span dangerouslySetInnerHTML={{ __html: 'район:&nbsp;'} }></span>
-              {address.district}
-            </div>
+          )}
+          <div className={styles.tag}>
+            <MetroIcon fill={'#664EF9'} width={20} height={13} />
+            {address.metro}
+          </div>
+          <div className={styles.tag}>
+            <span dangerouslySetInnerHTML={{ __html: 'район:&nbsp;' }}></span>
+            {address.district}
+          </div>
         </div>
         <div className={styles.description}>{description}</div>
         {ownerOpen && (
@@ -73,7 +84,7 @@ export const ApartmentCardHorizontal: FC<{ apartment: ApartmentCardProps }> = (p
           </div>
         )}
         <footer className={styles.footer}>
-        <SButton
+          <SButton
             label={'Контакты'}
             type={'button'}
             view={'cobaltPhone'}
@@ -81,15 +92,17 @@ export const ApartmentCardHorizontal: FC<{ apartment: ApartmentCardProps }> = (p
               setOwnerOpen(true);
             }}
           />
-          {location.pathname !== PagesLinks.MAIN_PAGE && 
-          /* <button className={clsx(styles.like, liked && styles.likeActive)} type="button" onClick={() => setLiked(!liked)} /> */
-          <SButton
-          label={!liked ? 'В закладки' : 'Добавлено'}
-          type={'button'}
-          view={ !liked ? 'liked' : 'likedActive'}
-          btnOnClick={() => {setLiked(!liked); setLiked(!liked)}}
-        />
-          }
+          {location.pathname !== PagesLinks.MAIN_PAGE && (
+            <SButton
+              label={!liked ? 'В закладки' : 'Добавлено'}
+              type={'button'}
+              view={!liked ? 'liked' : 'likedActive'}
+              btnOnClick={() => {
+                setLiked(!liked);
+                setLiked(!liked);
+              }}
+            />
+          )}
           <SButton
             label={'Подробнее'}
             type={'button'}

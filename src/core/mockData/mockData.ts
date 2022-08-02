@@ -555,7 +555,7 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       metro: 'Академия наук',
       district: 'Советский',
     },
-    img: [room1, room3, room4],
+    img: [room, room3, room4],
     status: '',
     price: 50.00,
     peopleCount: 1,

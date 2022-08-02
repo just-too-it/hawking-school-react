@@ -19,19 +19,11 @@
   border-radius: 10px;
   overflow: hidden;
 
+  & > div:first-child {
+    height: 226px !important;
+  }
+
   & img {
-    // flex-shrink: 0;
-    // max-width:100%;
-    // height: auto;
-
-    
-    // width: 100%;
-    // object-fit: cover;
-
-    //height: auto;
-    // object-fit: contain;
-    // max-width: 100%;
-
     object-fit: contain;
     max-width: 100%;
   }
@@ -157,6 +149,7 @@
   position: absolute;
   bottom: 75px;
   right: 185px;
+  z-index: 2;
 }
 
 .like {
@@ -200,16 +193,24 @@
   }
 }
 
-
 .cardTile {
   width: 1280px;
   height: 300px;
   display: flex;
 
-  .img {
+  & .img {
     width: 538px;
     height: 300px;
     flex-shrink: 0;
+
+    & > div:first-child {
+      height: 300px !important;
+    }
+
+    & img {
+      object-fit: contain;
+      max-width: 100%;
+    }
   }
 
   .container {
@@ -236,7 +237,7 @@
   }
 
   .day {
-    color: #7A7F86;
+    color: #7a7f86;
   }
 
   .info {
@@ -276,7 +277,7 @@
     font-size: 14px;
     line-height: 21px;
   }
-  
+
   .owner {
     bottom: 92px;
     right: 605px;
