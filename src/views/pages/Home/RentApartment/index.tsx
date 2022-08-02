@@ -70,7 +70,7 @@ export const RentApartment = () => {
             type="button"
             label={'Посмотреть все'}
             btnOnClick={() => useNavPageCity('Минск', navigate)}
-            view={'cobaltArrow'}
+            view={'cobaltArrowGrad'}
           />
         </div>
       </div>

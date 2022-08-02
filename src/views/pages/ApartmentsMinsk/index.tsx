@@ -46,6 +46,7 @@ export const ApartmentsMinsk = () => {
   useEffect(() => {
     dispatch(setApartments(apartmentsMinsk));
     dispatch(setRecommendations(recommendationsMinsk));
+    dispatch(setCurrentPage(1));
   }, []);
 
   useEffect(() => {
