@@ -6,7 +6,7 @@ import { filterMinskProps } from "./filterMinsk.types";
 
 const initialFilterMinskState: filterMinskProps = {
     metro: '',
-    district: '',
+    district: ''
 }
 
 export const filterMinskSlice = createSlice({

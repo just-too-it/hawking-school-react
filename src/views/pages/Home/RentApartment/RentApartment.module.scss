@@ -83,6 +83,9 @@
   margin-bottom: 38px;
 }
 
-.pagination {
-  margin-bottom: 32px;
+.navigation {
+  display: flex;
+  width: 92px;
+  justify-content: space-between;
+  margin: 0 auto 32px;
 }

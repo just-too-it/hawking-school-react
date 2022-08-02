@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { ApartmentList } from '../../../../components/ApartmentList';
-import { Pagination } from '../../../../components/Pagination';
+import { Navigation } from '../../../../components/Navigation';
 import { SButton } from '../../../../components/UI/SButton';
 import { apartmentsMinsk } from '../../../../core/mockData/mockData';
 import { getPageCount } from '../../../../core/utils/getPageCount';
@@ -14,11 +14,12 @@ import { FilterMinsk } from '../FilterMinsk';
 import styles from './RentApartment.module.scss';
 
 export const RentApartment = () => {
-  const { apartments, currentPage, metro, district } = useSelector((state: RootState) => state.apartmentsMinskReducer);
-  const { setApartments, setCurrentPage } = apartmentsMinskSlice.actions;
+  const { apartments, metro, district } = useSelector((state: RootState) => state.apartmentsMinskReducer);
+  const { setApartments/* , setCurrentPage */ } = apartmentsMinskSlice.actions;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const CARDS_PER_PAGE_HOME = 3;
+  const [currentPageForHome, setCurrentPageForHome] = useState(1)
 
   useEffect(() => {
     dispatch(setApartments(apartmentsMinsk));
@@ -44,14 +45,14 @@ export const RentApartment = () => {
       </div>
       <div className={styles.apartments}>
         {apartments && (
-          <ApartmentList apartments={apartments} cardsPerPage={CARDS_PER_PAGE_HOME} currentPage={currentPage} />
+          <ApartmentList apartments={apartments} cardsPerPage={CARDS_PER_PAGE_HOME} currentPage={currentPageForHome} />
         )}
       </div>
-      <div className={styles.pagination}>
-        <Pagination
-          currentPage={currentPage}
+      <div className={styles.navigation}>
+        <Navigation
+          currentPage={currentPageForHome}
           totalPage={apartments ? getPageCount(apartments.length, CARDS_PER_PAGE_HOME) : 1}
-          action={setCurrentPage}
+          action={setCurrentPageForHome}
         />
       </div>
 

@@ -571,6 +571,32 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       status: 'Владелец'
     },
     options: ['microwave']
+  },
+  {
+    id: 6,
+    title: '1-комн. апартаменты на Московской',
+    address: {
+      city: 'Минск',
+      street: 'б-р Мулявина, д. 10',
+      metro: 'Академия наук',
+      district: 'Советский',
+    },
+    img: [room3, room4],
+    status: '',
+    price: 35.00,
+    peopleCount: 1,
+    peopleCountByRoom: '(2)',
+    rooms: '1 комн.',
+    square: 140,
+    description: 'Большая 2х комн студия! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена.  Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону!',
+    owner: {
+      name: 'Dmitriy',
+      phone: '+375 (29) 291-14-44',
+      email: 'vladimir6234@tut.by',
+      img: owner,
+      status: 'Владелец'
+    },
+    options: ['microwave']
   }
 ] 
 
