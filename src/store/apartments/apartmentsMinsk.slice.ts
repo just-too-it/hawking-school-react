@@ -19,7 +19,7 @@ const initialApartmentsMinskState: ApartmentsMinskProps = {
   priceFrom: '',
   priceTo: '',
   peopleCount: '',
-  options: [],
+  options: ['oven', 'microwave'],
   listMode: true,
   sortMode: ''
 };

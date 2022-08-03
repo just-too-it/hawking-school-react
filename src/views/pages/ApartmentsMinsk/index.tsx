@@ -18,7 +18,7 @@ import { ApartmentsForm } from '../../../components/ApartmentsForm';
 
 import styles from './ApartmentsMinsk.module.scss';
 import { SearchOnMap } from '../../../components/SearchOnMap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
 import { Social } from '../../../components/Social';
 import { socialApartments, socialNews } from '../../../core/constants/social.constant';
@@ -39,9 +39,43 @@ export const ApartmentsMinsk = () => {
     listMode,
     sortMode,
   } = useSelector((state: RootState) => state.apartmentsMinskReducer);
-  const { setApartments, setCurrentPage, setRecommendations } = apartmentsMinskSlice.actions;
+  const { setApartments, setCurrentPage, setRecommendations, setRooms, setPriceFrom, setPriceTo, setPeopleCount, setMetro, setDistrict, setOptions } = apartmentsMinskSlice.actions;
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const roomsParams = searchParams.get('rooms');
+  const priceFromParams = searchParams.get('priceFrom');
+  const priceToParams = searchParams.get('priceTo');
+  const peopleCountParams = searchParams.get('peopleCount');
+  const metroParams = searchParams.get('metro');
+  const districtParams = searchParams.get('district');
+  const optionsParams = searchParams.get('options');
+
+  useEffect(() => {
+    roomsParams && dispatch(setRooms(roomsParams));
+    priceFromParams && dispatch(setPriceFrom(Number(priceFromParams)));
+    priceToParams && dispatch(setPriceTo(Number(priceToParams)));
+    peopleCountParams && dispatch(setPeopleCount(peopleCountParams));
+    metroParams && dispatch(setMetro(metroParams));
+    districtParams && dispatch(setDistrict(districtParams));
+    optionsParams && dispatch(setOptions(optionsParams.split(' ')));
+  }, []);
+
+  useEffect(() => {
+    const params:any = {};
+
+    params.rooms = rooms;
+    params.priceFrom = priceFrom;
+    params.priceTo = priceTo;
+    params.peopleCount = peopleCount;
+    params.metro = metro;
+    params.district = district;
+    params.options = options.join(' ');
+
+    setSearchParams(params);
+
+  }, [rooms, priceFrom, priceTo, peopleCount, metro, district, options]);
 
   useEffect(() => {
     dispatch(setApartments(apartmentsMinsk));

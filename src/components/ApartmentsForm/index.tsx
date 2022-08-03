@@ -33,8 +33,6 @@ export const ApartmentsForm = () => {
   const [viewForm, setViewForm] = useState('');
   const [initialValues, setInitialValues] = useState<FilterMainProps | ApartmentsMinskProps | any>();
   const optionsRef = useRef() as React.MutableRefObject<HTMLDivElement>;
-  const [isListMode, setIsListMode] = useState(true);
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const {
@@ -73,6 +71,7 @@ export const ApartmentsForm = () => {
     metro,
     listMode,
     sortMode,
+    options
   } = useSelector((state: RootState) => state.apartmentsMinskReducer);
 
   const initialValuesHome = {
@@ -90,7 +89,7 @@ export const ApartmentsForm = () => {
     peopleCount: peopleCount,
     district: district,
     metro: metro,
-    options: ['oven', 'microwave'],
+    options: options,
     listMode: listMode,
     sort: sortMode,
   };
@@ -152,7 +151,7 @@ export const ApartmentsForm = () => {
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
               setSubmitting(false);
-
+              
               switch (viewForm) {
                 case 'Home':
                   values.city && dispatch(setCity(values.city));
@@ -212,8 +211,8 @@ export const ApartmentsForm = () => {
                     <div className={clsx(styles.item, viewForm == 'Minsk' && styles.itemCity)}>
                       <div className={styles.itemTitle}>Цена за сутки (BYN)</div>
                       <div className={styles.prices}>
-                        <SInput type="number" placeholder={'От'} name={'priceFrom'} /> -
-                        <SInput type="number" placeholder={'До'} name={'priceTo'} />
+                        <SInput type="number" placeholder={initialValues.priceFrom ? initialValues.priceFrom : 'От'} name={'priceFrom'} /> -
+                        <SInput type="number" placeholder={initialValues.priceTo ? initialValues.priceTo : 'До'} name={'priceTo'} />
                       </div>
                     </div>
                     <div className={clsx(styles.item, viewForm == 'Minsk' && styles.itemCity)}>

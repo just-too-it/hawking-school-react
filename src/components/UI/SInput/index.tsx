@@ -17,7 +17,7 @@ export const SInput: FC<InputProps> = ({
   addStyles,
   isWarning,
   width,
-  className,
+  className
 }) => {
   const [iconLeft, setIconLeft] = useState(null as React.ReactElement);
   const [iconRight, setIconRight] = useState(null as React.ReactElement);
@@ -60,7 +60,7 @@ export const SInput: FC<InputProps> = ({
           placeholder={placeholder}
           className={inputClassNames}
           style={addStyles}
-          id={name}
+          id={name} 
         />
         {iconRight ? <div className={styles.iconRight}>{iconRight}</div> : null}
       </div>

@@ -439,7 +439,7 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       img: owner,
       status: 'Владелец'
     },
-    options: ['coffee-maker']
+    options: ['coffee-maker', 'microwave', 'oven', 'stove']
   },
   {
     id: 1,
@@ -465,7 +465,7 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       img: owner,
       status: 'Владелец'
     },
-    options: ['coffee-maker', 'dishwasher'],
+    options: ['coffee-maker', 'dishwasher', 'microwave', 'oven', 'stove'],
     like: true
   },
   {
@@ -492,7 +492,7 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       img: owner,
       status: 'Владелец'
     },
-    options: ['stove']
+    options: ['stove', 'microwave', 'oven']
   },
   {
     id: 3,
@@ -518,7 +518,7 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       img: owner,
       status: 'Владелец'
     },
-    options: ['stove']
+    options: ['stove', 'microwave', 'oven']
   },
   {
     id: 4,
@@ -544,7 +544,7 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       img: owner,
       status: 'Владелец'
     },
-    options: ['microwave']
+    options: ['microwave', 'microwave', 'oven', 'stove']
   },
   {
     id: 5,
@@ -570,7 +570,7 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       img: owner,
       status: 'Владелец'
     },
-    options: ['microwave']
+    options: ['microwave', 'oven', 'stove']
   },
   {
     id: 6,
@@ -596,7 +596,7 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       img: owner,
       status: 'Владелец'
     },
-    options: ['microwave']
+    options: ['microwave', 'oven', 'stove']
   }
 ] 
 
