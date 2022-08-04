@@ -52,6 +52,7 @@ export const ApartmentsForm = () => {
     setOptions,
     setListMode,
     setSortMode,
+    setCurrentPage
   } = apartmentsMinskSlice.actions;
 
   const {
@@ -175,6 +176,7 @@ export const ApartmentsForm = () => {
                   dispatch(setMetro(values.metro));
                   dispatch(setOptions(values.options));
                   dispatch(setSortMode(values.sort));
+                  dispatch(setCurrentPage(1));
                   break;
                 default:
                   break;

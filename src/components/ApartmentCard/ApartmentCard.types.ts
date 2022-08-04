@@ -1,4 +1,3 @@
-import { CheckboxProps } from "../UI/SCheckbox/SCheckbox.types";
 import { UserCardProps } from "../UserCard/UserCard.types";
 
 export type ApartmentCardProps = {

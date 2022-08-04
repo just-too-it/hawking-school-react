@@ -39,7 +39,18 @@ export const ApartmentsMinsk = () => {
     listMode,
     sortMode,
   } = useSelector((state: RootState) => state.apartmentsMinskReducer);
-  const { setApartments, setCurrentPage, setRecommendations, setRooms, setPriceFrom, setPriceTo, setPeopleCount, setMetro, setDistrict, setOptions } = apartmentsMinskSlice.actions;
+  const {
+    setApartments,
+    setCurrentPage,
+    setRecommendations,
+    setRooms,
+    setPriceFrom,
+    setPriceTo,
+    setPeopleCount,
+    setMetro,
+    setDistrict,
+    setOptions,
+  } = apartmentsMinskSlice.actions;
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -51,6 +62,7 @@ export const ApartmentsMinsk = () => {
   const metroParams = searchParams.get('metro');
   const districtParams = searchParams.get('district');
   const optionsParams = searchParams.get('options');
+  const pageParams = searchParams.get('page');
 
   useEffect(() => {
     roomsParams && dispatch(setRooms(roomsParams));
@@ -60,10 +72,11 @@ export const ApartmentsMinsk = () => {
     metroParams && dispatch(setMetro(metroParams));
     districtParams && dispatch(setDistrict(districtParams));
     optionsParams && dispatch(setOptions(optionsParams.split(' ')));
+    pageParams && dispatch(setCurrentPage(Number(pageParams)));
   }, []);
 
   useEffect(() => {
-    const params:any = {};
+    const params: any = {};
 
     params.rooms = rooms;
     params.priceFrom = priceFrom;
@@ -72,15 +85,14 @@ export const ApartmentsMinsk = () => {
     params.metro = metro;
     params.district = district;
     params.options = options.join(' ');
+    params.page = currentPage;
 
     setSearchParams(params);
-
-  }, [rooms, priceFrom, priceTo, peopleCount, metro, district, options]);
+  }, [rooms, priceFrom, priceTo, peopleCount, metro, district, options, currentPage]);
 
   useEffect(() => {
     dispatch(setApartments(apartmentsMinsk));
     dispatch(setRecommendations(recommendationsMinsk));
-    dispatch(setCurrentPage(1));
   }, []);
 
   useEffect(() => {

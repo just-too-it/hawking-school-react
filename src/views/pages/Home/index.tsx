@@ -16,6 +16,7 @@ import styles from './Home.module.scss';
 
 export const Home = () => {
   const navigate = useNavigate();
+
   return (
     <main>
       <div className="container">

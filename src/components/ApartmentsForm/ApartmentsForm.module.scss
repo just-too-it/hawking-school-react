@@ -13,7 +13,6 @@
 .top {
   display: flex;
   justify-content: flex-start;
-  
 }
 
 .topCity {
@@ -71,7 +70,6 @@
       width: 100px;
     }
   }
-  
 }
 
 .input {
@@ -116,25 +114,24 @@
 }
 
 .options {
-    height: 0;
-    max-height: 315px;
-    padding: 0;
-    overflow: hidden;
-    transition: all 0.3s ease-in;
-    display: grid;
-    grid-template-columns: repeat(5, 200px);
-    gap: 48px;
-    
+  height: 0;
+  max-height: 315px;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in;
+  display: grid;
+  grid-template-columns: repeat(5, 200px);
+  gap: 48px;
 
-    & .item {
-      border-right: none;
-      padding: 0;
-      margin: 0;
-    
-      & input {
-        width: 200px;
-      }
+  & .item {
+    border-right: none;
+    padding: 0;
+    margin: 0;
+
+    & input {
+      width: 200px;
     }
+  }
 }
 
 .controls {
