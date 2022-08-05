@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import styles from './TabBarItem.module.scss'
 
-export const TabBarItem: FC<{ isActive: boolean; nav: string, tabHandler: any; lastchild?: boolean, children }> = ({ isActive, nav, tabHandler, lastchild, children }) => {
+export const TabBarItem: FC<{ isActive: boolean; nav: string, tabHandler: ()=>void; lastchild?: boolean, children }> = ({ isActive, nav, tabHandler, lastchild, children }) => {
     const [active, setActive] = useState(null);
 
     const tabNavClassNames = clsx(

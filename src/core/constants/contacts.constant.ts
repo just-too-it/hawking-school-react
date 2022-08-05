@@ -1,6 +1,5 @@
 import { IContacts } from "../../views/pages/Contacts/Contacts.types"
 
-
 export const CONTACT: IContacts = {
     company: 'ИП Шушкевич Андрей Викторович',
     license: 'УНП 192602485 Минским горисполкомом 10.02.2016',

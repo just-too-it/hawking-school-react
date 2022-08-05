@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../store/store';
 
@@ -48,6 +48,7 @@ export const ApartmentsMinsk = () => {
   } = apartmentsMinskSlice.actions;
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [searchParams, setSearchParams] = useSearchParams();
   const roomsParams = searchParams.get('rooms');
@@ -68,7 +69,7 @@ export const ApartmentsMinsk = () => {
     districtParams && dispatch(setDistrict(districtParams));
     optionsParams && dispatch(setOptions(optionsParams.split(' ')));
     pageParams && dispatch(setCurrentPage(Number(pageParams)));
-  }, []);
+  }, [location.search]);
 
   useEffect(() => {
     const params: any = {};

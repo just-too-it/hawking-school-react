@@ -137,7 +137,7 @@ export const ApartmentsForm = () => {
         setInitialValues(initialValuesHome);
         break;
     }
-  }, [viewForm]);
+  }, [viewForm, location.search]);
 
   useEffect(() => {
     dispatch(setOptions(initialValuesMinsk.options));

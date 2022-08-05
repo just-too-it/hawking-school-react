@@ -8,9 +8,7 @@ export const Header = () => {
     <header className="header">
 
         <div className="header__nav">
-        {/* <div className="container"> */}
           <Nav menu={Menu}/>
-        {/* </div> */}
         <section className="header__subnav">
           <SubNav menu={SubMenu}/>
         </section>

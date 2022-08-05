@@ -385,6 +385,10 @@ export const districtsMinskList: SelectorProps[] = [
   { id: 4, value: 'Ленинский' },
   { id: 5, value: 'Октябрьский' },
   { id: 6, value: 'Фрунзенский' },
+  { id: 7, value: 'Московский' },
+  { id: 8, value: 'Партизанский' },
+  { id: 9, value: 'Первомайский' },
+  { id: 10, value: 'Центральный' },
 ];
 
 export const sortList: SelectorProps[] = [
@@ -597,6 +601,32 @@ export const apartmentsMinsk: ApartmentCardProps[] = [
       status: 'Владелец'
     },
     options: ['microwave', 'oven', 'stove']
+  },
+  {
+    id: 7,
+    title: '1-комн. апартаменты на Московской',
+    address: {
+      city: 'Минск',
+      street: 'б-р Мулявина, д. 10',
+      metro: 'Академия наук',
+      district: 'Заводской',
+    },
+    img: [room3, room4],
+    status: '',
+    price: 100.00,
+    peopleCount: 4,
+    peopleCountByRoom: '(2+2)',
+    rooms: '5 комн.',
+    square: 340,
+    description: 'Большая 5х комн! Большая джкакузи на двоих, на теливизоре есть приложение Megogo, YouTube, Smart TV, сможете выбрать фильм по вкусу!) Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону! В пяти минутах ходьбы Минск-Арена.  Цена зависит от количества проживающих, уточняйте, пожалуйста, по телефону!',
+    owner: {
+      name: 'Dmitriy',
+      phone: '+375 (29) 291-14-44',
+      email: 'vladimir6234@tut.by',
+      img: owner,
+      status: 'Владелец'
+    },
+    options: ['microwave', 'oven', 'stove', 'coffee-maker', 'cookware', 'dishwasher']
   }
 ] 
 
@@ -608,19 +638,19 @@ export const about: AboutProps = {
 }
 
 export const recommendationsMinsk: RecommendationProps[] = [
-  {label: 'Недорогие', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?tag=cheap`},
-  {label: '1-комнатные', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?room=1kkv`},
-  {label: '2-комнатные', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?room=2kkv`},
-  {label: '3-комнатные', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?room=3kkv`},
-  {label: '4-комнатные', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?room=4kkv`},
-  {label: '5-комнатные', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?room=5kkv`},
-  {label: 'Заводской р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?district=zavodskoj`},
-  {label: 'Ленинский р. ', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?district=leninskij`},
-  {label: 'Московский р.  ', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?district=moskovskij`},
-  {label: 'Октябрьский р.    ', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?district=oktyabrskij`},
-  {label: 'Партизанский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?district=partizanskij`},
-  {label: 'Первомайский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?district=pervomajskij`},
-  {label: 'Советский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?district=sovetskij`},
-  {label: 'Фрунзенский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?district=frunzenskij`},
-  {label: 'Центральный р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}/?district=centralnyj`}
+  {label: 'Недорогие', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?priceTo=50`},
+  {label: '1-комнатные', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?rooms=1+комн.`},
+  {label: '2-комнатные', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?rooms=2+комн.`},
+  {label: '3-комнатные', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?rooms=3+комн.`},
+  {label: '4-комнатные', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?rooms=4+комн.`},
+  {label: '5-комнатные', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?rooms=5+комн.`},
+  {label: 'Заводской р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Заводской`},
+  {label: 'Ленинский р. ', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Ленинский`},
+  {label: 'Московский р.  ', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Московский`},
+  {label: 'Октябрьский р.    ', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Октябрьский`},
+  {label: 'Партизанский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Партизанский`},
+  {label: 'Первомайский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Первомайский`},
+  {label: 'Советский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Советский`},
+  {label: 'Фрунзенский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Фрунзенский`},
+  {label: 'Центральный р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Центральный`}
 ]

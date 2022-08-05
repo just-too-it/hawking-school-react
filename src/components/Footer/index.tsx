@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import { Logo } from '../Logo';
 import { socialGroups } from '../../core/constants/social.constant';
 import { Social } from '../Social';
@@ -8,6 +10,7 @@ import { FooterSubNav } from './FooterSubNav';
 import { FooterNav } from './FooterNav';
 import { Payment } from '../Payment';
 import { PAYMENTS } from '../../core/constants/payments.constant';
+import { PagesLinks } from '../../core/constants/pagesLinks.constant';
 
 export const Footer = () => {
 
@@ -15,7 +18,13 @@ export const Footer = () => {
     <footer className="footer">
       <div className="container">
         <div className="footer__info">
-          <Logo />
+          {location.pathname === PagesLinks.MAIN_PAGE ? (
+            <Logo />
+          ) : (
+            <Link to={PagesLinks.MAIN_PAGE}>
+              <Logo />
+            </Link>
+          )}
           <div className="footer__title">Сдаём бай</div>
           <Info />
         </div>

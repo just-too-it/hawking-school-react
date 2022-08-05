@@ -1,4 +1,4 @@
-import React, { useState, FC, useRef, useEffect } from 'react';
+import React, { useState, FC, useRef } from 'react';
 import { SelectorProps } from './SSelector.types';
 import { Field } from 'formik';
 import { ReactComponent as MetroIcon } from '../../../assets/images/icons/metro.svg';
@@ -11,7 +11,7 @@ export const SSelector: FC<{
   options: SelectorProps[];
   placeholder: string | number;
   name: string;
-  setValue?: any;
+  setValue?: (x: string, y: string|number)=>void;
   className?: string;
   setSelectedSwiftly?: any;
 }> = ({ options, placeholder, name, setValue, className = '', setSelectedSwiftly }) => {

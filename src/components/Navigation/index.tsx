@@ -6,8 +6,6 @@ import { SButtonIcon } from '../UI/SButtonIcon';
 import { NavigationProps } from './Navigation.types';
 
 import styles from './Navigation.module.scss';
-import { Button } from '../UI/Button';
-import { ArrowIcon } from '../icons';
 
 export const Navigation: FC<NavigationProps> = ({ currentPage, totalPage, action }) => {
   const [btnLClassName, setBtnLClassName] = useState(styles.button);
