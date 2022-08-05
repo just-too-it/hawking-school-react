@@ -1,8 +1,8 @@
-import { IButton } from "../UI/SButton/SButton.type";
+import { ButtonProps } from "../UI/Button/Button.types";
 
 export type SearchOnMapProps = {
     height?: string;
     title: string;
     description: string;
-    btn: IButton;
+    btn: ButtonProps;
 }

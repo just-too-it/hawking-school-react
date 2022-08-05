@@ -7,11 +7,12 @@ import { ReactComponent as MapIcon } from '../../../assets/images/icons/map.svg'
 import { ReactComponent as MetroIcon } from '../../../assets/images/icons/metro.svg';
 import { ReactComponent as PointIcon } from '../../../assets/images/icons/point.svg';
 import { ReactComponent as UserIcon } from '../../../assets/images/icons/user.svg';
-import { SButton } from '../../UI/SButton';
 import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
 import { UserCard } from '../../UserCard';
 import { useRefCloseOut } from '../../../hooks/useRefCloseOut';
 import { SSwiper } from '../../UI/SSwiper';
+import { Button } from '../../UI/Button';
+import { PhoneIcon } from '../../icons';
 
 import styles from '../ApartmentCard.module.scss';
 
@@ -84,26 +85,20 @@ export const ApartmentCardVertical: FC<{ apartment: ApartmentCardProps }> = (pro
         )}
         <footer className={styles.footer}>
           {location.pathname !== PagesLinks.MAIN_PAGE && (
-            <button
-              className={clsx(styles.like, liked && styles.likeActive)}
-              type="button"
-              onClick={() => setLiked(!liked)}
-            />
+            <Button className={clsx(styles.like, liked && styles.likeActive)} onClick={() => setLiked(!liked)}></Button>
           )}
-          <SButton
-            label={'Контакты'}
-            type={'button'}
-            view={'cobaltPhone'}
-            btnOnClick={() => {
+          <Button
+            className={styles.buttonPhone}
+            onClick={() => {
               setOwnerOpen(true);
             }}
-          />
-          <SButton
-            label={'Подробнее'}
-            type={'button'}
-            view={'yellowLight'}
-            btnOnClick={() => navigate(`${PagesLinks.APARTMENTS_MINSK_PAGE}/${id}`)}
-          />
+          >
+            <PhoneIcon width={9} height={15} />
+            Контакты
+          </Button>
+          <Button className={styles.buttonMore} onClick={() => navigate(`${PagesLinks.APARTMENTS_MINSK_PAGE}/${id}`)}>
+            Подробнее
+          </Button>
         </footer>
       </div>
     </article>

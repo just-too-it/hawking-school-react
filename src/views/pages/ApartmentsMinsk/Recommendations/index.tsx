@@ -5,7 +5,7 @@ import { RecommendationProps } from './Recommendations.types';
 
 import styles from './Recommendations.module.scss';
 
-export const Recommendations: FC<{ recommendations: RecommendationProps[] }> = ({recommendations}) => {
+export const Recommendations: FC<{ recommendations: RecommendationProps[] }> = ({ recommendations }) => {
   return (
     <section className={styles.rec}>
       <h3 className={styles.title}>Рекомендуем посмотреть</h3>

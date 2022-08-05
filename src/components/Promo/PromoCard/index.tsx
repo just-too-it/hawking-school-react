@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { PromoCardProps } from './PromoCard.types';
-
-import styles from './PromoCard.module.scss';
 import { SButtonIcon } from '../../UI/SButtonIcon';
 import { ReactComponent as ArrowCirleIcon } from '../../../assets/images/icons/arrowCircle.svg';
-import { SButton } from '../../UI/SButton';
-import { useNavigate } from 'react-router-dom';
+import { Button } from '../../UI/Button';
+
+import styles from './PromoCard.module.scss';
 
 export const PromoCard: FC<PromoCardProps> = ({ title, description, mode, img, tags, iconLink }) => {
   const promoClassName = mode === 'normal' ? styles.card : [styles.card, styles.cardWide].join(' ');
@@ -20,7 +20,9 @@ export const PromoCard: FC<PromoCardProps> = ({ title, description, mode, img, t
         <div className={styles.tags}>
           {tags?.map((tag) => (
             <div className={styles.tag} key={tag.label}>
-              <SButton label={tag.label} btnOnClick={() => navigate(tag.link)} view="cobaltTag" />
+              <Button className={styles.buttonTag} onClick={() => navigate(tag.link)}>
+                {tag.label}
+              </Button>
             </div>
           ))}
         </div>

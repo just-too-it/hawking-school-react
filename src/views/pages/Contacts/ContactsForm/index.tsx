@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
-
-import styles from './ContactsForm.module.scss';
-import { SInput } from '../../../../components/UI/SInput';
-import { SButton } from '../../../../components/UI/SButton';
 import { Formik, Form, Field } from 'formik';
 import * as yup from 'yup';
 
-export const ContactsForm: FC<{modalControl}> = (props) => {
+import { SInput } from '../../../../components/UI/SInput';
+import { Button } from '../../../../components/UI/Button';
 
+import styles from './ContactsForm.module.scss';
+
+export const ContactsForm: FC<{ modalControl }> = (props) => {
   const initialValues = {
     name: '',
     email: '',
@@ -60,10 +60,18 @@ export const ContactsForm: FC<{modalControl}> = (props) => {
             </div>
             <label className={styles.label}>
               Ваше сообщение
-              <Field as="textarea" name={'message'} placeholder="Сообщение" className={styles.textarea} style={errors.message? { border:'1px solid #eb5757'}: {border:'none'}}/>
+              <Field
+                as="textarea"
+                name={'message'}
+                placeholder="Сообщение"
+                className={styles.textarea}
+                style={errors.message ? { border: '1px solid #eb5757' } : { border: 'none' }}
+              />
             </label>
-            <div className={styles.button}>
-              <SButton type="submit" label={'Отправить'} view={'cobalt'} btnOnClick={handleSubmit} />
+            <div className={styles.buttonWrapper}>
+              <Button type="submit" onClick={handleSubmit} className={styles.button}>
+                Отправить
+              </Button>
             </div>
           </fieldset>
         </Form>

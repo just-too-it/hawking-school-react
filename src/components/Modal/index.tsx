@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import { useRefCloseOut } from '../../hooks/useRefCloseOut';
-import { SButton } from '../UI/SButton';
+import { Button } from '../UI/Button';
+
 import styles from './Modal.module.scss';
 
 export const Modal: FC<{ isActive: boolean; children; action?: string }> = ({ isActive, children, action }) => {
@@ -18,14 +19,14 @@ export const Modal: FC<{ isActive: boolean; children; action?: string }> = ({ is
       <div className={styles.content} ref={refModal}>
         {children}
         {action && (
-          <SButton
-            type={'button'}
-            label={`${action}`}
-            btnOnClick={() => {
+          <Button
+            className={styles.button}
+            onClick={() => {
               setActive(false);
             }}
-            view={'yellow'}
-          />
+          >
+            {action}
+          </Button>
         )}
       </div>
     </section>

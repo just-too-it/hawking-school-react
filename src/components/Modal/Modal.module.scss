@@ -31,3 +31,24 @@
     margin-top: 30px;
   }
 }
+
+.button {
+    background: $color-yellow;
+    padding: 12px 24px;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 33px;
+    color: $color-black;
+
+    &:hover {
+      background: $color-yellow-hover;
+    }
+
+    &:active {
+      background: $color-yellow;
+    }
+
+    &:disabled {
+      cursor: auto;
+    }
+}

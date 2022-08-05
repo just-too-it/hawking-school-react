@@ -297,3 +297,90 @@
     }
   }
 }
+
+.buttonPhone {
+  background: $color-background-white;
+  box-shadow: 0 5px 20px rgb(0 96 206 / 10%);
+  border-radius: 18px;
+  padding: 10px 15px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: $color-cobalt;
+
+  & svg {
+    fill: $color-cobalt;
+    margin-right: 10px;
+  }
+
+  &:hover {
+    background: #f5f3ff;
+  }
+
+  &:active {
+    background: $color-background-white;
+  }
+}
+
+.buttonLiked {
+  background: $color-red-10;
+  border-radius: 22px;
+  font-weight: 600;
+  color: $color-red;
+  padding: 9px 40px 9px 15px;
+  text-shadow: none;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    width: 15px;
+    height: 13px;
+    content: '';
+    background-color: $color-red;
+    mask-image: url('../../assets/images/icons/heart2-default.png');
+    mask-size: 15px 13px;
+    background-repeat: no-repeat;
+    top: calc(50% - 7px);
+    right: 15px;
+  }
+
+  &:hover {
+    &::after {
+      transition: mask-image 0.2s ease-in;
+      mask-image: url('../../assets/images/icons/heart2-hover.png');
+    }
+  }
+}
+
+.buttonLikedActive {
+  &::after {
+    transition: mask-image 0.2s ease-in;
+    mask-image: url('../../assets/images/icons/heart2-active.png');
+  }
+
+  &:hover {
+    &::after {
+      transition: mask-image 0.2s ease-in;
+      mask-image: url('../../assets/images/icons/heart2-active.png');
+    }
+  }
+}
+
+.buttonMore {
+  background: $color-yellow-10;
+  padding: 10px 15px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  border-radius: 17px;
+  color: $color-yellow-hover;
+  text-shadow: none;
+
+  &:hover {
+    background: $color-yellow-20;
+  }
+
+  &:active {
+    background: $color-yellow-10;
+  }
+}

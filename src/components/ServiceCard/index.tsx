@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
+import clsx from 'clsx';
+
 import { ServiceCardProps } from './ServiceCard.types';
+import { Button } from '../UI/Button';
 
 import styles from './ServiceCard.module.scss';
-import { SButton } from '../UI/SButton';
-import clsx from 'clsx';
 
 export const ServiceCard: FC<ServiceCardProps> = ({ title, subTitle, icon, description, btn, gold }) => {
   return (
@@ -18,7 +19,10 @@ export const ServiceCard: FC<ServiceCardProps> = ({ title, subTitle, icon, descr
         )}
       </header>
       <div className={styles.description} dangerouslySetInnerHTML={{ __html: description }}></div>
-      <SButton label={btn.label} btnOnClick={btn.btnOnClick} view={btn.view} />
+      <Button onClick={btn.onClick} className={styles[btn.className]}>
+        {btn.children}
+        {btn.iconAfter}
+      </Button>
     </article>
   );
 };

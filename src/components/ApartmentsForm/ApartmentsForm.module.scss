@@ -42,7 +42,7 @@
 
   &:nth-last-child(2) {
     border-right: none;
-    margin-left: 30px;
+    margin-left: 13px;
   }
 
   & input {
@@ -160,4 +160,168 @@
   width: 235px;
   margin-right: 65px;
   justify-content: space-between;
+}
+
+.buttonOptions {
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: $color-black;
+  padding: 0;
+  width: 128px;
+
+  & svg {
+    margin-left: 10px;
+    fill: $color-cobalt;
+  }
+
+  &:hover {
+    color: $color-total-black;
+
+    & svg {
+      fill: $color-cobalt-hover;
+    }
+  }
+}
+
+.buttonClear {
+  background: $color-grey-default;
+  border-radius: 22px;
+  padding: 10px 16px;
+  font-weight: 600;
+  color: $color-black;
+  width: 100px;
+
+  &:hover {
+    background: $color-grey-default-hover;
+  }
+
+  &:active {
+    background: $color-grey-default;
+  }
+}
+
+.buttonMapHome {
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: $color-black;
+  padding: 0;
+  width: 80px;
+
+  & svg {
+    margin-left: 5px;
+    fill: $color-cobalt;
+  }
+
+  &:hover {
+    color: $color-total-black;
+
+    svg {
+      fill: $color-cobalt-hover;
+    }
+  }
+}
+
+.buttonSubmitHome {
+  padding: 9px 16px;
+  background: $color-yellow;
+  color: $color-grey-text;
+  width: 123px;
+
+  &:hover {
+    background: $color-yellow-hover;
+  }
+
+  &:active {
+    background: $color-yellow;
+  }
+
+  & svg {
+    margin-left: 12px;
+    stroke: $color-grey-text;
+  }
+}
+
+.buttonSubmitCity {
+  background: $color-cobalt;
+  border-radius: 22px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: $color-white;
+  width: 192px;
+
+  &:hover {
+    background: $color-cobalt-hover;
+  }
+
+  &:active {
+    background: $color-cobalt;
+  }
+
+  & svg {
+    margin-left: 10px;
+    stroke: $color-white;
+  }
+}
+
+.buttonMode {
+  padding: 10px 15px 10px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: $color-black;
+  background: transparent;
+  border-radius: 18px;
+
+  & svg {
+    fill: $color-grey-light;
+    margin-right: 10px;
+  }
+
+  &:hover {
+    background: $color-grey-default;
+  }
+  &:active {
+    background: $color-white;
+
+    & svg {
+      fill: $color-cobalt;
+      margin-right: 10px;
+    }
+  }
+}
+
+.buttonModeActive {
+  background: $color-white;
+  box-shadow: 0px 5px 20px rgba(0, 96, 206, 0.1);
+
+  & svg {
+    fill: $color-cobalt;
+    margin-right: 10px;
+  }
+}
+
+.buttonMapCity {
+  background: $color-white;
+  padding: 10px 15px;
+  box-shadow: 0px 5px 20px rgba(0, 96, 206, 0.1);
+  text-shadow: none;
+  border-radius: 18px;
+  color: $color-black;
+  font-weight: 600;
+
+  & svg {
+    fill: $color-cobalt;
+    margin-right: 10px;
+  }
+
+  &:hover {
+    background: $color-grey-default;
+  }
+
+  &:active {
+    background: $color-white;
+  }
 }

@@ -32,3 +32,22 @@
   margin-bottom: 23px;
   text-align: center;
 }
+
+.button {
+  height: 37px;
+  background: $color-white;
+  border-radius: 19px;
+  padding: 10px 18px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: $color-black;
+
+  & svg {
+    margin-right: 11px;
+  }
+
+  &:hover {
+    color: $color-yellow-hover;
+  }
+}

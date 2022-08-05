@@ -35,7 +35,7 @@ export const Home = () => {
         <SearchOnMap
           title={'Поиск квартир на карте'}
           description={'Ищите квартиры на сутки в центре города, возле парка или в живописном районе'}
-          btn={{ label: 'Открыть карту', btnOnClick: () => navigate(PagesLinks.MAPS_PAGE) }}
+          btn={{ children: 'Открыть карту', onClick: () => navigate(PagesLinks.MAPS_PAGE) }}
           height={'440px'}
         />
       </div>

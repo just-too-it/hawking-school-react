@@ -1,27 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../store/store';
 
 import { ApartmentList } from '../../../components/ApartmentList';
 import { Breadcrumbs } from '../../../components/Breadcrumbs';
 import { Pagination } from '../../../components/Pagination';
-import {
-  breadcrumbsForApartmentsMinsk,
-  apartmentsMinsk,
-  recommendationsMinsk,
-  sortList,
-} from '../../../core/mockData/mockData';
+import { breadcrumbsForApartmentsMinsk, apartmentsMinsk, recommendationsMinsk } from '../../../core/mockData/mockData';
 import { getPageCount } from '../../../core/utils/getPageCount';
 import { apartmentsMinskSlice } from '../../../store/apartments/apartmentsMinsk.slice';
 import { Recommendations } from './Recommendations';
 import { ApartmentsForm } from '../../../components/ApartmentsForm';
-
-import styles from './ApartmentsMinsk.module.scss';
 import { SearchOnMap } from '../../../components/SearchOnMap';
-import { useNavigate, useSearchParams } from 'react-router-dom';
 import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
 import { Social } from '../../../components/Social';
-import { socialApartments, socialNews } from '../../../core/constants/social.constant';
+import { socialApartments } from '../../../core/constants/social.constant';
+
+import styles from './ApartmentsMinsk.module.scss';
 
 export const ApartmentsMinsk = () => {
   const {
@@ -172,7 +167,7 @@ export const ApartmentsMinsk = () => {
       <SearchOnMap
         title={'Показать найденные квартиры на карте'}
         description={'Ищите новостройки рядом с работой, парком или родственниками'}
-        btn={{ label: 'Открыть карту', btnOnClick: () => navigate(PagesLinks.MAPS_PAGE) }}
+        btn={{ children: 'Открыть карту', onClick: () => navigate(PagesLinks.MAPS_PAGE) }}
         height={'310px'}
       />
     </main>

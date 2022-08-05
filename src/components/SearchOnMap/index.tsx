@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 
-import { SButton } from '../UI/SButton';
 import { SearchOnMapProps } from './SearchOnMap.types';
+import { Button } from '../UI/Button';
+import { MapGradientIcon } from '../icons';
 
 import styles from './SearchOnMap.module.scss';
 
@@ -11,7 +12,10 @@ export const SearchOnMap: FC<SearchOnMapProps> = ({ title, description, height, 
       <div className={styles.content}>
         <div className={styles.title}>{title}</div>
         <div className={styles.description}>{description}</div>
-        <SButton label={btn.label} btnOnClick={btn.btnOnClick} view={'whiteMap'} />
+        <Button onClick={btn.onClick} className={styles.button}>
+        <MapGradientIcon width={12} height={15} />
+        {btn.children}
+      </Button>
       </div>
     </section>
   );

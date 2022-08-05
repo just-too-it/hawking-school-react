@@ -73,3 +73,23 @@
     margin-bottom: 21px;
   }
 }
+
+.buttonTag {
+  background: $color-cobalt;
+  border-radius: 33px;
+  width: auto;
+  border-radius: 16px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: $color-white-70;
+  padding: 8px 14px;
+
+  &:hover {
+    background: $color-cobalt-hover;
+  }
+
+  &:active {
+    background: $color-cobalt;
+  }
+}

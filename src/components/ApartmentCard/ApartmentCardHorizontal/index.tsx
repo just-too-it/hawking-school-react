@@ -6,11 +6,12 @@ import { ApartmentCardProps } from '../ApartmentCard.types';
 import { ReactComponent as MapIcon } from '../../../assets/images/icons/map.svg';
 import { ReactComponent as MetroIcon } from '../../../assets/images/icons/metro.svg';
 import { ReactComponent as UserIcon } from '../../../assets/images/icons/user.svg';
-import { SButton } from '../../UI/SButton';
 import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
 import { UserCard } from '../../UserCard';
 import { useRefCloseOut } from '../../../hooks/useRefCloseOut';
 import { SSwiper } from '../../UI/SSwiper';
+import { Button } from '../../UI/Button';
+import { PhoneIcon } from '../../icons';
 
 import styles from '../ApartmentCard.module.scss';
 
@@ -84,31 +85,28 @@ export const ApartmentCardHorizontal: FC<{ apartment: ApartmentCardProps }> = (p
           </div>
         )}
         <footer className={styles.footer}>
-          <SButton
-            label={'Контакты'}
-            type={'button'}
-            view={'cobaltPhone'}
-            btnOnClick={() => {
+          <Button
+            className={styles.buttonPhone}
+            onClick={() => {
               setOwnerOpen(true);
             }}
-          />
+          >
+            <PhoneIcon width={9} height={15} />
+            Контакты
+          </Button>
           {location.pathname !== PagesLinks.MAIN_PAGE && (
-            <SButton
-              label={!liked ? 'В закладки' : 'Добавлено'}
-              type={'button'}
-              view={!liked ? 'liked' : 'likedActive'}
-              btnOnClick={() => {
-                setLiked(!liked);
+            <Button
+              onClick={() => {
                 setLiked(!liked);
               }}
-            />
+              className={!liked ? styles.buttonLiked : clsx(styles.buttonLiked, styles.buttonLikedActive)}
+            >
+              {!liked ? 'В закладки' : 'Добавлено'}
+            </Button>
           )}
-          <SButton
-            label={'Подробнее'}
-            type={'button'}
-            view={'yellowLight'}
-            btnOnClick={() => navigate(`${PagesLinks.APARTMENTS_MINSK_PAGE}/${id}`)}
-          />
+          <Button className={styles.buttonMore} onClick={() => navigate(`${PagesLinks.APARTMENTS_MINSK_PAGE}/${id}`)}>
+            Подробнее
+          </Button>
         </footer>
       </div>
     </article>

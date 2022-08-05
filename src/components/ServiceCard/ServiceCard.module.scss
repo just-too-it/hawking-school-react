@@ -63,3 +63,59 @@
     margin: 0;
   }
 }
+
+.yellowButton {
+  background: $color-yellow-gradient;
+  box-shadow: 0 15px 40px rgb(254 193 0 / 15%);
+  border-radius: 17px;
+  color: $color-grey-text;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+
+  &:hover {
+    background: $color-yellow-gradient-hover;
+  }
+
+  &:active {
+    background: $color-yellow-gradient;
+  }
+
+}
+
+.yellowGradientButton {
+  background: $color-yellow-gradient;
+  box-shadow: 0 15px 40px rgb(254 193 0 / 15%);
+  border-radius: 17px;
+  color: $color-grey-text;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+
+  &:hover {
+    background: $color-yellow-gradient-hover;
+  }
+
+  &:active {
+    background: $color-yellow-gradient;
+  }
+
+  & svg {
+    margin-left: 12px;
+  }
+}
+
+.violetGradientButton {
+  background: $color-violet-gradient-dark;
+    box-shadow: 0 15px 40px rgb(0 96 206 / 15%);
+    border-radius: 17px;
+    text-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+
+    &:hover {
+      background: $color-violet-gradient-hover;
+    }
+
+    &:active {
+      background: $color-violet-gradient-dark;
+    }
+
+    & svg {
+      margin-left: 12px;
+    }
+}

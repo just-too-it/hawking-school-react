@@ -49,7 +49,21 @@
   }
 }
 
-.button {
+.buttonWrapper {
   display: flex;
   justify-content: center;
+}
+
+.button {
+  background: $color-cobalt;
+  border-radius: 33px;
+  width: 200px;
+
+  &:hover {
+    background: $color-cobalt-hover;
+  }
+
+  &:active {
+    background: $color-cobalt;
+  }
 }

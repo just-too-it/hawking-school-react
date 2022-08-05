@@ -1,9 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SButton } from '../../../components/UI/SButton';
-import styles from './NotFound.module.scss';
+
 import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
 import { ReactComponent as ErrorIcon } from '../../../assets/images/404.svg';
+import { Button } from '../../../components/UI/Button';
+import { HomeIcon } from '../../../components/icons';
+
+import styles from './NotFound.module.scss';
 
 export const NotFound = () => {
   const navigate = useNavigate();
@@ -16,14 +19,10 @@ export const NotFound = () => {
           <div className={styles.description}>
             Возможно, у вас опечатка в адресе страницы, или её просто не существует
           </div>
-          <SButton
-            label={'Вернуться на главную'}
-            type={'button'}
-            view={'yellowIcon'}
-            btnOnClick={() => {
-              navigate(PagesLinks.MAIN_PAGE);
-            }}
-          />
+          <Button className={styles.button} onClick={() => navigate(PagesLinks.MAIN_PAGE)}>
+            <HomeIcon width={12} height={12} />
+            Вернуться на главную
+          </Button>
         </div>
         <div className={styles.code}>
           <ErrorIcon />

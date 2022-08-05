@@ -1,5 +1,4 @@
 import React, { FC, useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
 import clsx from 'clsx';
 
 import { ReactComponent as ArrowLeftIcon } from '../../assets/images/icons/arrowLeft.svg';
@@ -7,9 +6,10 @@ import { SButtonIcon } from '../UI/SButtonIcon';
 import { NavigationProps } from './Navigation.types';
 
 import styles from './Navigation.module.scss';
+import { Button } from '../UI/Button';
+import { ArrowIcon } from '../icons';
 
 export const Navigation: FC<NavigationProps> = ({ currentPage, totalPage, action }) => {
-  const dispatch = useDispatch();
   const [btnLClassName, setBtnLClassName] = useState(styles.button);
   const [btnRClassName, setBtnRClassName] = useState(styles.button);
 
@@ -20,13 +20,13 @@ export const Navigation: FC<NavigationProps> = ({ currentPage, totalPage, action
 
   const handleBtnLeft = () => {
     if (currentPage > 1) {
-      dispatch(action(currentPage - 1));
+      action(currentPage - 1);
     }
   };
 
   const handleBtnRight = () => {
     if (currentPage < totalPage) {
-      dispatch(action(currentPage + 1));
+      action(currentPage + 1);
     }
   };
 

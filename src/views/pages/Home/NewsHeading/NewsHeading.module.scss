@@ -12,3 +12,24 @@
   line-height: 30px;
   margin-bottom: 16px;
 }
+
+.button {
+  color: $color-cobalt;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0;
+
+    &:hover {
+      color: $color-cobalt-hover;
+    }
+
+    &:active {
+      color: $color-cobalt;
+    }
+
+    & svg {
+      margin-left: 12px;
+      stroke: $color-cobalt;
+    }
+}

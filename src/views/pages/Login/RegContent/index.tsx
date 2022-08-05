@@ -6,7 +6,8 @@ import ReCAPTCHA from 'react-google-recaptcha';
 
 import { PagesLinks } from '../../../../core/constants/pagesLinks.constant';
 import { SInput } from '../../../../components/UI/SInput';
-import { SButton } from '../../../../components/UI/SButton';
+import { Button } from '../../../../components/UI/Button';
+import { WarningIcon } from '../../../../components/icons';
 
 import styles from './RegContent.module.scss';
 
@@ -100,23 +101,14 @@ export const RegContent = () => {
                     <ReCAPTCHA sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" onChange={onChangeReCaptcha} />
                     <div className={styles.buttons}>
                       {!isValid && (
-                        <SButton
-                          type="button"
-                          label={'Ошибка ввода'}
-                          view={'warning'}
-                          btnOnClick={() => console.log('error')}
-                          width={'306px'}
-                          disabled={true}
-                        />
+                        <Button className={styles.buttonWarning} onClick={() => console.log('error')}>
+                          Ошибка ввода
+                          <WarningIcon width={20} height={20} />
+                        </Button>
                       )}
-                      <SButton
-                        type="submit"
-                        label={'Зарегистрироваться'}
-                        view={'yellow'}
-                        btnOnClick={handleSubmit}
-                        width={'306px'}
-                        disabled={!verifed}
-                      />
+                      <Button type="submit" onClick={handleSubmit} disabled={!verifed} className={styles.buttonReg}>
+                        Зарегистрироваться
+                      </Button>
                     </div>
                   </fieldset>
                 </Form>
@@ -148,7 +140,9 @@ export const RegContent = () => {
             Письмо для подтверждения аккаунта отправлено почту. Перейдите по ссылке, указанной в письме. Если письма
             нет, то проверьте спам.
           </div>
-          <SButton type="button" label={'Понятно'} view={'yellow'} btnOnClick={() => navigate(PagesLinks.MAIN_PAGE)} />
+          <Button className={styles.buttonReg} onClick={() => navigate(PagesLinks.MAIN_PAGE)}>
+            Понятно
+          </Button>
         </div>
       )}
     </>

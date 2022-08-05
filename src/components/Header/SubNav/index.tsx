@@ -1,11 +1,12 @@
 import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
-import { Logo } from '../../Logo';
 import { Link, useLocation } from 'react-router-dom';
-import { SButton } from '../../UI/SButton';
+
+import { Logo } from '../../Logo';
 import { IItemSubNav } from './SubNav.type';
 import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
 import { ReactComponent as MapIcon } from '../../../assets/images/icons/map.svg';
 import { useRefCloseOut } from '../../../hooks/useRefCloseOut';
+import { Button } from '../../UI/Button';
 
 export const SubNav: FC<{ menu: IItemSubNav[] }> = (props) => {
   const [isActiveSubmenu, setIsActiveSubmenu] = useState(false);
@@ -47,14 +48,14 @@ export const SubNav: FC<{ menu: IItemSubNav[] }> = (props) => {
 
   const memoizedItemClassName = useCallback(
     (item) => {
-      let itemClassName = 'subnav__item'
-     
+      let itemClassName = 'subnav__item';
+
       if (item.link) {
-        itemClassName = location.pathname == item.link ? 'subnav__item subnav__item_active' : 'subnav__item'
+        itemClassName = location.pathname == item.link ? 'subnav__item subnav__item_active' : 'subnav__item';
       } else {
         if (location.pathname.includes('apartments')) {
           itemClassName = 'subnav__item subnav__item_active';
-        } 
+        }
       }
       return itemClassName;
     },
@@ -108,16 +109,14 @@ export const SubNav: FC<{ menu: IItemSubNav[] }> = (props) => {
             </li>
           ))}
         </ul>
-        <div className="subnav__button">
-          <SButton
-            type={'button'}
-            label={'+ Разместить объявление'}
-            view={'violetGradient'}
-            btnOnClick={() => {
-              console.log('');
-            }}
-          />
-        </div>
+        <Button
+          onClick={() => {
+            console.log('Переход на страницу Разместить объявление');
+          }}
+          className="subnav__button"
+        >
+          + Разместить объявление
+        </Button>
       </div>
     </div>
   );

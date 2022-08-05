@@ -8,7 +8,8 @@ import { FormControlLabel } from '@mui/material';
 import { PagesLinks } from '../../../../core/constants/pagesLinks.constant';
 import { SSwitch } from '../../../../components/UI/Switch';
 import { SInput } from '../../../../components/UI/SInput';
-import { SButton } from '../../../../components/UI/SButton';
+import { Button } from '../../../../components/UI/Button';
+import { WarningIcon } from '../../../../components/icons';
 
 import styles from './LoginContent.module.scss';
 
@@ -74,8 +75,15 @@ export const LoginContent = () => {
                 </div>
               </div>
               <div className={styles.buttons}>
-                {!isValid && <SButton type="submit" label={'Ошибка ввода'} view={'warning'} btnOnClick={handleSubmit} width={'306px'} />}
-                <SButton type="submit" label={'Войти'} view={'yellow'} btnOnClick={handleSubmit} width={'306px'} />
+                {!isValid && (
+                  <Button type="submit" className={styles.buttonWarning} onClick={handleSubmit}>
+                    Ошибка ввода
+                    <WarningIcon width={20} height={20} />
+                  </Button>
+                )}
+                <Button type="submit" className={styles.buttonLogin} onClick={handleSubmit}>
+                  Войти
+                </Button>
               </div>
             </fieldset>
           </Form>

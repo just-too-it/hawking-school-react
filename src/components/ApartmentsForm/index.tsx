@@ -6,7 +6,6 @@ import * as yup from 'yup';
 import clsx from 'clsx';
 
 import { SInput } from '../UI/SInput';
-import { SButton } from '../UI/SButton';
 import { SSelector } from '../UI/SSelector';
 import {
   roomsList,
@@ -25,6 +24,8 @@ import { PagesLinks } from '../../core/constants/pagesLinks.constant';
 import { FilterMainProps } from '../../store/filterMain/filterMain.types';
 import { ApartmentsMinskProps } from '../../views/pages/ApartmentsMinsk/ApartmentsMinsk.types';
 import { SCheckboxList } from '../UI/SCheckboxList';
+import { Button } from '../UI/Button';
+import { ArrowIcon, ListIcon, MapIcon, OptionsIcon, TileIcon } from '../icons';
 
 import styles from './ApartmentsForm.module.scss';
 
@@ -52,7 +53,7 @@ export const ApartmentsForm = () => {
     setOptions,
     setListMode,
     setSortMode,
-    setCurrentPage
+    setCurrentPage,
   } = apartmentsMinskSlice.actions;
 
   const {
@@ -72,7 +73,7 @@ export const ApartmentsForm = () => {
     metro,
     listMode,
     sortMode,
-    options
+    options,
   } = useSelector((state: RootState) => state.apartmentsMinskReducer);
 
   const initialValuesHome = {
@@ -152,7 +153,7 @@ export const ApartmentsForm = () => {
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
               setSubmitting(false);
-              
+
               switch (viewForm) {
                 case 'Home':
                   values.city && dispatch(setCity(values.city));
@@ -213,27 +214,34 @@ export const ApartmentsForm = () => {
                     <div className={clsx(styles.item, viewForm == 'Minsk' && styles.itemCity)}>
                       <div className={styles.itemTitle}>Цена за сутки (BYN)</div>
                       <div className={styles.prices}>
-                        <SInput type="number" placeholder={initialValues.priceFrom ? initialValues.priceFrom : 'От'} name={'priceFrom'} /> -
-                        <SInput type="number" placeholder={initialValues.priceTo ? initialValues.priceTo : 'До'} name={'priceTo'} />
+                        <SInput
+                          type="number"
+                          placeholder={initialValues.priceFrom ? initialValues.priceFrom : 'От'}
+                          name={'priceFrom'}
+                        />{' '}
+                        -
+                        <SInput
+                          type="number"
+                          placeholder={initialValues.priceTo ? initialValues.priceTo : 'До'}
+                          name={'priceTo'}
+                        />
                       </div>
                     </div>
                     <div className={clsx(styles.item, viewForm == 'Minsk' && styles.itemCity)}>
-                      <SButton
-                        type="button"
-                        label="Больше опций"
-                        view={'transparentOptions'}
-                        width={'128px'}
-                        btnOnClick={viewForm == 'Home' ? handleBtnOptionsHome(handleSubmit) : handleBtnOptionsCity}
-                      />
+                      <Button
+                        className={styles.buttonOptions}
+                        onClick={viewForm == 'Home' ? handleBtnOptionsHome(handleSubmit) : handleBtnOptionsCity}
+                      >
+                        Больше опций
+                        <OptionsIcon width={16} height={18} />
+                      </Button>
                     </div>
                     {viewForm !== 'Home' && (
                       <div className={clsx(styles.item, viewForm == 'Minsk' && styles.itemCity)}>
-                        <SButton
+                        <Button
                           type="reset"
-                          label="Очистить"
-                          view={'clear'}
-                          width={'100px'}
-                          btnOnClick={() => {
+                          className={styles.buttonClear}
+                          onClick={() => {
                             handleReset();
                             dispatch(setRoomsMinsk(''));
                             dispatch(setPriceFromMinsk(0));
@@ -241,42 +249,35 @@ export const ApartmentsForm = () => {
                             dispatch(setPeopleCount(''));
                             dispatch(setDistrict(''));
                             dispatch(setMetro(''));
-                            dispatch(setOptions([])); 
+                            dispatch(setOptions([]));
                             values.options = [];
                             dispatch(setSortMode(''));
                           }}
-                        />
+                        >
+                          Очистить
+                        </Button>
                       </div>
                     )}
                     {viewForm == 'Home' && (
                       <div className={clsx(styles.item)}>
-                        <SButton
-                          type="button"
-                          label="На карте"
-                          view={'transparentMap'}
-                          width={'80px'}
-                          btnOnClick={handleSubmit}
-                        />
+                        <Button className={styles.buttonMapHome} onClick={handleSubmit}>
+                          На карте
+                          <MapIcon width={12} height={15} />
+                        </Button>
                       </div>
                     )}
                     <div className={styles.button}>
                       {viewForm == 'Home' && (
-                        <SButton
-                          type="submit"
-                          label={'Показать'}
-                          view={'yellowArrow'}
-                          btnOnClick={handleSubmit}
-                          width={'123px'}
-                        />
+                        <Button type="submit" className={styles.buttonSubmitHome} onClick={handleSubmit}>
+                          Показать
+                          <ArrowIcon width={10} height={10} />
+                        </Button>
                       )}
                       {viewForm == 'Minsk' && (
-                        <SButton
-                          type="submit"
-                          label={'Показать объекты'}
-                          view={'cobaltArrow'}
-                          btnOnClick={handleSubmit}
-                          width={'192px'}
-                        />
+                        <Button type="submit" className={styles.buttonSubmitCity} onClick={handleSubmit}>
+                          Показать объекты
+                          <ArrowIcon width={10} height={10} />
+                        </Button>
                       )}
                     </div>
                   </div>
@@ -333,26 +334,26 @@ export const ApartmentsForm = () => {
                           />
                         </div>
                         <div className={styles.view}>
-                          <SButton
-                            label={'Список'}
-                            type={'button'}
-                            view={listMode ? 'listActive' : 'list'}
-                            btnOnClick={() => dispatch(setListMode(true))}
-                          />
-                          <SButton
-                            label={'Плитки'}
-                            type={'button'}
-                            view={!listMode ? 'tileActive' : 'tile'}
-                            btnOnClick={() => dispatch(setListMode(false))}
-                          />
+                          <Button
+                            className={clsx(styles.buttonMode, listMode && styles.buttonModeActive)}
+                            onClick={() => dispatch(setListMode(true))}
+                          >
+                            <ListIcon width={14} height={14} />
+                            Список
+                          </Button>
+                          <Button
+                            className={clsx(styles.buttonMode, !listMode && styles.buttonModeActive)}
+                            onClick={() => dispatch(setListMode(false))}
+                          >
+                            <TileIcon width={14} height={14} />
+                            Плитки
+                          </Button>
                         </div>
                         <div className={styles.map}>
-                          <SButton
-                            type="button"
-                            label="Показать на карте"
-                            view={'transparentLeftMap'}
-                            btnOnClick={() => navigate(PagesLinks.MAPS_PAGE)}
-                          />
+                          <Button className={styles.buttonMapCity} onClick={() => navigate(PagesLinks.MAPS_PAGE)}>
+                            <MapIcon width={11} height={14} />
+                            Показать на карте
+                          </Button>
                         </div>
                       </section>
                     </div>

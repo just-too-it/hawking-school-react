@@ -58,7 +58,7 @@
   opacity: 0.6;
 }
 
-.button {
+.buttonWrapper {
   align-self: center;
   height: 70px;
   padding-left: 25px;
@@ -77,6 +77,30 @@
     top: 0;
     left: 0;
   }
+}
+
+.button {
+    background: $color-violet-gradient;
+    box-shadow: 0 15px 40px rgb(0 96 206 / 15%);
+    border-radius: 17px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: $color-white;
+    text-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+
+    &:hover {
+      background: $color-violet-gradient-hover;
+    }
+
+    &:active {
+      background: $color-violet-gradient;
+    }
+
+    & svg {
+      margin-left: 12px;
+      stroke: $color-white;
+    }
 }
 
 .apartments {

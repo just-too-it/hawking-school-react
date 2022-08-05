@@ -52,3 +52,29 @@
   color: $color-white;
   margin-bottom: 40px;
 }
+
+.button {
+  background: $color-yellow;
+  padding: 12px 24px;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 33px;
+  color: $color-black;
+
+  &:hover {
+    background: $color-yellow-hover;
+  }
+
+  &:active {
+    background: $color-yellow;
+  }
+
+  &:disabled {
+    cursor: auto;
+  }
+  
+  & svg {
+    margin-right: 10px;
+    fill: $color-total-black;
+  }
+}

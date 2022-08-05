@@ -84,3 +84,44 @@
     flex-shrink: 0;
   }
 }
+
+.buttonWarning {
+  background: $color-red;
+  border-radius: 33px;
+  font-size: 16px;
+  padding: 12px 24px;
+
+  & svg {
+    margin-left: 15px;
+    fill: $color-white-50;
+  }
+
+  &:hover {
+    background: $color-red-hover;
+  }
+
+  &:active {
+    background: $color-red;
+  }
+}
+
+.buttonReg {
+  background: $color-yellow;
+    padding: 12px 24px;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 33px;
+    color: $color-black;
+
+    &:hover {
+      background: $color-yellow-hover;
+    }
+
+    &:active {
+      background: $color-yellow;
+    }
+
+    &:disabled {
+      cursor: auto;
+    }
+}

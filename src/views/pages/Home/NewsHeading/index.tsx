@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { ArrowIcon } from '../../../../components/icons';
 import { NewsHeadlines } from '../../../../components/NewsHeadlines';
-import { SButton } from '../../../../components/UI/SButton';
+import { Button } from '../../../../components/UI/Button';
 import { PagesLinks } from '../../../../core/constants/pagesLinks.constant';
 import { news } from '../../../../core/mockData/mockData';
 import { newsSlice } from '../../../../store/news/news.slice';
@@ -25,7 +26,10 @@ export const NewsHeading = () => {
     <article className={styles.news}>
       <h2 className={styles.title}>Новости</h2>
       <NewsHeadlines data={data} newsPerPage={NEWS_PER_PAGE} />
-      <SButton label="Посмотреть все" btnOnClick={() => navigate(PagesLinks.NEWS_PAGE)} view="transparentCobaltArrow" />
+      <Button onClick={() => navigate(PagesLinks.NEWS_PAGE)} className={styles.button}>
+        Посмотреть все
+        <ArrowIcon width={10} height={10} />
+      </Button>
     </article>
   );
 };

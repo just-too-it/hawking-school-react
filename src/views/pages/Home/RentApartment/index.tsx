@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { ApartmentList } from '../../../../components/ApartmentList';
+import { ArrowIcon } from '../../../../components/icons';
 import { Navigation } from '../../../../components/Navigation';
-import { SButton } from '../../../../components/UI/SButton';
+import { Button } from '../../../../components/UI/Button';
 import { apartmentsMinsk } from '../../../../core/mockData/mockData';
 import { getPageCount } from '../../../../core/utils/getPageCount';
 import { useNavPageCity } from '../../../../hooks/useNavPageCity';
@@ -15,11 +16,11 @@ import styles from './RentApartment.module.scss';
 
 export const RentApartment = () => {
   const { apartments, metro, district } = useSelector((state: RootState) => state.apartmentsMinskReducer);
-  const { setApartments/* , setCurrentPage */ } = apartmentsMinskSlice.actions;
+  const { setApartments } = apartmentsMinskSlice.actions;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const CARDS_PER_PAGE_HOME = 3;
-  const [currentPageForHome, setCurrentPageForHome] = useState(1)
+  const [currentPageForHome, setCurrentPageForHome] = useState(1);
 
   useEffect(() => {
     dispatch(setApartments(apartmentsMinsk));
@@ -65,13 +66,11 @@ export const RentApartment = () => {
           ) : null}
           <div className={styles.description}>Предложений по Минску</div>
         </div>
-        <div className={styles.button}>
-          <SButton
-            type="button"
-            label={'Посмотреть все'}
-            btnOnClick={() => useNavPageCity('Минск', navigate)}
-            view={'cobaltArrowGrad'}
-          />
+        <div className={styles.buttonWrapper}>
+          <Button className={styles.button} onClick={() => useNavPageCity('Минск', navigate)}>
+            Посмотреть все
+            <ArrowIcon width={10} height={10} />
+          </Button>
         </div>
       </div>
     </section>
