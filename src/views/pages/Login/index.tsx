@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
+import { PagesLinks } from 'core/constants/pagesLinks.constant';
 import { LoginContent } from './LoginContent';
 import { RegContent } from './RegContent';
 

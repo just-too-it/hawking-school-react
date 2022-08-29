@@ -1,25 +1,25 @@
-import { IBreadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs.types';
-import { INewsPreview } from '../../components/NewsPreview/NewsPreview.types';
-import { PagesLinks } from '../constants/pagesLinks.constant';
-import room from '../../assets/images/room.jpg';
-import room1 from '../../assets/images/room1.jpg';
-import room2 from '../../assets/images/room2.jpg';
-import room3 from '../../assets/images/room3.jpg';
-import room4 from '../../assets/images/room4.jpg';
-import roomAbout from '../../assets/images/room-about.jpg';
-import owner from '../../assets/images/owner.jpg';
-import { INewsItem } from '../../views/pages/NewsItem/NewsItem.types';
-import { SelectorProps } from '../../components/UI/SSelector/SSelector.types';
-import { PromoCardProps } from '../../components/Promo/PromoCard/PromoCard.types';
-import promoApart from '../../assets/images/promo-apart.jpg';
-import promoCott from '../../assets/images/promo-cott.jpg';
-import promoSauna from '../../assets/images/promo-sauna.jpg';
-import promoAuto from '../../assets/images/promo-auto.jpg'
-import { PopularListProps } from '../../components/PopularList/PopularList.types';
-import { ApartmentCardProps } from '../../components/ApartmentCard/ApartmentCard.types';
-import { AboutProps } from '../../components/About/About.types';
-import { RecommendationProps } from '../../views/pages/ApartmentsMinsk/Recommendations/Recommendations.types';
-import { CheckboxProps } from '../../components/UI/SCheckbox/SCheckbox.types';
+import { IBreadcrumbs } from 'components/Breadcrumbs/Breadcrumbs.types';
+import { INewsPreview } from 'components/NewsPreview/NewsPreview.types';
+import { PagesLinks } from 'core/constants/pagesLinks.constant';
+import room from 'assets/images/room.jpg';
+import room1 from 'assets/images/room1.jpg';
+import room2 from 'assets/images/room2.jpg';
+import room3 from 'assets/images/room3.jpg';
+import room4 from 'assets/images/room4.jpg';
+import roomAbout from 'assets/images/room-about.jpg';
+import owner from 'assets/images/owner.jpg';
+import { INewsItem } from 'views/pages/NewsItem/NewsItem.types';
+import { SelectorProps } from 'components/UI/SSelector/SSelector.types';
+import { PromoCardProps } from 'components/Promo/PromoCard/PromoCard.types';
+import promoApart from 'assets/images/promo-apart.jpg';
+import promoCott from 'assets/images/promo-cott.jpg';
+import promoSauna from 'assets/images/promo-sauna.jpg';
+import promoAuto from 'assets/images/promo-auto.jpg'
+import { PopularListProps } from 'components/PopularList/PopularList.types';
+import { ApartmentCardProps } from 'components/ApartmentCard/ApartmentCard.types';
+import { AboutProps } from 'components/About/About.types';
+import { RecommendationProps } from 'views/pages/ApartmentsMinsk/Recommendations/Recommendations.types';
+import { CheckboxProps } from 'components/UI/SCheckbox/SCheckbox.types';
 
 /* export const chooseCity: ISelector = {
   title: 'Выберите',

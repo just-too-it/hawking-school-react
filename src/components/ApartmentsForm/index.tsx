@@ -5,8 +5,8 @@ import { Formik, Form } from 'formik';
 import * as yup from 'yup';
 import clsx from 'clsx';
 
-import { SInput } from '../UI/SInput';
-import { SSelector } from '../UI/SSelector';
+import { SInput } from 'components/UI/SInput'; 
+import { SSelector } from 'components/UI/SSelector';
 import {
   roomsList,
   citysList,
@@ -15,17 +15,17 @@ import {
   metroMinskList,
   optionsList,
   sortList,
-} from '../../core/mockData/mockData';
-import { filterMainSlice } from '../../store/filterMain/filterMain.slice';
-import { useNavPageCity } from '../../hooks/useNavPageCity';
-import { RootState } from '../../store/store';
-import { apartmentsMinskSlice } from '../../store/apartments/apartmentsMinsk.slice';
-import { PagesLinks } from '../../core/constants/pagesLinks.constant';
-import { FilterMainProps } from '../../store/filterMain/filterMain.types';
-import { ApartmentsMinskProps } from '../../views/pages/ApartmentsMinsk/ApartmentsMinsk.types';
-import { SCheckboxList } from '../UI/SCheckboxList';
-import { Button } from '../UI/Button';
-import { ArrowIcon, ListIcon, MapIcon, OptionsIcon, TileIcon } from '../icons';
+} from 'core/mockData/mockData';
+import { filterMainSlice } from 'store/filterMain/filterMain.slice';
+import { useNavPageCity } from 'hooks/useNavPageCity';
+import { RootState } from 'store/store';
+import { apartmentsMinskSlice } from 'store/apartments/apartmentsMinsk.slice';
+import { PagesLinks } from 'core/constants/pagesLinks.constant';
+import { FilterMainProps } from 'store/filterMain/filterMain.types';
+import { ApartmentsMinskProps } from 'views/pages/ApartmentsMinsk/ApartmentsMinsk.types';
+import { SCheckboxList } from 'components/UI/SCheckboxList'; 
+import { Button } from 'components/UI/Button'; 
+import { ArrowIcon, ListIcon, MapIcon, OptionsIcon, TileIcon } from 'components/icons';
 
 import styles from './ApartmentsForm.module.scss';
 

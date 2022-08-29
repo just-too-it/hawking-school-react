@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/bundle';
 
 import { SButtonIcon } from '../SButtonIcon';
-import { ReactComponent as ArrowLeftIcon } from '../../../assets/images/icons/arrowLeft.svg';
+import { ReactComponent as ArrowLeftIcon } from 'assets/images/icons/arrowLeft.svg';
 import { Navigation, Pagination } from 'swiper';
 
 import styles from './SSwiper.module.scss';

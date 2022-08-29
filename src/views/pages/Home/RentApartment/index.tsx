@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { ApartmentList } from '../../../../components/ApartmentList';
-import { ArrowIcon } from '../../../../components/icons';
-import { Navigation } from '../../../../components/Navigation';
-import { Button } from '../../../../components/UI/Button';
-import { apartmentsMinsk } from '../../../../core/mockData/mockData';
-import { getPageCount } from '../../../../core/utils/getPageCount';
-import { useNavPageCity } from '../../../../hooks/useNavPageCity';
-import { apartmentsMinskSlice } from '../../../../store/apartments/apartmentsMinsk.slice';
-import { RootState } from '../../../../store/store';
+
+import { ApartmentList } from 'components/ApartmentList';
+import { ArrowIcon } from 'components/icons';
+import { Navigation } from 'components/Navigation';
+import { Button } from 'components/UI/Button';
+import { apartmentsMinsk } from 'core/mockData/mockData';
+import { getPageCount } from 'core/utils/getPageCount';
+import { useNavPageCity } from 'hooks/useNavPageCity';
+import { apartmentsMinskSlice } from 'store/apartments/apartmentsMinsk.slice';
+import { RootState } from 'store/store';
 import { FilterMinsk } from '../FilterMinsk';
 
 import styles from './RentApartment.module.scss';

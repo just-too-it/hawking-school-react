@@ -1,12 +1,14 @@
 import React, { FC, useState, useEffect } from 'react';
-import { InputProps } from './SInput.types';
-import styles from './SInput.module.scss';
-import clsx from 'clsx';
-import { ReactComponent as UserIcon } from '../../../assets/images/icons/user.svg';
-import { ReactComponent as MailIcon } from '../../../assets/images/icons/mail.svg';
-import { ReactComponent as PassIcon } from '../../../assets/images/icons/pass.svg';
-import { ReactComponent as WarningIcon } from '../../../assets/images/icons/warning.svg';
 import { Field } from 'formik';
+import clsx from 'clsx';
+
+import { InputProps } from './SInput.types';
+import { ReactComponent as UserIcon } from 'assets/images/icons/user.svg';
+import { ReactComponent as MailIcon } from 'assets/images/icons/mail.svg';
+import { ReactComponent as PassIcon } from 'assets/images/icons/pass.svg';
+import { ReactComponent as WarningIcon } from 'assets/images/icons/warning.svg';
+
+import styles from './SInput.module.scss';
 
 export const SInput: FC<InputProps> = ({
   type,
@@ -17,7 +19,7 @@ export const SInput: FC<InputProps> = ({
   addStyles,
   isWarning,
   width,
-  className
+  className,
 }) => {
   const [iconLeft, setIconLeft] = useState(null as React.ReactElement);
   const [iconRight, setIconRight] = useState(null as React.ReactElement);
@@ -60,7 +62,7 @@ export const SInput: FC<InputProps> = ({
           placeholder={placeholder}
           className={inputClassNames}
           style={addStyles}
-          id={name} 
+          id={name}
         />
         {iconRight ? <div className={styles.iconRight}>{iconRight}</div> : null}
       </div>

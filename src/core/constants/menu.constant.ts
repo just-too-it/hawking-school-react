@@ -1,5 +1,5 @@
-import { IItemNav } from '../../components/Header/Nav/Nav.types';
-import { IItemSubNav } from '../../components/Header/SubNav/SubNav.type';
+import { IItemNav } from 'components/Header/Nav/Nav.types';
+import { IItemSubNav } from 'components/Header/SubNav/SubNav.type';
 import { PagesLinks } from './pagesLinks.constant';
 
 export const Menu: IItemNav[] = [

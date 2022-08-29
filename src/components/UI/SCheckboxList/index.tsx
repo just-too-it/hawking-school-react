@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import { SCheckbox } from '../SCheckbox';
-import { CheckboxProps } from '../SCheckbox/SCheckbox.types';
+import { CheckboxProps } from '../SCheckbox/SCheckbox.types'; 
 
 import styles from './SCheckboxList.module.scss';
 

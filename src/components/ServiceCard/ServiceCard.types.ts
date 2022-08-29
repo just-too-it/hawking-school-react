@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonProps } from "../UI/Button/Button.types";
+import { ButtonProps } from "components/UI/Button/Button.types";
 
 export type ServiceCardProps = {
     title?: string;

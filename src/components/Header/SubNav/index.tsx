@@ -1,12 +1,12 @@
 import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import { Logo } from '../../Logo';
+import { Logo } from 'components/Logo'; 
 import { IItemSubNav } from './SubNav.type';
-import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
-import { ReactComponent as MapIcon } from '../../../assets/images/icons/map.svg';
-import { useRefCloseOut } from '../../../hooks/useRefCloseOut';
-import { Button } from '../../UI/Button';
+import { PagesLinks } from 'core/constants/pagesLinks.constant';
+import { ReactComponent as MapIcon } from 'assets/images/icons/map.svg';
+import { useRefCloseOut } from 'hooks/useRefCloseOut';
+import { Button } from 'components/UI/Button';
 
 export const SubNav: FC<{ menu: IItemSubNav[] }> = (props) => {
   const [isActiveSubmenu, setIsActiveSubmenu] = useState(false);

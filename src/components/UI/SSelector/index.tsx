@@ -1,12 +1,12 @@
 import React, { useState, FC, useRef } from 'react';
-import { useRefCloseOut } from '../../../hooks/useRefCloseOut';
 import { useLocation } from 'react-router-dom';
 import { Field } from 'formik';
 
+import { useRefCloseOut } from 'hooks/useRefCloseOut';
 import { SelectorProps } from './SSelector.types';
-import { ReactComponent as MetroIcon } from '../../../assets/images/icons/metro.svg';
-import { ReactComponent as SortIcon } from '../../../assets/images/icons/sort.svg';
-import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
+import { ReactComponent as MetroIcon } from 'assets/images/icons/metro.svg';
+import { ReactComponent as SortIcon } from 'assets/images/icons/sort.svg';
+import { PagesLinks } from 'core/constants/pagesLinks.constant';
 
 export const SSelector: FC<{
   options: SelectorProps[];

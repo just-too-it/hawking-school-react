@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-import { INewsPreview } from "../../components/NewsPreview/NewsPreview.types";
-import { NewsListProps } from "../../components/NewsList/NewsList.types";
+import { INewsPreview } from "components/NewsPreview/NewsPreview.types";
+import { NewsListProps } from "components/NewsList/NewsList.types";
 
 
 const initialNewsState: NewsListProps = {

@@ -1,4 +1,4 @@
-import { ApartmentCardProps } from "../ApartmentCard/ApartmentCard.types";
+import { ApartmentCardProps } from "components/ApartmentCard/ApartmentCard.types"; 
 
 export type ApartmentListProps = {
     apartments: ApartmentCardProps[];

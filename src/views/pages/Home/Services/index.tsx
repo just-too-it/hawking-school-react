@@ -1,10 +1,11 @@
 import React from 'react';
-import { ServiceCard } from '../../../../components/ServiceCard';
-import { ReactComponent as ClientsIcon } from '../../../../assets/images/icons/clients.svg';
-import { ReactComponent as AdIcon } from '../../../../assets/images/icons/ad.svg';
+
+import { ServiceCard } from 'components/ServiceCard';
+import { ReactComponent as ClientsIcon } from 'assets/images/icons/clients.svg';
+import { ReactComponent as AdIcon } from 'assets/images/icons/ad.svg';
+import { ArrowIcon } from 'components/icons/';
 
 import styles from './Services.module.scss';
-import {ArrowIcon} from '../../../../components/icons/';
 
 export const Services = () => {
   return (
@@ -27,7 +28,7 @@ export const Services = () => {
           children: 'Узнать стоимость услуги',
           onClick: () => console.log('click'),
           className: 'yellowGradientButton',
-          iconAfter: <ArrowIcon width={10} height={10} stroke='#242424'/>,
+          iconAfter: <ArrowIcon width={10} height={10} stroke="#242424" />,
         }}
       />
       <ServiceCard
@@ -39,7 +40,7 @@ export const Services = () => {
           children: 'Еще о тарифе Gold',
           onClick: () => console.log('click'),
           className: 'violetGradientButton',
-          iconAfter: <ArrowIcon width={10} height={10} stroke='#FFFFFF'/>,
+          iconAfter: <ArrowIcon width={10} height={10} stroke="#FFFFFF" />,
         }}
         gold={true}
       />

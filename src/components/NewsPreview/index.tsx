@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { MONTHS } from '../../core/constants/months.constant';
-import { PagesLinks } from '../../core/constants/pagesLinks.constant';
+import { MONTHS } from 'core/constants/months.constant';
+import { PagesLinks } from 'core/constants/pagesLinks.constant';
 import { INewsPreview } from './NewsPreview.types';
 
 export const NewsPreview: FC<{ news: INewsPreview }> = (props) => {

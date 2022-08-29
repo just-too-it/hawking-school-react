@@ -2,9 +2,9 @@ import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { PromoCardProps } from './PromoCard.types';
-import { SButtonIcon } from '../../UI/SButtonIcon';
-import { ReactComponent as ArrowCirleIcon } from '../../../assets/images/icons/arrowCircle.svg';
-import { Button } from '../../UI/Button';
+import { SButtonIcon } from 'components/UI/SButtonIcon';
+import { ReactComponent as ArrowCirleIcon } from 'assets/images/icons/arrowCircle.svg';
+import { Button } from 'components/UI/Button';
 
 import styles from './PromoCard.module.scss';
 

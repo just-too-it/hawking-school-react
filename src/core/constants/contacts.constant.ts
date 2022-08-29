@@ -1,4 +1,4 @@
-import { IContacts } from "../../views/pages/Contacts/Contacts.types"
+import { IContacts } from "views/pages/Contacts/Contacts.types"
 
 export const CONTACT: IContacts = {
     company: 'ИП Шушкевич Андрей Викторович',

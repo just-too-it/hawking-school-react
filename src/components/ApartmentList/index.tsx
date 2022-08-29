@@ -1,8 +1,8 @@
 import React, { FC, useState, useEffect } from 'react';
 import clsx from 'clsx';
 
-import { ApartmentCard } from '../ApartmentCard';
-import { ApartmentListProps } from './ApartmentListProps.types';
+import { ApartmentCard } from 'components/ApartmentCard';
+import { ApartmentListProps } from './ApartmentListProps.types'; 
 
 import styles from './ApartmentList.module.scss';
 

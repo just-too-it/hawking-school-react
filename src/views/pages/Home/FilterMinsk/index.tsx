@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Formik, Form } from 'formik';
 
-import { SearchWrapper } from '../../../../components/SearchWrapper';
-import { SSelector } from '../../../../components/UI/SSelector';
-import { metroMinskList, districtsMinskList } from '../../../../core/mockData/mockData';
-import { RootState } from '../../../../store/store';
-import { apartmentsMinskSlice } from '../../../../store/apartments/apartmentsMinsk.slice';
+import { SearchWrapper } from 'components/SearchWrapper';
+import { SSelector } from 'components/UI/SSelector';
+import { metroMinskList, districtsMinskList } from 'core/mockData/mockData';
+import { RootState } from 'store/store';
+import { apartmentsMinskSlice } from 'store/apartments/apartmentsMinsk.slice';
 
 import styles from './FilterMinsk.module.scss';
 

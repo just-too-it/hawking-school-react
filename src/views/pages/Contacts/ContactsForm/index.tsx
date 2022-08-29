@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as yup from 'yup';
 
-import { SInput } from '../../../../components/UI/SInput';
-import { Button } from '../../../../components/UI/Button';
+import { SInput } from 'components/UI/SInput';
+import { Button } from 'components/UI/Button';
 
 import styles from './ContactsForm.module.scss';
 

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { Social } from '../../../components/Social';
-import { socialContactsRight } from '../../../core/constants/social.constant';
-import styles from './Contacts.module.scss';
+
+import { Social } from 'components/Social';
+import { socialContactsRight } from 'core/constants/social.constant';
 import { ContactsForm } from './ContactsForm';
-import { Modal } from '../../../components/Modal';
+import { Modal } from 'components/Modal';
 import { Address } from './Address';
+
+import styles from './Contacts.module.scss';
 
 export const Contacts = () => {
   const [modal, setModal] = useState(false);
-
 
   return (
     <main className={styles.contacts}>
@@ -24,13 +25,15 @@ export const Contacts = () => {
             Администрация сайта не владеет информацией о наличии свободных квартир
           </article>
         </section>
-        <ContactsForm modalControl={setModal}/>
+        <ContactsForm modalControl={setModal} />
         <Social socialBlock={socialContactsRight} />
       </div>
       <Modal isActive={modal} action={'Закрыть окно'}>
         <div className={styles.modal}>
           <h1 className={styles.modalTitle}>Ваше письмо отправлено!</h1>
-          <p className={styles.modalDescription}>Какое-то сообщение о том, что письмо отправлено, какое-то сообщение, что письмо отправлено.</p>
+          <p className={styles.modalDescription}>
+            Какое-то сообщение о том, что письмо отправлено, какое-то сообщение, что письмо отправлено.
+          </p>
         </div>
       </Modal>
     </main>

@@ -5,11 +5,11 @@ import { Formik, Form } from 'formik';
 import * as yup from 'yup';
 import { FormControlLabel } from '@mui/material';
 
-import { PagesLinks } from '../../../../core/constants/pagesLinks.constant';
-import { SSwitch } from '../../../../components/UI/Switch';
-import { SInput } from '../../../../components/UI/SInput';
-import { Button } from '../../../../components/UI/Button';
-import { WarningIcon } from '../../../../components/icons';
+import { PagesLinks } from 'core/constants/pagesLinks.constant';
+import { SSwitch } from 'components/UI/Switch';
+import { SInput } from 'components/UI/SInput';
+import { Button } from 'components/UI/Button';
+import { WarningIcon } from 'components/icons';
 
 import styles from './LoginContent.module.scss';
 

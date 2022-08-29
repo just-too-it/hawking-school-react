@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../../store/store';
 
-import { ApartmentList } from '../../../components/ApartmentList';
-import { Breadcrumbs } from '../../../components/Breadcrumbs';
-import { Pagination } from '../../../components/Pagination';
-import { breadcrumbsForApartmentsMinsk, apartmentsMinsk, recommendationsMinsk } from '../../../core/mockData/mockData';
-import { getPageCount } from '../../../core/utils/getPageCount';
-import { apartmentsMinskSlice } from '../../../store/apartments/apartmentsMinsk.slice';
+import { RootState } from 'store/store';
+import { ApartmentList } from 'components/ApartmentList';
+import { Breadcrumbs } from 'components/Breadcrumbs';
+import { Pagination } from 'components/Pagination';
+import { breadcrumbsForApartmentsMinsk, apartmentsMinsk, recommendationsMinsk } from 'core/mockData/mockData';
+import { getPageCount } from 'core/utils/getPageCount';
+import { apartmentsMinskSlice } from 'store/apartments/apartmentsMinsk.slice';
 import { Recommendations } from './Recommendations';
-import { ApartmentsForm } from '../../../components/ApartmentsForm';
-import { SearchOnMap } from '../../../components/SearchOnMap';
-import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
-import { Social } from '../../../components/Social';
-import { socialApartments } from '../../../core/constants/social.constant';
+import { ApartmentsForm } from 'components/ApartmentsForm';
+import { SearchOnMap } from 'components/SearchOnMap';
+import { PagesLinks } from 'core/constants/pagesLinks.constant';
+import { Social } from 'components/Social';
+import { socialApartments } from 'core/constants/social.constant';
 
 import styles from './ApartmentsMinsk.module.scss';
 

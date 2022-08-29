@@ -1,4 +1,4 @@
-import {ISocialBlock} from '../../components/Social/Social.type';
+import {ISocialBlock} from 'components/Social/Social.type';
 
 export const socialGroups: ISocialBlock = {
     title: 'Мы в соцсетях',

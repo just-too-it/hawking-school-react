@@ -1,5 +1,6 @@
 import React from 'react';
-import { Menu, SubMenu } from '../../core/constants/menu.constant';
+
+import { Menu, SubMenu } from 'core/constants/menu.constant';
 import { Nav } from './Nav';
 import { SubNav } from './SubNav';
 

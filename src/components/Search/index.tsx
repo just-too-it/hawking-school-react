@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-
-import { ReactComponent as SearchIcon } from '../../assets/images/icons/search.svg';
-import { Formik, Form } from 'formik';
-import { SButtonIcon } from '../UI/SButtonIcon';
-import { SInput } from '../UI/SInput';
-import { RootState } from '../../store/store';
 import { useDispatch, useSelector } from 'react-redux';
-import { newsSlice } from '../../store/news/news.slice';
-import { SearchWrapper } from '../SearchWrapper';
+
+import { ReactComponent as SearchIcon } from 'assets/images/icons/search.svg';
+import { Formik, Form } from 'formik';
+import { SButtonIcon } from 'components/UI/SButtonIcon';
+import { SInput } from 'components/UI/SInput';
+import { RootState } from 'store/store';
+import { newsSlice } from 'store/news/news.slice';
+import { SearchWrapper } from 'components/SearchWrapper';
 
 import styles from './Search.module.scss';
 

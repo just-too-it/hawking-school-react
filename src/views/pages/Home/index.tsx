@@ -1,15 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Promo } from '../../../components/Promo';
+import { Promo } from 'components/Promo';
 import { Filter } from './Filter';
-import { about, promoCards } from '../../../core/mockData/mockData';
+import { about, promoCards } from 'core/mockData/mockData';
 import { PopularPages } from './PopularPages';
 import { RentApartment } from './RentApartment';
-import { SearchOnMap } from '../../../components/SearchOnMap';
-import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
+import { SearchOnMap } from 'components/SearchOnMap';
+import { PagesLinks } from 'core/constants/pagesLinks.constant';
 import { Services } from './Services';
-import { About } from '../../../components/About';
+import { About } from 'components/About';
 import { NewsHeading } from './NewsHeading';
 
 import styles from './Home.module.scss';

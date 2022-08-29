@@ -1,4 +1,4 @@
-import { IPayment } from '../../components/Payment/Payment.type';
+import { IPayment } from 'components/Payment/Payment.type';
 
 export const PAYMENTS: IPayment[] = [
   { name: 'visa', link: '/mock-link' },

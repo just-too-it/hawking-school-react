@@ -1,13 +1,13 @@
-import { Contacts } from '../views/pages/Contacts';
-import { Home } from '../views/pages/Home';
-import { News } from '../views/pages/News';
-import { NewsItem } from '../views/pages/NewsItem';
-import { NotFound } from '../views/pages/NotFound';
-import { Admin } from '../views/pages/Admin';
-import { Login } from '../views/pages/Login';
+import { Contacts } from 'views/pages/Contacts';
+import { Home } from 'views/pages/Home';
+import { News } from 'views/pages/News';
+import { NewsItem } from 'views/pages/NewsItem';
+import { NotFound } from 'views/pages/NotFound';
+import { Admin } from 'views/pages/Admin';
+import { Login } from 'views/pages/Login';
 import { RoutesProps } from './routes.types';
-import { PagesLinks } from '../core/constants/pagesLinks.constant';
-import { ApartmentsMinsk } from '../views/pages/ApartmentsMinsk';
+import { PagesLinks } from 'core/constants/pagesLinks.constant';
+import { ApartmentsMinsk } from 'views/pages/ApartmentsMinsk';
 
 export const authRoutes: RoutesProps[] = [
   {

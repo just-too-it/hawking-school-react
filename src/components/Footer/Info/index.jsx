@@ -1,5 +1,6 @@
 import React from 'react';
-import { CONTACT } from '../../../core/constants/contacts.constant';
+
+import { CONTACT } from 'core/constants/contacts.constant';
 
 export const Info = () => {
     return(

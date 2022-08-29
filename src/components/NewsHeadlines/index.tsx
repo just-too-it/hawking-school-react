@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 
 import { NewsHeadlinesProps } from './NewsHeadlines.types';
-import { MONTHS } from '../../core/constants/months.constant';
-import { PagesLinks } from '../../core/constants/pagesLinks.constant';
+import { MONTHS } from 'core/constants/months.constant';
+import { PagesLinks } from 'core/constants/pagesLinks.constant';
 
 import styles from './NewsHeadlines.module.scss';
 

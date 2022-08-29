@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { ApartmentCardProps } from '../../components/ApartmentCard/ApartmentCard.types';
-import { ApartmentsMinskProps } from '../../views/pages/ApartmentsMinsk/ApartmentsMinsk.types';
-import { RecommendationProps } from '../../views/pages/ApartmentsMinsk/Recommendations/Recommendations.types';
+
+import { ApartmentCardProps } from 'components/ApartmentCard/ApartmentCard.types';
+import { ApartmentsMinskProps } from 'views/pages/ApartmentsMinsk/ApartmentsMinsk.types';
+import { RecommendationProps } from 'views/pages/ApartmentsMinsk/Recommendations/Recommendations.types';
 
 const initialApartmentsMinskState: ApartmentsMinskProps = {
   apartments: null,
@@ -19,7 +20,7 @@ const initialApartmentsMinskState: ApartmentsMinskProps = {
   peopleCount: '',
   options: ['oven', 'microwave'],
   listMode: true,
-  sortMode: ''
+  sortMode: '',
 };
 
 export const apartmentsMinskSlice = createSlice({
@@ -50,13 +51,13 @@ export const apartmentsMinskSlice = createSlice({
     setRooms(state, action: PayloadAction<string>) {
       state.rooms = action.payload;
     },
-    setPriceFrom(state, action: PayloadAction<number|string>) {
+    setPriceFrom(state, action: PayloadAction<number | string>) {
       state.priceFrom = action.payload;
     },
-    setPriceTo(state, action: PayloadAction<number|string>) {
+    setPriceTo(state, action: PayloadAction<number | string>) {
       state.priceTo = action.payload;
     },
-    setPeopleCount(state, action: PayloadAction<number|string>) {
+    setPeopleCount(state, action: PayloadAction<number | string>) {
       state.peopleCount = action.payload;
     },
     setOptions(state, action: PayloadAction<string[]>) {

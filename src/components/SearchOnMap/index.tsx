@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
 import { SearchOnMapProps } from './SearchOnMap.types';
-import { Button } from '../UI/Button';
-import { MapGradientIcon } from '../icons';
+import { Button } from 'components/UI/Button';
+import { MapGradientIcon } from 'components/icons';
 
 import styles from './SearchOnMap.module.scss';
 

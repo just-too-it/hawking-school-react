@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { MONTHS } from '../../core/constants/months.constant';
-import { socialNews } from '../../core/constants/social.constant';
-import { newsItems } from '../../core/mockData/mockData';
-import { INewsItem } from '../../views/pages/NewsItem/NewsItem.types';
-import { Social } from '../Social';
+import { MONTHS } from 'core/constants/months.constant';
+import { socialNews } from 'core/constants/social.constant';
+import { newsItems } from 'core/mockData/mockData';
+import { INewsItem } from 'views/pages/NewsItem/NewsItem.types';
+import { Social } from 'components/Social';
 
 import styles from './FullNews.module.scss';
 

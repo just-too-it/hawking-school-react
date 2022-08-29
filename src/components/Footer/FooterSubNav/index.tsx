@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { IItemSubNav } from '../../Header/SubNav/SubNav.type';
+
+import { IItemSubNav } from 'components/Header/SubNav/SubNav.type';
 
 export const FooterSubNav: FC<{ menu: IItemSubNav[] }> = ({ menu }) => {
   return (

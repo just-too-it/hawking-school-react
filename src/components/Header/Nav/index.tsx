@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
+import { PagesLinks } from 'core/constants/pagesLinks.constant';
 import { IItemNav } from './Nav.types';
-import { ReactComponent as MapIcon } from '../../../assets/images/icons/map.svg';
+import { ReactComponent as MapIcon } from 'assets/images/icons/map.svg';
 
 export const Nav: FC<{ menu: IItemNav[] }> = (props) => {
   const location = useLocation();

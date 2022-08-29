@@ -1,8 +1,8 @@
 import React, { FC, useEffect, useState } from 'react';
 import clsx from 'clsx';
 
-import { ReactComponent as ArrowLeftIcon } from '../../assets/images/icons/arrowLeft.svg';
-import { SButtonIcon } from '../UI/SButtonIcon';
+import { ReactComponent as ArrowLeftIcon } from 'assets/images/icons/arrowLeft.svg';
+import { SButtonIcon } from 'components/UI/SButtonIcon';
 import { NavigationProps } from './Navigation.types';
 
 import styles from './Navigation.module.scss';

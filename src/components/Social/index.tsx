@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 import { ISocialBlock } from './Social.type';
-import { ReactComponent as VkGroupIcon } from '../../assets/images/icons/vk-group.svg';
-import { ReactComponent as InstGroupIcon } from '../../assets/images/icons/insta-group.svg';
-import { ReactComponent as FbGroupIcon } from '../../assets/images/icons/fb-group.svg';
+import { ReactComponent as VkGroupIcon } from 'assets/images/icons/vk-group.svg';
+import { ReactComponent as InstGroupIcon } from 'assets/images/icons/insta-group.svg';
+import { ReactComponent as FbGroupIcon } from 'assets/images/icons/fb-group.svg';
 
-import { ReactComponent as VkShareIcon } from '../../assets/images/icons/vk-share.svg';
-import { ReactComponent as FbShareIcon } from '../../assets/images/icons/fb-share.svg';
-import { ReactComponent as VbShareIcon } from '../../assets/images/icons/viber-share.svg';
-import { ReactComponent as TgShareIcon } from '../../assets/images/icons/telegram-share.svg';
-import { ReactComponent as WaShareIcon } from '../../assets/images/icons/whatsapp-share.svg';
+import { ReactComponent as VkShareIcon } from 'assets/images/icons/vk-share.svg';
+import { ReactComponent as FbShareIcon } from 'assets/images/icons/fb-share.svg';
+import { ReactComponent as VbShareIcon } from 'assets/images/icons/viber-share.svg';
+import { ReactComponent as TgShareIcon } from 'assets/images/icons/telegram-share.svg';
+import { ReactComponent as WaShareIcon } from 'assets/images/icons/whatsapp-share.svg';
 
 export const Social: FC<{ socialBlock: ISocialBlock }> = (props) => {
   const { title, socials, placeOfUse } = props.socialBlock;

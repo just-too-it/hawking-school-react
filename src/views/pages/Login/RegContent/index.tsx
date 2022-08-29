@@ -4,10 +4,10 @@ import { Formik, Form } from 'formik';
 import * as yup from 'yup';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-import { PagesLinks } from '../../../../core/constants/pagesLinks.constant';
-import { SInput } from '../../../../components/UI/SInput';
-import { Button } from '../../../../components/UI/Button';
-import { WarningIcon } from '../../../../components/icons';
+import { PagesLinks } from 'core/constants/pagesLinks.constant';
+import { SInput } from 'components/UI/SInput';
+import { Button } from 'components/UI/Button';
+import { WarningIcon } from 'components/icons';
 
 import styles from './RegContent.module.scss';
 

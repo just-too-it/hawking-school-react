@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Logo } from '../Logo';
-import { socialGroups } from '../../core/constants/social.constant';
-import { Social } from '../Social';
-import { FooterMenu, Menu } from '../../core/constants/menu.constant';
+import { Logo } from 'components/Logo';
+import { socialGroups } from 'core/constants/social.constant';
+import { Social } from 'components/Social';
+import { FooterMenu, Menu } from 'core/constants/menu.constant';
 import { Info } from './Info';
 import { FooterSubNav } from './FooterSubNav';
 import { FooterNav } from './FooterNav';
-import { Payment } from '../Payment';
-import { PAYMENTS } from '../../core/constants/payments.constant';
-import { PagesLinks } from '../../core/constants/pagesLinks.constant';
+import { Payment } from 'components/Payment';
+import { PAYMENTS } from 'core/constants/payments.constant';
+import { PagesLinks } from 'core/constants/pagesLinks.constant';
 
 export const Footer = () => {
 

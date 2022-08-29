@@ -1,4 +1,4 @@
-import { PagesLinks } from "../core/constants/pagesLinks.constant"; 
+import { PagesLinks } from "core/constants/pagesLinks.constant"; 
 
 export const useNavPageCity = (city, navigate) => {
 

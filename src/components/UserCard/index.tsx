@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
 
-import { SButtonIcon } from '../UI/SButtonIcon';
+import { SButtonIcon } from 'components/UI/SButtonIcon';
 import { UserCardProps } from './UserCard.types';
-import { ReactComponent as ViberIcon } from '../../assets/images/icons/viber-share.svg';
-import { ReactComponent as WhatsAppIcon } from '../../assets/images/icons/whatsapp-share.svg';
-import { ReactComponent as MailIcon } from '../../assets/images/icons/mail.svg';
+import { ReactComponent as ViberIcon } from 'assets/images/icons/viber-share.svg';
+import { ReactComponent as WhatsAppIcon } from 'assets/images/icons/whatsapp-share.svg';
+import { ReactComponent as MailIcon } from 'assets/images/icons/mail.svg';
 
 import styles from './UserCard.module.scss';
 

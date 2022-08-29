@@ -1,4 +1,4 @@
-import { UserCardProps } from "../UserCard/UserCard.types";
+import { UserCardProps } from "components/UserCard/UserCard.types";
 
 export type ApartmentCardProps = {
     id: number;

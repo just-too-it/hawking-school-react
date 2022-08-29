@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
-import { Breadcrumbs } from '../../../components/Breadcrumbs';
-import { breadcrumbsForNews, news } from '../../../core/mockData/mockData';
-import { Search } from '../../../components/Search';
-import styles from './News.module.scss';
-import { Pagination } from '../../../components/Pagination';
-import { NewsList } from '../../../components/NewsList';
-import { getPageCount } from '../../../core/utils/getPageCount';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../../store/store';
-import { newsSlice } from '../../../store/news/news.slice';
+
+import { Breadcrumbs } from 'components/Breadcrumbs';
+import { breadcrumbsForNews, news } from 'core/mockData/mockData';
+import { Search } from 'components/Search';
+import { Pagination } from 'components/Pagination';
+import { NewsList } from 'components/NewsList';
+import { getPageCount } from 'core/utils/getPageCount';
+import { RootState } from 'store/store';
+import { newsSlice } from 'store/news/news.slice';
+
+import styles from './News.module.scss';
 
 export const News = () => {
   const { data, newsPerPage, currentPage, query } = useSelector((state: RootState) => state.newsReducer);
@@ -33,7 +35,11 @@ export const News = () => {
         <div className={styles.list}>
           {data ? <NewsList data={data} newsPerPage={newsPerPage} currentPage={currentPage} query={query} /> : null}
         </div>
-        <Pagination currentPage={currentPage} totalPage={data ? getPageCount(data.length, newsPerPage) : 1} action={setCurrentPage}/>
+        <Pagination
+          currentPage={currentPage}
+          totalPage={data ? getPageCount(data.length, newsPerPage) : 1}
+          action={setCurrentPage}
+        />
       </section>
     </main>
   );

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { TabBarItem } from './TabBarItem';
-import { ApartmentsForm } from '../ApartmentsForm';
+import { ApartmentsForm } from 'components/ApartmentsForm'; 
 
 import styles from './TabBar.module.scss';
 

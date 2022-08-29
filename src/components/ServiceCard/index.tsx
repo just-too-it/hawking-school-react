@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import clsx from 'clsx';
 
 import { ServiceCardProps } from './ServiceCard.types';
-import { Button } from '../UI/Button';
+import { Button } from 'components/UI/Button';
 
 import styles from './ServiceCard.module.scss';
 

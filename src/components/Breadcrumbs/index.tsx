@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { IBreadcrumbs } from './Breadcrumbs.types';
-import { PagesLinks } from '../../core/constants/pagesLinks.constant';
-import { ReactComponent as HomeIcon } from '../../assets/images/icons/home.svg';
+import { PagesLinks } from 'core/constants/pagesLinks.constant';
+import { ReactComponent as HomeIcon } from 'assets/images/icons/home.svg';
 
 export const Breadcrumbs: FC<{ breadcrumbs: IBreadcrumbs[] }> = ({ breadcrumbs }) => {
   

@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
-import { useRefCloseOut } from '../../hooks/useRefCloseOut';
-import { Button } from '../UI/Button';
+
+import { useRefCloseOut } from 'hooks/useRefCloseOut';
+import { Button } from 'components/UI/Button';
 
 import styles from './Modal.module.scss';
 

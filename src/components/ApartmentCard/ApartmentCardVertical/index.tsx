@@ -2,17 +2,17 @@ import React, { FC, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import clsx from 'clsx';
 
-import { ApartmentCardProps } from '../ApartmentCard.types';
-import { ReactComponent as MapIcon } from '../../../assets/images/icons/map.svg';
-import { ReactComponent as MetroIcon } from '../../../assets/images/icons/metro.svg';
-import { ReactComponent as PointIcon } from '../../../assets/images/icons/point.svg';
-import { ReactComponent as UserIcon } from '../../../assets/images/icons/user.svg';
-import { PagesLinks } from '../../../core/constants/pagesLinks.constant';
-import { UserCard } from '../../UserCard';
-import { useRefCloseOut } from '../../../hooks/useRefCloseOut';
-import { SSwiper } from '../../UI/SSwiper';
-import { Button } from '../../UI/Button';
-import { PhoneIcon } from '../../icons';
+import { ApartmentCardProps } from '../ApartmentCard.types'; 
+import { ReactComponent as MapIcon } from 'assets/images/icons/map.svg';
+import { ReactComponent as MetroIcon } from 'assets/images/icons/metro.svg';
+import { ReactComponent as PointIcon } from 'assets/images/icons/point.svg';
+import { ReactComponent as UserIcon } from 'assets/images/icons/user.svg';
+import { PagesLinks } from 'core/constants/pagesLinks.constant';
+import { UserCard } from 'components/UserCard';
+import { useRefCloseOut } from 'hooks/useRefCloseOut';
+import { SSwiper } from 'components/UI/SSwiper';
+import { Button } from 'components/UI/Button'; 
+import { PhoneIcon } from 'components/icons';
 
 import styles from '../ApartmentCard.module.scss';
 
