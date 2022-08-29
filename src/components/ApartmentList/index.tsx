@@ -1,12 +1,12 @@
 import React, { FC, useState, useEffect } from 'react';
-import { ApartmentCard } from '../ApartmentCard';
-import { ApartmentCardProps } from '../ApartmentCard/ApartmentCard.types';
 import clsx from 'clsx';
 
-import styles from './ApartmentList.module.scss';
+import { ApartmentCard } from '../ApartmentCard';
 import { ApartmentListProps } from './ApartmentListProps.types';
 
-export const ApartmentList: FC<ApartmentListProps> = ({apartments, isListMode=true, cardsPerPage, currentPage}) => {
+import styles from './ApartmentList.module.scss';
+
+export const ApartmentList: FC<ApartmentListProps> = ({ apartments, isListMode = true, cardsPerPage, currentPage }) => {
   const [listView, setListView] = useState(null);
 
   const start: number = (currentPage - 1) * cardsPerPage;

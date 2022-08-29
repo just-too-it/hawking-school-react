@@ -32,8 +32,8 @@
     "stylelint:fix": "stylelint src/**/*{.css,.scss} --fix",
     "prettier": "prettier --check src/**/*{.css,.scss}",
     "prettier:fix": "prettier --write src/**/*{.css,.scss}",
-    "eslint": "eslint src/**/*.ts",
-    "eslint:fix": "eslint src/**/*.ts --fix"
+    "eslint": "eslint src/**/*{.ts,.tsx}",
+    "eslint:fix": "eslint src/**/*{.ts,.tsx} --fix"
   },
   "eslintConfig": {
     "extends": [

@@ -1,11 +1,9 @@
-import React, { FC, useCallback, useEffect, useState } from 'react';
-
+import React, { useState } from 'react';
 
 import { TabBarItem } from './TabBarItem';
+import { ApartmentsForm } from '../ApartmentsForm';
 
 import styles from './TabBar.module.scss';
-
-import { ApartmentsForm } from '../ApartmentsForm'
 
 export const TabBar = () => {
   const [tab, setTab] = useState(1);
@@ -21,7 +19,12 @@ export const TabBar = () => {
       <TabBarItem isActive={tab === 3 ? true : false} nav={'Бани и сауны'} tabHandler={() => setTab(3)}>
         <div>Фильтр для контента Бани и сауны</div>
       </TabBarItem>
-      <TabBarItem isActive={tab === 4 ? true : false} nav={'Авто напрокат'} tabHandler={() => setTab(4)} lastchild={true}>
+      <TabBarItem
+        isActive={tab === 4 ? true : false}
+        nav={'Авто напрокат'}
+        tabHandler={() => setTab(4)}
+        lastchild={true}
+      >
         <div>Фильтр для контента Авто напрокат</div>
       </TabBarItem>
     </section>

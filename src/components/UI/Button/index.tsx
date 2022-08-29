@@ -1,5 +1,5 @@
+import React, { FC } from 'react';
 import clsx from 'clsx';
-import React, { FC, ReactNode } from 'react';
 
 import { ButtonProps } from './Button.types';
 
