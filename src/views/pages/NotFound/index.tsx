@@ -11,15 +11,17 @@ import styles from './NotFound.module.scss';
 export const NotFound = () => {
   const navigate = useNavigate();
 
+  const handleButtonClick = () => {
+    navigate(PagesLinks.MAIN_PAGE);
+  };
+
   return (
     <main className={styles.error}>
       <div className={`container ${styles.container}`}>
         <div className={styles.info}>
           <h1 className={styles.title}>Ошибка 404</h1>
-          <div className={styles.description}>
-            Возможно, у вас опечатка в адресе страницы, или её просто не существует
-          </div>
-          <Button className={styles.button} onClick={() => navigate(PagesLinks.MAIN_PAGE)}>
+          <p className={styles.description}>Возможно, у вас опечатка в адресе страницы, или её просто не существует</p>
+          <Button className={styles.button} onClick={handleButtonClick}>
             <HomeIcon width={12} height={12} />
             Вернуться на главную
           </Button>
