@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
-import { useDispatch } from 'react-redux';
-import styles from './Pagination.module.scss';
+
+import { useAppDispatch } from 'store/store.hooks';
 import { PaginationProps } from './Pagination.types';
 
+import styles from './Pagination.module.scss';
 
-export const Pagination: FC<PaginationProps>=({currentPage, totalPage, action}) => {
-  const dispatch = useDispatch();
+export const Pagination: FC<PaginationProps> = ({ currentPage, totalPage, action }) => {
+  const dispatch = useAppDispatch();
 
   const items: number[] = [];
   for (let index = 0; index < totalPage; index++) {
@@ -19,7 +20,7 @@ export const Pagination: FC<PaginationProps>=({currentPage, totalPage, action}) 
           key={item}
           className={item == currentPage ? `${styles.item} ${styles.item_current}` : styles.item}
           onClick={() => {
-            dispatch(action(item))
+            dispatch(action(item));
           }}
         >
           {item}

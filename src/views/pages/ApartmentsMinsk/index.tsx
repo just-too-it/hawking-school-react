@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 
-import { RootState } from 'store/store';
 import { ApartmentList } from 'components/ApartmentList';
 import { Breadcrumbs } from 'components/Breadcrumbs';
 import { Pagination } from 'components/Pagination';
@@ -15,6 +13,7 @@ import { SearchOnMap } from 'components/SearchOnMap';
 import { PagesLinks } from 'core/constants/pagesLinks.constant';
 import { Social } from 'components/Social';
 import { socialApartments } from 'core/constants/social.constant';
+import { useAppDispatch, useAppSelector } from 'store/store.hooks';
 
 import styles from './ApartmentsMinsk.module.scss';
 
@@ -33,7 +32,7 @@ export const ApartmentsMinsk = () => {
     options,
     listMode,
     sortMode,
-  } = useSelector((state: RootState) => state.apartmentsMinskReducer);
+  } = useAppSelector((state) => state.apartmentsMinskReducer);
   const {
     setApartments,
     setCurrentPage,
@@ -46,7 +45,7 @@ export const ApartmentsMinsk = () => {
     setDistrict,
     setOptions,
   } = apartmentsMinskSlice.actions;
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const location = useLocation();
 

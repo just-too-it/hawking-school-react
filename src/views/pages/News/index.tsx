@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 
 import { Breadcrumbs } from 'components/Breadcrumbs';
 import { breadcrumbsForNews, news } from 'core/mockData/mockData';
@@ -7,15 +6,15 @@ import { Search } from 'components/Search';
 import { Pagination } from 'components/Pagination';
 import { NewsList } from 'components/NewsList';
 import { getPageCount } from 'core/utils/getPageCount';
-import { RootState } from 'store/store';
 import { newsSlice } from 'store/news/news.slice';
+import { useAppSelector, useAppDispatch } from 'store/store.hooks';
 
 import styles from './News.module.scss';
 
 export const News = () => {
-  const { data, newsPerPage, currentPage, query } = useSelector((state: RootState) => state.newsReducer);
+  const { data, newsPerPage, currentPage, query } = useAppSelector((state) => state.newsReducer);
   const { setData, setCurrentPage } = newsSlice.actions;
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const filteredNews = news.filter(

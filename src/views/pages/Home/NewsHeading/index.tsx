@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { ArrowIcon } from 'components/icons';
@@ -8,14 +7,14 @@ import { Button } from 'components/UI/Button';
 import { PagesLinks } from 'core/constants/pagesLinks.constant';
 import { news } from 'core/mockData/mockData';
 import { newsSlice } from 'store/news/news.slice';
-import { RootState } from 'store/store';
+import { useAppSelector, useAppDispatch } from 'store/store.hooks';
 
 import styles from './NewsHeading.module.scss';
 
 export const NewsHeading = () => {
-  const { data } = useSelector((state: RootState) => state.newsReducer);
+  const { data } = useAppSelector((state) => state.newsReducer);
   const { setData } = newsSlice.actions;
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const NEWS_PER_PAGE = 5;
 

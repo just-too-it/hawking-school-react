@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { Formik, Form } from 'formik';
 import * as yup from 'yup';
 import clsx from 'clsx';
 
-import { SInput } from 'components/UI/SInput'; 
+import { SInput } from 'components/UI/SInput';
 import { SSelector } from 'components/UI/SSelector';
 import {
   roomsList,
@@ -18,14 +17,14 @@ import {
 } from 'core/mockData/mockData';
 import { filterMainSlice } from 'store/filterMain/filterMain.slice';
 import { useNavPageCity } from 'hooks/useNavPageCity';
-import { RootState } from 'store/store';
 import { apartmentsMinskSlice } from 'store/apartments/apartmentsMinsk.slice';
 import { PagesLinks } from 'core/constants/pagesLinks.constant';
 import { FilterMainProps } from 'store/filterMain/filterMain.types';
 import { ApartmentsMinskProps } from 'views/pages/ApartmentsMinsk/ApartmentsMinsk.types';
-import { SCheckboxList } from 'components/UI/SCheckboxList'; 
-import { Button } from 'components/UI/Button'; 
+import { SCheckboxList } from 'components/UI/SCheckboxList';
+import { Button } from 'components/UI/Button';
 import { ArrowIcon, ListIcon, MapIcon, OptionsIcon, TileIcon } from 'components/icons';
+import { useAppDispatch, useAppSelector } from 'store/store.hooks';
 
 import styles from './ApartmentsForm.module.scss';
 
@@ -35,7 +34,7 @@ export const ApartmentsForm = () => {
   const [initialValues, setInitialValues] = useState<FilterMainProps | ApartmentsMinskProps | any>();
   const optionsRef = useRef() as React.MutableRefObject<HTMLDivElement>;
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const {
     setCity,
     setRooms: setRoomsMain,
@@ -61,7 +60,7 @@ export const ApartmentsForm = () => {
     rooms: roomsHome,
     priceFrom: priceFromHome,
     priceTo: priceToHome,
-  } = useSelector((state: RootState) => state.filterMainReducer);
+  } = useAppSelector((state) => state.filterMainReducer);
 
   const {
     city: cityMinsk,
@@ -74,7 +73,7 @@ export const ApartmentsForm = () => {
     listMode,
     sortMode,
     options,
-  } = useSelector((state: RootState) => state.apartmentsMinskReducer);
+  } = useAppSelector((state) => state.apartmentsMinskReducer);
 
   const initialValuesHome = {
     city: cityHome,

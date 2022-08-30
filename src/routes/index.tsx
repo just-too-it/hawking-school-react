@@ -1,14 +1,13 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 
 import { PagesLinks } from 'core/constants/pagesLinks.constant';
-import { RootState } from 'store/store';
 import { Layout } from 'views/layouts/Layout';
 import { publicRoutes, authRoutes } from './routes';
+import { useAppSelector } from 'store/store.hooks';
 
 export const AppRouter = () => {
-  const { isAuth } = useSelector((state: RootState) => state.userReducer);
+  const { isAuth } = useAppSelector((state) => state.userReducer);
 
   return (
     <Routes>
@@ -21,4 +20,3 @@ export const AppRouter = () => {
     </Routes>
   );
 };
-

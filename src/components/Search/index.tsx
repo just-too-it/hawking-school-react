@@ -1,21 +1,20 @@
 import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { Formik, Form } from 'formik';
 
 import { ReactComponent as SearchIcon } from 'assets/images/icons/search.svg';
-import { Formik, Form } from 'formik';
 import { SButtonIcon } from 'components/UI/SButtonIcon';
 import { SInput } from 'components/UI/SInput';
-import { RootState } from 'store/store';
 import { newsSlice } from 'store/news/news.slice';
 import { SearchWrapper } from 'components/SearchWrapper';
+import { useAppSelector, useAppDispatch } from 'store/store.hooks';
 
 import styles from './Search.module.scss';
 
 export const Search = () => {
-  const { query } = useSelector((state: RootState) => state.newsReducer);
+  const { query } = useAppSelector((state) => state.newsReducer);
   const { setQuery } = newsSlice.actions;
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [queryParams, setQueryParams] = useSearchParams();
   const newsQuery = queryParams.get('query');
 

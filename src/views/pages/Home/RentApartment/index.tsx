@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { ApartmentList } from 'components/ApartmentList';
@@ -10,15 +9,15 @@ import { apartmentsMinsk } from 'core/mockData/mockData';
 import { getPageCount } from 'core/utils/getPageCount';
 import { useNavPageCity } from 'hooks/useNavPageCity';
 import { apartmentsMinskSlice } from 'store/apartments/apartmentsMinsk.slice';
-import { RootState } from 'store/store';
 import { FilterMinsk } from '../FilterMinsk';
+import { useAppDispatch, useAppSelector } from 'store/store.hooks';
 
 import styles from './RentApartment.module.scss';
 
 export const RentApartment = () => {
-  const { apartments, metro, district } = useSelector((state: RootState) => state.apartmentsMinskReducer);
+  const { apartments, metro, district } = useAppSelector((state) => state.apartmentsMinskReducer);
   const { setApartments } = apartmentsMinskSlice.actions;
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const CARDS_PER_PAGE_HOME = 3;
   const [currentPageForHome, setCurrentPageForHome] = useState(1);
