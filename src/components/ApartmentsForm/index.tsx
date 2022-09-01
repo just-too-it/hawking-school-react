@@ -8,7 +8,6 @@ import { SInput } from 'components/UI/SInput';
 import { SSelector } from 'components/UI/SSelector';
 import {
   roomsList,
-  citysList,
   peopleList,
   districtsMinskList,
   metroMinskList,
@@ -27,6 +26,8 @@ import { ArrowIcon, ListIcon, MapIcon, OptionsIcon, TileIcon } from 'components/
 import { useAppDispatch, useAppSelector } from 'store/store.hooks';
 
 import styles from './ApartmentsForm.module.scss';
+import { getCities } from 'core/services/cities.services';
+import { SelectorProps } from 'components/UI/SSelector/SSelector.types';
 
 export const ApartmentsForm = () => {
   const location = useLocation();
@@ -115,6 +116,8 @@ export const ApartmentsForm = () => {
 
   const handleBtnOptionsHome = (handleSubmit) => handleSubmit;
 
+  const [cities, setCities] = useState<SelectorProps[]>([])
+
   const useUpdateFilter = (action, value) => {
     useEffect(() => {
       dispatch(action(value));
@@ -141,6 +144,10 @@ export const ApartmentsForm = () => {
   useEffect(() => {
     dispatch(setOptions(initialValuesMinsk.options));
   }, []);
+
+  useEffect(()=>{
+    void getCities().then((data) => setCities(data));
+  },[])
 
   return (
     <>
@@ -194,7 +201,7 @@ export const ApartmentsForm = () => {
                       <div className={styles.item}>
                         <div className={styles.itemTitle}>Город</div>
                         <SSelector
-                          options={citysList}
+                          options={cities}
                           placeholder={initialValues.city ? initialValues.city : 'Выберите'}
                           name={'city'}
                           setValue={setFieldValue}

@@ -139,14 +139,14 @@ export const roomsList: SelectorProps[] = [
   },
 ];
 
-export const citysList: SelectorProps[] = [
+/* export const citysList: SelectorProps[] = [
   { id: 1, value: 'Минск' },
   { id: 2, value: 'Гомель' },
   { id: 3, value: 'Брест' },
   { id: 4, value: 'Витебск' },
   { id: 5, value: 'Гродно' },
   { id: 6, value: 'Могилев' },
-];
+]; */
 
 export const peopleList: SelectorProps[] = [
   { id: 1, value: 1 },
