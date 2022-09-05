@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hawking-school-react/static/css/main.2a3cef3a.css",
-    "main.js": "/hawking-school-react/static/js/main.772a67a6.js",
+    "main.js": "/hawking-school-react/static/js/main.c3212daa.js",
     "static/media/promo-sauna.jpg": "/hawking-school-react/static/media/promo-sauna.d9e4fda2a912b7d393a4.jpg",
     "static/media/background.png": "/hawking-school-react/static/media/background.1363e352b753534a5c02.png",
     "static/media/promo-cott.jpg": "/hawking-school-react/static/media/promo-cott.c14078e85603faa7029c.jpg",
@@ -49,10 +49,10 @@
     "static/media/arrow.svg": "/hawking-school-react/static/media/arrow.981a25aebe67ee349dbf.svg",
     "static/media/point.svg": "/hawking-school-react/static/media/point.01d852510144cf318f7053b87fd057a3.svg",
     "main.2a3cef3a.css.map": "/hawking-school-react/static/css/main.2a3cef3a.css.map",
-    "main.772a67a6.js.map": "/hawking-school-react/static/js/main.772a67a6.js.map"
+    "main.c3212daa.js.map": "/hawking-school-react/static/js/main.c3212daa.js.map"
   },
   "entrypoints": [
     "static/css/main.2a3cef3a.css",
-    "static/js/main.772a67a6.js"
+    "static/js/main.c3212daa.js"
   ]
 }
