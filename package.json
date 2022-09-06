@@ -2,7 +2,6 @@
   "name": "hawking-school-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/just-too-it/hawking-school-react/",
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
@@ -13,7 +12,6 @@
     "@types/yup": "^0.29.14",
     "axios": "^0.27.2",
     "formik": "^2.2.9",
-    "gh-pages": "^4.0.0",
     "normalize.css": "^8.0.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -37,9 +35,7 @@
     "prettier": "prettier --check src/**/*{.css,.scss}",
     "prettier:fix": "prettier --write src/**/*{.css,.scss}",
     "eslint": "eslint src/**/*{.ts,.tsx}",
-    "eslint:fix": "eslint src/**/*{.ts,.tsx} --fix",
-    "deploy": "gh-pages -d build",
-    "predeploy": "npm run build"
+    "eslint:fix": "eslint src/**/*{.ts,.tsx} --fix"
   },
   "eslintConfig": {
     "extends": [
