@@ -1,3 +1,6 @@
+import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
+
 import { IBreadcrumbs } from 'components/Breadcrumbs/Breadcrumbs.types';
 import { INewsPreview } from 'components/NewsPreview/NewsPreview.types';
 import { PagesLinks } from 'core/constants/pagesLinks.constant';
@@ -9,7 +12,6 @@ import room4 from 'assets/images/room4.jpg';
 import roomAbout from 'assets/images/room-about.jpg';
 import owner from 'assets/images/owner.jpg';
 import { INewsItem } from 'views/pages/NewsItem/NewsItem.types';
-import { SelectorProps } from 'components/UI/SSelector/SSelector.types';
 import { PromoCardProps } from 'components/Promo/PromoCard/PromoCard.types';
 import promoApart from 'assets/images/promo-apart.jpg';
 import promoCott from 'assets/images/promo-cott.jpg';
@@ -19,19 +21,6 @@ import { PopularListProps } from 'components/PopularList/PopularList.types';
 import { ApartmentCardProps } from 'components/ApartmentCard/ApartmentCard.types';
 import { AboutProps } from 'components/About/About.types';
 import { RecommendationProps } from 'views/pages/ApartmentsMinsk/Recommendations/Recommendations.types';
-import { CheckboxProps } from 'components/UI/SCheckbox/SCheckbox.types';
-
-/* export const chooseCity: ISelector = {
-  title: 'Выберите',
-  list: [
-    { id: 1, value: 'Минск' },
-    { id: 2, value: 'Гомель' },
-    { id: 3, value: 'Брест' },
-    { id: 4, value: 'Витебск' },
-    { id: 5, value: 'Гродно' },
-    { id: 6, value: 'Могилев' }
-  ],
-}; */
 
 export const breadcrumbsForNews: IBreadcrumbs[] = [
   {
@@ -68,13 +57,6 @@ for (let index = 0; index < 20; index++) {
   });
 }
 
-/* export const newsList: INewsList = {
-  data: news,
-  newsPerPage: 9,
-  currentPage: 1
-};
- */
-
 export const newsItems: INewsItem[] = [];
 
 for (let index = 0; index < 20; index++) {
@@ -88,74 +70,6 @@ for (let index = 0; index < 20; index++) {
     text: '<p>Итак, утром вы выезжаете в путь по Молодеченской трассе. Если автомобиля у вас нет - садитесь на маршрутку в сторону Молодечно от железнодорожного вокзала. Остановка называется «Линия Сталина» - да-да, именно здесь вы и проведёте ближайшие несколько часов, а вероятнее всего – останетесь до самого вечера.</p><p>«Линия Сталина» - это уникальный музейный комплекс, располагающийся под открытым небом. Поэтому желательно приезжать сюда в хорошую погоду. Его территория поистине огромна: целых 26 га. Такое название дано музею неспроста: «Линией Сталина» в 20е-30е гг. XX века именовали цепь укреплений, созданную для защиты государственной границы СССР. Комплекс же построен лишь в 2005 году – к шестидесятой годовщине Победы в Великой Отечественной войне.</p><p>Если вы заранее позаботились о том, чтобы снять усадьбу на сутки в направлении Молодечно, то можете провести в музейном комплексе хоть целый день. Здесь действительно есть на что посмотреть: ДОТы, испещрённые следами немецких снарядов, окопы, противотанковые заграждения, зенитные пушки, бронетехника… Вы встретите даже элементы ракетных войск – и всё это не муляжи, а настоящие боевые орудия! За отдельную плату вам предложат пострелять из винтовки и пулемёта, а также прокатиться на танке. Проголодались? Загляните в кафе и насладитесь сытным домашним обедом.</p><p>Посетить «Линию Сталина» будет интересно как взрослым, так и детям. Особенно мальчишкам! Уставшие от впечатлений, они будут рады вместо долгой дороги домой остановиться на ночь в уютном современном коттедже. На сайте можно выбрать и снять посуточно наиболее удобный для вас вариант. Проведите незабываемые выходные за городом – приезжайте в «Линию Сталина»!</p><p>Отличная усадьба в 10 км от "Линии Сталина".</p>',
   });
 }
-
-/* export const rooms2: ISelector = {
-  title: 'Выберите',
-  list: [
-    {
-      id: 1,
-      value: '1 комн.'
-    },
-    {
-      id: 2,
-      value: '2 комн.'
-    },
-    {
-      id: 3,
-      value: '3 комн.'
-    },
-    {
-      id: 4,
-      value: '4 комн.'
-    },
-    {
-      id: 5,
-      value: '5 комн.'
-    },
-  ]
-  
-} */
-
-export const roomsList: SelectorProps[] = [
-  {
-    id: 1,
-    value: '1 комн.',
-  },
-  {
-    id: 2,
-    value: '2 комн.',
-  },
-  {
-    id: 3,
-    value: '3 комн.',
-  },
-  {
-    id: 4,
-    value: '4 комн.',
-  },
-  {
-    id: 5,
-    value: '5 комн.',
-  },
-];
-
-/* export const citysList: SelectorProps[] = [
-  { id: 1, value: 'Минск' },
-  { id: 2, value: 'Гомель' },
-  { id: 3, value: 'Брест' },
-  { id: 4, value: 'Витебск' },
-  { id: 5, value: 'Гродно' },
-  { id: 6, value: 'Могилев' },
-]; */
-
-export const peopleList: SelectorProps[] = [
-  { id: 1, value: 1 },
-  { id: 2, value: 2 },
-  { id: 3, value: 3 },
-  { id: 4, value: 4 },
-  { id: 5, value: 5 }
-];
-
 
 export const promoCards: PromoCardProps[] = [
   {
@@ -368,55 +282,6 @@ export const apartmentsList: ApartmentCardProps[] = [];
 for (let i=1; i <= 10; i++) {
   apartmentsList.push({...apartmentCard, id: i})
 }
-
-export const metroMinskList: SelectorProps[] = [
-  { id: 1, value: 'Борисовский тракт' },
-  { id: 2, value: 'Московская' },
-  { id: 3, value: 'Академия наук' },
-  { id: 4, value: 'Площадь Победы' },
-  { id: 5, value: 'Михалово' },
-  { id: 6, value: 'Грушевка' },
-];
-
-export const districtsMinskList: SelectorProps[] = [
-  { id: 1, value: 'Шабаны' },
-  { id: 2, value: 'Советский' },
-  { id: 3, value: 'Заводской' },
-  { id: 4, value: 'Ленинский' },
-  { id: 5, value: 'Октябрьский' },
-  { id: 6, value: 'Фрунзенский' },
-  { id: 7, value: 'Московский' },
-  { id: 8, value: 'Партизанский' },
-  { id: 9, value: 'Первомайский' },
-  { id: 10, value: 'Центральный' },
-];
-
-export const sortList: SelectorProps[] = [
-  { id: 1, value: 'По возрастанию' },
-  { id: 2, value: 'По убыванию' },
-];
-
-export const optionsList: CheckboxProps[] = [
-  {id: 1, name: 'options', value: 'stove', label: 'Газовая плита'},
-  {id: 2, name: 'options', value: 'oven', label: 'Духовка'},
-  {id: 3, name: 'options', value: 'coffee-maker', label: 'Кофеварка'},
-  {id: 4, name: 'options', value: 'microwave', label: 'Микроволновая печь'},
-  {id: 5, name: 'options', value: 'cookware', label: 'Посуда'},
-  {id: 6, name: 'options', value: 'dishwasher', label: 'Посудомоечная машина'},
-  {id: 7, name: 'options', value: 'stove2', label: 'Газовая плита2'},
-  {id: 8, name: 'options', value: 'oven2', label: 'Духовка2'},
-  {id: 9, name: 'options', value: 'coffee-maker2', label: 'Кофеварка2'},
-  {id: 10, name: 'options', value: 'microwave2', label: 'Микроволновка2'},
-  {id: 11, name: 'options', value: 'cookware2', label: 'Посуда2'},
-  {id: 12, name: 'options', value: 'dishwasher2', label: 'Посудомойка2'},
-  {id: 13, name: 'options', value: 'stove3', label: 'Газовая плита3'},
-  {id: 14, name: 'options', value: 'oven3', label: 'Духовка3'},
-  {id: 15, name: 'options', value: 'coffee-maker3', label: 'Кофеварка3'},
-  {id: 16, name: 'options', value: 'microwave3', label: 'Микроволновка3'},
-  {id: 17, name: 'options', value: 'cookware3', label: 'Посуда3'},
-  {id: 18, name: 'options', value: 'dishwasher3', label: 'Посудомойка3'},
-]
-
 
 export const apartmentsMinsk: ApartmentCardProps[] = [
   {
@@ -645,12 +510,84 @@ export const recommendationsMinsk: RecommendationProps[] = [
   {label: '4-комнатные', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?rooms=4+комн.`},
   {label: '5-комнатные', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?rooms=5+комн.`},
   {label: 'Заводской р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Заводской`},
-  {label: 'Ленинский р. ', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Ленинский`},
-  {label: 'Московский р.  ', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Московский`},
-  {label: 'Октябрьский р.    ', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Октябрьский`},
+  {label: 'Ленинский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Ленинский`},
+  {label: 'Московский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Московский`},
+  {label: 'Октябрьский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Октябрьский`},
   {label: 'Партизанский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Партизанский`},
   {label: 'Первомайский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Первомайский`},
   {label: 'Советский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Советский`},
   {label: 'Фрунзенский р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Фрунзенский`},
   {label: 'Центральный р.', path: `${PagesLinks.APARTMENTS_MINSK_PAGE}?district=Центральный`}
 ]
+
+
+// моковые данные через mock-axios-adapter
+const mockDataForFilter = new MockAdapter(axios);
+mockDataForFilter.onGet('/mock-data-for-filter').reply(200, {
+  citiesList: [
+    { id: 1, value: 'Минск' },
+    { id: 2, value: 'Гомель' },
+    { id: 3, value: 'Брест' },
+    { id: 4, value: 'Витебск' },
+    { id: 5, value: 'Гродно' },
+    { id: 6, value: 'Могилев' },
+  ],
+  roomsList: [
+    { id: 1, value: '1 комн.' },
+    { id: 2, value: '2 комн.' },
+    { id: 3, value: '3 комн.' },
+    { id: 4, value: '4 комн.' },
+    { id: 5, value: '5 комн.' },
+  ],
+    peopleList: [
+  { id: 1, value: 1 },
+  { id: 2, value: 2 },
+  { id: 3, value: 3 },
+  { id: 4, value: 4 },
+  { id: 5, value: 5 }
+],
+    districtsMinskList: [
+        { id: 1, value: 'Шабаны' },
+        { id: 2, value: 'Советский' },
+        { id: 3, value: 'Заводской' },
+        { id: 4, value: 'Ленинский' },
+        { id: 5, value: 'Октябрьский' },
+        { id: 6, value: 'Фрунзенский' },
+        { id: 7, value: 'Московский' },
+        { id: 8, value: 'Партизанский' },
+        { id: 9, value: 'Первомайский' },
+        { id: 10, value: 'Центральный' },
+      ],
+    metroMinskList: [
+        { id: 1, value: 'Борисовский тракт' },
+        { id: 2, value: 'Московская' },
+        { id: 3, value: 'Академия наук' },
+        { id: 4, value: 'Площадь Победы' },
+        { id: 5, value: 'Михалово' },
+        { id: 6, value: 'Грушевка' },
+      ],
+    optionsList: [
+        {id: 1, name: 'options', value: 'stove', label: 'Газовая плита'},
+        {id: 2, name: 'options', value: 'oven', label: 'Духовка'},
+        {id: 3, name: 'options', value: 'coffee-maker', label: 'Кофеварка'},
+        {id: 4, name: 'options', value: 'microwave', label: 'Микроволновая печь'},
+        {id: 5, name: 'options', value: 'cookware', label: 'Посуда'},
+        {id: 6, name: 'options', value: 'dishwasher', label: 'Посудомоечная машина'},
+        {id: 7, name: 'options', value: 'stove2', label: 'Газовая плита2'},
+        {id: 8, name: 'options', value: 'oven2', label: 'Духовка2'},
+        {id: 9, name: 'options', value: 'coffee-maker2', label: 'Кофеварка2'},
+        {id: 10, name: 'options', value: 'microwave2', label: 'Микроволновка2'},
+        {id: 11, name: 'options', value: 'cookware2', label: 'Посуда2'},
+        {id: 12, name: 'options', value: 'dishwasher2', label: 'Посудомойка2'},
+        {id: 13, name: 'options', value: 'stove3', label: 'Газовая плита3'},
+        {id: 14, name: 'options', value: 'oven3', label: 'Духовка3'},
+        {id: 15, name: 'options', value: 'coffee-maker3', label: 'Кофеварка3'},
+        {id: 16, name: 'options', value: 'microwave3', label: 'Микроволновка3'},
+        {id: 17, name: 'options', value: 'cookware3', label: 'Посуда3'},
+        {id: 18, name: 'options', value: 'dishwasher3', label: 'Посудомойка3'},
+      ],
+    sortList: [
+        { id: 1, value: 'По возрастанию' },
+        { id: 2, value: 'По убыванию' },
+      ]
+});

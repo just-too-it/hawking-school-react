@@ -6,14 +6,6 @@ import clsx from 'clsx';
 
 import { SInput } from 'components/UI/SInput';
 import { SSelector } from 'components/UI/SSelector';
-import {
-  roomsList,
-  peopleList,
-  districtsMinskList,
-  metroMinskList,
-  optionsList,
-  sortList,
-} from 'core/mockData/mockData';
 import { filterMainSlice } from 'store/filterMain/filterMain.slice';
 import { useNavPageCity } from 'hooks/useNavPageCity';
 import { apartmentsMinskSlice } from 'store/apartments/apartmentsMinsk.slice';
@@ -24,10 +16,9 @@ import { SCheckboxList } from 'components/UI/SCheckboxList';
 import { Button } from 'components/UI/Button';
 import { ArrowIcon, ListIcon, MapIcon, OptionsIcon, TileIcon } from 'components/icons';
 import { useAppDispatch, useAppSelector } from 'store/store.hooks';
+import { useDataForFilter } from 'hooks/useDataForFilter';
 
 import styles from './ApartmentsForm.module.scss';
-import { getCities } from 'core/services/cities.services';
-import { SelectorProps } from 'components/UI/SSelector/SSelector.types';
 
 export const ApartmentsForm = () => {
   const location = useLocation();
@@ -113,10 +104,8 @@ export const ApartmentsForm = () => {
       optionsRef.current.style.overflow = 'hidden';
     }
   };
-
   const handleBtnOptionsHome = (handleSubmit) => handleSubmit;
-
-  const [cities, setCities] = useState<SelectorProps[]>([])
+  const { data } = useDataForFilter();
 
   const useUpdateFilter = (action, value) => {
     useEffect(() => {
@@ -144,10 +133,6 @@ export const ApartmentsForm = () => {
   useEffect(() => {
     dispatch(setOptions(initialValuesMinsk.options));
   }, []);
-
-  useEffect(()=>{
-    void getCities().then((data) => setCities(data));
-  },[])
 
   return (
     <>
@@ -201,7 +186,7 @@ export const ApartmentsForm = () => {
                       <div className={styles.item}>
                         <div className={styles.itemTitle}>Город</div>
                         <SSelector
-                          options={cities}
+                          options={data?.citiesList}
                           placeholder={initialValues.city ? initialValues.city : 'Выберите'}
                           name={'city'}
                           setValue={setFieldValue}
@@ -211,7 +196,7 @@ export const ApartmentsForm = () => {
                     <div className={clsx(styles.item, viewForm == 'Minsk' && styles.itemCity)}>
                       <div className={styles.itemTitle}>Комнаты</div>
                       <SSelector
-                        options={roomsList}
+                        options={data?.roomsList}
                         placeholder={roomsMinsk ? roomsMinsk : 'Выберите'}
                         name={'rooms'}
                         setValue={setFieldValue}
@@ -296,7 +281,7 @@ export const ApartmentsForm = () => {
                         <div className={clsx(styles.item, styles.itemAdd)}>
                           <div className={styles.itemTitle}>Спальные места</div>
                           <SSelector
-                            options={peopleList}
+                            options={data?.peopleList}
                             placeholder={initialValues.peopleCount ? initialValues.peopleCount : 'Выберите'}
                             name={'peopleCount'}
                             setValue={setFieldValue}
@@ -306,7 +291,7 @@ export const ApartmentsForm = () => {
                         <div className={clsx(styles.item, styles.itemAdd)}>
                           <div className={styles.itemTitle}>Район</div>
                           <SSelector
-                            options={districtsMinskList}
+                            options={data.districtsMinskList}
                             placeholder={initialValues.district ? initialValues.district : 'Выберите'}
                             name={'district'}
                             setValue={setFieldValue}
@@ -316,7 +301,7 @@ export const ApartmentsForm = () => {
                         <div className={clsx(styles.item)}>
                           <div className={styles.itemTitle}>Метро</div>
                           <SSelector
-                            options={metroMinskList}
+                            options={data?.metroMinskList}
                             placeholder={initialValues.metro ? initialValues.metro : 'Выберите'}
                             name={'metro'}
                             setValue={setFieldValue}
@@ -325,14 +310,14 @@ export const ApartmentsForm = () => {
                         </div>
                         <div></div>
                         <div></div>
-                        <SCheckboxList options={optionsList} />
+                        <SCheckboxList options={data?.optionsList} />
                       </div>
                     </div>
                     <div className="container">
                       <section className={styles.controls}>
                         <div className={styles.sort}>
                           <SSelector
-                            options={sortList}
+                            options={data?.sortList}
                             placeholder={initialValues.sort ? initialValues.sort : 'По умолчанию'}
                             name={'sort'}
                             setValue={setFieldValue}

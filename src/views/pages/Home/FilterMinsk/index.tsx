@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { Formik, Form } from 'formik';
+import { useAppDispatch, useAppSelector } from 'store/store.hooks';
 
 import { SearchWrapper } from 'components/SearchWrapper';
 import { SSelector } from 'components/UI/SSelector';
-import { metroMinskList, districtsMinskList } from 'core/mockData/mockData';
 import { apartmentsMinskSlice } from 'store/apartments/apartmentsMinsk.slice';
-import { useAppDispatch, useAppSelector } from 'store/store.hooks';
+import { useDataForFilter } from 'hooks/useDataForFilter';
 
 import styles from './FilterMinsk.module.scss';
 
@@ -13,6 +13,7 @@ export const FilterMinsk = () => {
   const dispatch = useAppDispatch();
   const { setMetro, setDistrict } = apartmentsMinskSlice.actions;
   const { metro, district } = useAppSelector((state) => state.apartmentsMinskReducer);
+  const { data } = useDataForFilter();
 
   const initialValues = {
     metro: metro,
@@ -44,7 +45,7 @@ export const FilterMinsk = () => {
                 <fieldset className={styles.fieldset}>
                   <div className={styles.item}>
                     <SSelector
-                      options={metroMinskList}
+                      options={data?.metroMinskList}
                       placeholder={metro ? metro : 'Метро'}
                       name={'metro'}
                       className={`${styles.input} ${styles.metro}`}
@@ -55,7 +56,7 @@ export const FilterMinsk = () => {
                   <div className={styles.item}>
                     {
                       <SSelector
-                        options={districtsMinskList}
+                        options={data?.districtsMinskList}
                         placeholder={district ? district : 'Район'}
                         name={'district'}
                         className={styles.input}
